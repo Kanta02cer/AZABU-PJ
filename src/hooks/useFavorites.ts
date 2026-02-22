@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
 export function useFavorites(key: string = 'azabu_favorites') {
-  const [favorites, setFavorites] = useState<number[]>(() => {
+  const [favorites, setFavorites] = useState<(string | number)[]>(() => {
     const saved = localStorage.getItem(key);
     return saved ? JSON.parse(saved) : [];
   });
@@ -10,7 +10,7 @@ export function useFavorites(key: string = 'azabu_favorites') {
     localStorage.setItem(key, JSON.stringify(favorites));
   }, [favorites, key]);
 
-  const toggleFavorite = useCallback((id: number) => {
+  const toggleFavorite = useCallback((id: string | number) => {
     setFavorites(prev => 
       prev.includes(id) 
         ? prev.filter(f => f !== id) 
@@ -18,7 +18,7 @@ export function useFavorites(key: string = 'azabu_favorites') {
     );
   }, []);
 
-  const isFavorite = useCallback((id: number) => {
+  const isFavorite = useCallback((id: string | number) => {
     return favorites.includes(id);
   }, [favorites]);
 

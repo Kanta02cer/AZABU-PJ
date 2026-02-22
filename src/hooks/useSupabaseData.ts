@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import type { NewsRow, ColumnRow, InterviewRow } from '../lib/supabase';
 import { newsData as mockNews } from '../mocks/news';
@@ -126,32 +126,24 @@ export function useInterviews() {
 }
 
 /* ---------- Skeleton Component ---------- */
-export function SkeletonBlock({ className = '' }: { className?: string }) {
-  return (
-    <div className={`animate-pulse bg-slate-200 rounded-xl ${className}`} />
-  );
-}
+export const SkeletonBlock = ({ className = '' }: { className?: string }) => {
+  return React.createElement('div', { className: 'animate-pulse bg-slate-200 rounded-xl ' + className });
+};
 
-export function SkeletonCard() {
-  return (
-    <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
-      <SkeletonBlock className="h-48 rounded-none" />
-      <div className="p-5 space-y-3">
-        <SkeletonBlock className="h-4 w-20" />
-        <SkeletonBlock className="h-5 w-3/4" />
-        <SkeletonBlock className="h-4 w-full" />
-        <SkeletonBlock className="h-4 w-2/3" />
-      </div>
-    </div>
+export const SkeletonCard = () => {
+  return React.createElement('div', { className: 'bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm' },
+    React.createElement(SkeletonBlock, { className: 'h-48 rounded-none' }),
+    React.createElement('div', { className: 'p-5 space-y-3' },
+      React.createElement(SkeletonBlock, { className: 'h-4 w-20' }),
+      React.createElement(SkeletonBlock, { className: 'h-5 w-3/4' }),
+      React.createElement(SkeletonBlock, { className: 'h-4 w-full' }),
+      React.createElement(SkeletonBlock, { className: 'h-4 w-2/3' })
+    )
   );
-}
+};
 
-export function SkeletonList({ count = 4 }: { count?: number }) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8">
-      {Array.from({ length: count }).map((_, i) => (
-        <SkeletonCard key={i} />
-      ))}
-    </div>
+export const SkeletonList = ({ count = 4 }: { count?: number }) => {
+  return React.createElement('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8' },
+    Array.from({ length: count }).map((_, i) => React.createElement(SkeletonCard, { key: i }))
   );
-}
+};

@@ -25,7 +25,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '第三技術部',
     title: '未経験入社8年目で部長に。20代から裁量権を持って働く',
     subtitle: '未経験での入社から、わずか8年目で部長に就任。就職活動の際「20代のうちから挑戦したい」という明確な目標を持っており、それが当社の社風とマッチした。',
-    photo: '/images/interviews/gm_is.png',
+    photo: './images/interviews/gm_is.png',
     tags: ['経済学部出身', '未経験入社', '8年目で部長就任', 'クラウドコンサルタント'],
     sections: [
       {
@@ -53,7 +53,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '第四技術部',
     title: '研修制度の手厚さに惹かれて。未経験でも安心して挑戦できる環境',
     subtitle: '当社の教育制度が入社の決め手となったOさん。しかし入社直前まで「本当に自分でも大丈夫か」と不安を感じていたそうです。不安が解消された経緯と将来の目標について伺います。',
-    photo: '/images/interviews/member_or.png',
+    photo: './images/interviews/member_or.png',
     tags: ['未経験入社', '研修制度', 'ネットワーク運用', '資格取得中'],
     sections: [
       {
@@ -81,7 +81,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '技術部',
     title: 'PCほぼ未経験から、セキュリティのプロジェクトリーダーへ',
     subtitle: '学生時代は「PCに触れることがほとんどなかった」というUさん。現在はセキュリティ関連のプロジェクトでリーダーを務め、育休も経て家庭と仕事を両立しています。',
-    photo: '/images/interviews/leader_uy.png',
+    photo: './images/interviews/leader_uy.png',
     tags: ['政治経済学部出身', 'セキュリティ', 'プロジェクトリーダー', '育休取得'],
     sections: [
       {
@@ -109,7 +109,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '第六技術部',
     title: 'チャレンジできる環境。「これから大手になる会社を創る」という夢',
     subtitle: '大手とベンチャーの間で迷ったものの、自分と会社の将来性に魅力を感じ当社に入社したというMさん。「これから大手になる会社を創る」という夢について語っていただきました。',
-    photo: '/images/interviews/eng_mk.png',
+    photo: './images/interviews/eng_mk.png',
     tags: ['経営学部出身', '2年目でリーダー', '資格6つ取得', '最年少部長を目指す'],
     sections: [
       {
@@ -137,7 +137,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '第二技術部',
     title: '社員の人柄で入社を決意。「誰と働くか」がもっと重要',
     subtitle: '学生時代はチームスポーツに熱中したIさん。当社で見た社員同士の距離の近さや、仲間同士で楽しみながら、同じ目標に向かって一緒に頑張る様子に大きな魅力を感じたといいます。',
-    photo: '/images/interviews/it2_it.png',
+    photo: './images/interviews/it2_it.png',
     tags: ['チームスポーツ経験', 'ワイヤレス技術', 'コミュニケーション力', '社内教育志望'],
     sections: [
       {
@@ -165,7 +165,7 @@ export const interviewsData: InterviewDetail[] = [
     department: '営業部',
     title: '公務員からITベンチャーの営業職に転職。裁量と責任のある働き方',
     subtitle: '公務員から当社の営業職に転職したIさん。前職では実現できなかった「裁量と責任のある働き方」ができることと、チームとして結果を追い求める社内の雰囲気に魅力を感じたといいます。',
-    photo: '/images/interviews/sales_it.png',
+    photo: './images/interviews/sales_it.png',
     tags: ['公務員から転職', '営業職', '新規顧客開拓', 'エンジニア育成'],
     sections: [
       {

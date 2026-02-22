@@ -1,7 +1,7 @@
 export const newsData = [
   {
     id: "news-2025-01",
-    thumbnail: "/images/news/azabu+_cover.png",
+    thumbnail: __BASE_PATH__ + "images/news/azabu+_cover.png",
     category: "PRESS RELEASE",
     date: "2025.10.01",
     title: "【未経験からITのプロへ】20代限定・インフラエンジニア採用オーディション開催！PC1台で「一生モノのスキル」を掴み取れ",

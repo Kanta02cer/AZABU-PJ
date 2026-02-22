@@ -107,7 +107,7 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
           }}
         >
           <img 
-            src="/images/Challenge.png" 
+            src={__BASE_PATH__ + "images/Challenge.png"}
             alt="Challenge."
             className="w-full h-auto object-contain drop-shadow-2xl"
           />
@@ -268,42 +268,42 @@ export default function HomePage() {
       position: '第三技術本部 本部長',
       title: '20代でプロジェクトマネージャーに昇進',
       quote: '未経験からのスタートでしたが、充実した研修と先輩方のサポートのおかげで、20代でプロジェクトマネージャーに昇進できました。挑戦を後押ししてくれる環境が最大の魅力です。',
-      photo: '/images/interviews/gm_is.png',
+      photo: './images/interviews/gm_is.png',
     },
     {
       name: 'U.Y さん',
       position: '第五技術部',
       title: '仕事と家庭を両立しながらプロジェクトリーダーに',
       quote: '育児と仕事の両立に不安がありましたが、柔軟な働き方を支援してくれる制度のおかげで、プロジェクトリーダーとして活躍できています。',
-      photo: '/images/interviews/leader_uy.png',
+      photo: './images/interviews/leader_uy.png',
     },
     {
       name: 'M.K さん',
       position: '第六技術部',
       title: 'チャレンジできる環境',
       quote: '新しい技術に挑戦したいという気持ちを尊重してくれる会社です。失敗を恐れず挑戦できる環境が、自分の成長を加速させてくれました。',
-      photo: '/images/interviews/eng_mk.png',
+      photo: './images/interviews/eng_mk.png',
     },
     {
       name: 'O.R さん',
       position: '第四技術部 メンバー',
       title: '研修制度の手厚さに惹かれて',
       quote: '入社の決め手は研修制度の充実さ。未経験でも安心してスキルアップできる環境が整っていて、資格取得のサポートも手厚いです。',
-      photo: '/images/interviews/member_or.png',
+      photo: './images/interviews/member_or.png',
     },
     {
       name: 'I.T さん',
       position: '第二技術部',
       title: '社員の人柄で入社を決意',
       quote: '面接で感じた社員の温かさが入社の決め手でした。チーム全体で助け合う文化があり、困った時はいつでも相談できる安心感があります。',
-      photo: '/images/interviews/it2_it.png',
+      photo: './images/interviews/it2_it.png',
     },
     {
       name: 'I.T さん',
       position: '営業社員',
       title: '公務員からITベンチャーの営業職に転職',
       quote: '公務員から転職して、裁量と責任を持って働ける環境に大きなやりがいを感じています。自分の提案が直接成果に繋がる実感があります。',
-      photo: '/images/interviews/sales_it.png',
+      photo: './images/interviews/sales_it.png',
     },
   ];
 

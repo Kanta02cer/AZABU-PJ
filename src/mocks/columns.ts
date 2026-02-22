@@ -1,7 +1,7 @@
 export const columnsData = [
   {
     id: "column-1",
-    thumbnail: "/images/column/itinfra_cover.png",
+    thumbnail: __BASE_PATH__ + "images/column/itinfra_cover.png",
     category: "CAREER",
     date: "2025.10.05",
     title: "「未経験からインフラエンジニアはやめとけ」と言われる3つの理由と、失敗しないための企業選び",
@@ -121,7 +121,7 @@ export const columnsData = [
   },
   {
     id: "column-2",
-    thumbnail: "/images/column/firstcareer_cover.png",
+    thumbnail: __BASE_PATH__ + "images/column/firstcareer_cover.png",
     category: "CAREER",
     date: "2025.10.15",
     title: "未経験からITエンジニアへ。20代におすすめの職種と優良企業の見極め方",
