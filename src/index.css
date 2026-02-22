@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-brand-black bg-brand-white font-sans;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+
+/* Article Content Styles */
+.article-content {
+  @apply text-[#334155] leading-relaxed;
+}
+
+.article-content h2 {
+  @apply text-2xl font-bold text-[#1A2B4C] mt-12 mb-6 pb-3 border-b-2 border-[#FF6B00];
+}
+
+.article-content h3 {
+  @apply text-xl font-bold text-[#1A2B4C] mt-8 mb-4;
+}
+
+.article-content h4 {
+  @apply text-lg font-bold text-[#334155] mt-6 mb-3;
+}
+
+.article-content p {
+  @apply mb-6 text-base leading-relaxed;
+}
+
+.article-content ul,
+.article-content ol {
+  @apply mb-6 pl-6 space-y-2;
+}
+
+.article-content ul li {
+  @apply relative pl-2;
+}
+
+.article-content ul li::before {
+  content: '';
+  @apply absolute left-[-1rem] top-[0.6rem] w-2 h-2 bg-[#FF6B00] rounded-full;
+}
+
+.article-content ol {
+  @apply list-decimal;
+}
+
+.article-content ol li {
+  @apply pl-2;
+}
+
+.article-content strong {
+  @apply font-bold text-[#1A2B4C];
+}
+
+.article-content blockquote {
+  @apply my-6 pl-6 pr-4 py-4 border-l-4 border-[#FF6B00] bg-slate-50 rounded-r-lg italic;
+}
+
+.article-content blockquote p {
+  @apply mb-0 text-slate-700;
+}
+
+.article-content a {
+  @apply text-[#FF6B00] underline hover:text-[#1A2B4C] transition-colors;
+}
+
+.article-content code {
+  @apply px-2 py-1 bg-slate-100 text-[#1A2B4C] rounded text-sm font-mono;
+}
+
+.article-content pre {
+  @apply my-6 p-4 bg-slate-900 text-white rounded-lg overflow-x-auto;
+}
+
+.article-content pre code {
+  @apply bg-transparent text-white p-0;
+}
+
+.article-content img {
+  @apply my-8 rounded-xl shadow-lg w-full;
+}
+
+.article-content hr {
+  @apply my-8 border-slate-200;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Interview Carousel */
+@keyframes carousel-slide-in-right {
+  from { opacity: 0; transform: translateX(60px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes carousel-slide-in-left {
+  from { opacity: 0; transform: translateX(-60px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.animate-carousel-right {
+  animation: carousel-slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.animate-carousel-left {
+  animation: carousel-slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Timeline animations */
+@keyframes timeline-line-grow {
+  from { height: 0; }
+  to { height: 100%; }
+}
+@keyframes timeline-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(255,107,0,0); }
+}
+@keyframes timeline-card-enter {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-timeline-line {
+  animation: timeline-line-grow 1.5s ease-out forwards;
+}
+.animate-timeline-dot {
+  animation: timeline-dot-pulse 2s ease-in-out infinite;
+}
+.animate-timeline-card {
+  animation: timeline-card-enter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* FAQ redesign animations */
+@keyframes faq-border-glow {
+  0%, 100% { border-color: rgba(255,107,0,0.1); }
+  50% { border-color: rgba(255,107,0,0.3); }
+}
+@keyframes faq-number-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-faq-glow {
+  animation: faq-border-glow 3s ease-in-out infinite;
+}
+
+/* Progress bar for carousel */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+.animate-progress {
+  animation: progress-fill 5s linear forwards;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.15) translateY(-2%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes text-reveal {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-text-reveal {
+  animation: text-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
