@@ -84,14 +84,14 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-4 sm:px-6">
+    <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-white px-4 sm:px-6">
       <SEO 
         title="東京・麻布台ヒルズでエンジニア転職 | AZABU+ Project"
         description="20代のエンジニア転職なら麻布台ヒルズのAZABU+ Project。未経験から年収350万円からのキャリアを。1day就職オーディション開催中。"
         keywords="転職エンジニア 東京,インフラエンジニア 転職,20代,麻布台ヒルズ"
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[90vh] pt-24 sm:pt-32 pb-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[90vh] pt-24 sm:pt-32 pb-28 sm:pb-16">
         
         {/* Subtle top typography */}
         <div className={`absolute top-24 sm:top-32 left-4 sm:left-8 transition-all duration-1000 ${heroLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
@@ -140,8 +140,8 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
 
       {/* Scroll Indicator */}
       <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-1000 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '0.8s' }}>
-        <span className="text-[10px] text-[#111111]/40 tracking-[0.2em] mb-3" style={{ writingMode: 'vertical-rl' }}>SCROLL</span>
-        <div className="w-px h-16 bg-gradient-to-b from-[#111111]/40 to-transparent"></div>
+        <span className="text-[10px] text-[#111111]/40 tracking-[0.2em] mb-2 sm:mb-3" style={{ writingMode: 'vertical-rl' }}>SCROLL</span>
+        <div className="w-px h-12 sm:h-16 bg-gradient-to-b from-[#111111]/40 to-transparent"></div>
       </div>
     </section>
   );
@@ -173,7 +173,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
             alt="CHALLENGE AZABU+PJ"
             className="h-7 w-auto"
           />
-          <button onClick={onClose} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors cursor-pointer">
+          <button onClick={onClose} className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors cursor-pointer">
             <i className="ri-close-line text-2xl text-[#1A2B4C]"></i>
           </button>
         </div>
@@ -375,7 +375,7 @@ export default function HomePage() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden w-10 h-10 flex items-center justify-center rounded-full transition-all cursor-pointer text-[#111111] hover:bg-slate-100"
+              className="md:hidden w-12 h-12 flex items-center justify-center rounded-full transition-all cursor-pointer text-[#111111] hover:bg-slate-100"
             >
               <i className="ri-menu-3-line text-2xl"></i>
             </button>
@@ -391,11 +391,11 @@ export default function HomePage() {
 
       {/* Problem Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20geometric%20pattern%20with%20soft%20warm%20tones%2C%20minimalist%20corporate%20background%20texture%20with%20subtle%20golden%20amber%20lines%20on%20light%20cream%20surface%2C%20elegant%20business%20presentation%20backdrop%2C%20clean%20modern%20design%20with%20faint%20network%20connection%20nodes%20and%20thin%20lines%2C%20professional%20muted%20aesthetic%20with%20warm%20highlights%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-problem-section-v1&orientation=landscape" opacity={0.05}>
-        <div className="py-14 sm:py-20 px-4 sm:px-6">
+        <div className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Problem</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">こんな悩み、ありませんか?</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">こんな悩み、ありませんか?</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto origin-center animate-expand-line"></div>
             </AnimatedSection>
             <StaggerChildren className="space-y-4 sm:space-y-6" interval={150}>
@@ -423,12 +423,12 @@ export default function HomePage() {
 
       {/* Solution Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20abstract%20background%20with%20warm%20golden%20light%20rays%20streaming%20through%20modern%20glass%20architecture%2C%20soft%20bokeh%20effect%20with%20amber%20and%20cream%20tones%2C%20sophisticated%20corporate%20atmosphere%20with%20gentle%20light%20flares%2C%20minimalist%20luxury%20aesthetic%20with%20depth%20and%20warmth%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-solution-section-v1&orientation=landscape" opacity={0.06}>
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-8 sm:mb-12">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Solution</p>
               <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] mb-2 leading-relaxed">その悩み、すべて解決する</h2>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">&lsquo;特別な入り口&rsquo;があります。</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">&lsquo;特別な入り口&rsquo;があります。</h2>
             </AnimatedSection>
             <AnimatedSection animation="zoom" delay={200}>
               <div className="py-10 relative group text-center">
@@ -454,11 +454,11 @@ export default function HomePage() {
         opacity={0.03}
         id="about-infra"
       >
-        <div className="py-20 sm:py-32 px-4 sm:px-6">
+        <div className="py-12 sm:py-32 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection className="text-center mb-16 sm:mb-20">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">About</p>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-6">
+              <h2 className="text-[28px] sm:text-5xl lg:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-6">
                 文系・未経験から目指す、<span className="text-[#FF6B00]">ITインフラエンジニア</span>とは？
               </h2>
               <div className="w-16 h-1 bg-[#111111] mx-auto"></div>
@@ -496,7 +496,7 @@ export default function HomePage() {
       </SectionBg>
 
       {/* Brand Story Section */}
-      <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+      <section className="relative py-12 sm:py-32 bg-white overflow-hidden">
         {/* Minimalist Accents */}
         <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FF6B00]/20 to-transparent transform -translate-y-1/2" />
         <div className="absolute top-0 right-10 sm:right-20 w-px h-full bg-gradient-to-b from-transparent via-[#FF6B00]/10 to-transparent" />
@@ -505,7 +505,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
           <AnimatedSection className="mb-12 sm:mb-16 w-full">
             <h2 className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl uppercase mb-6 sm:mb-8">Brand Story</h2>
-            <h3 className="text-3xl sm:text-5xl md:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-8 sm:mb-12">
+            <h3 className="text-[28px] sm:text-5xl md:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-8 sm:mb-12">
               なぜ、未経験から「麻布台ヒルズ」なのか。
             </h3>
             <div className="w-px h-16 sm:h-24 bg-gradient-to-b from-[#FF6B00] to-transparent mx-auto"></div>
@@ -553,11 +553,11 @@ export default function HomePage() {
         opacity={0.04}
         id="特徴"
       >
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Features</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest leading-relaxed mb-2">
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest leading-relaxed mb-2">
                 <span className="text-[#111111]">3つの圧倒的</span>
                 <span className="text-[#FF6B00]">教育システム</span>
               </h2>
@@ -610,12 +610,12 @@ export default function HomePage() {
 
       {/* Benefit Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Luxurious%20modern%20Tokyo%20Azabudai%20Hills%20building%20exterior%20at%20golden%20hour%20with%20warm%20sunlight%20reflecting%20off%20premium%20glass%20facades%2C%20elegant%20architectural%20photography%20with%20soft%20amber%20glow%2C%20sophisticated%20urban%20landscape%20with%20clean%20lines%20and%20premium%20materials%2C%20professional%20real%20estate%20photography%20with%20warm%20color%20palette%20and%20gentle%20lens%20flare%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=900&seq=bg-benefit-section-v1&orientation=landscape" opacity={0.06}>
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection animation="slide-in-right" className="mb-8 sm:mb-10">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Location</p>
               <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-1 sm:mb-2">舞台は日本最高峰のビジネス街、</h2>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">麻布台ヒルズ。</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">麻布台ヒルズ。</h2>
             </AnimatedSection>
             <AnimatedSection animation="zoom" delay={100}>
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden mb-8 sm:mb-10 group">
@@ -669,11 +669,11 @@ export default function HomePage() {
 
       {/* Step Section — Timeline */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20flowing%20lines%20and%20pathways%20on%20soft%20cream%20background%2C%20elegant%20journey%20visualization%20with%20warm%20golden%20amber%20accent%20paths%20%2C%20minimalist%20roadmap%20concept%20art%20with%20gentle%20curves%20and%20connection%20points%2C%20clean%20modern%20design%20with%20subtle%20depth%20and%20dimension%2C%20professional%20corporate%20infographic%20backdrop%20with%20warm%20highlights%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=900&seq=bg-timeline-section-v1&orientation=landscape" opacity={0.05}>
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Application Flow</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed">エントリーまでの流れ</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed">エントリーまでの流れ</h2>
             </AnimatedSection>
             <div ref={timelineRef} className="relative">
               {/* Timeline vertical line */}
@@ -771,11 +771,11 @@ export default function HomePage() {
 
       {/* Interview Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20corporate%20team%20meeting%20environment%20with%20warm%20ambient%20lighting%2C%20soft%20focus%20modern%20office%20interior%20with%20comfortable%20seating%20areas%2C%20warm%20golden%20tones%20blending%20with%20cream%20and%20beige%2C%20sophisticated%20professional%20atmosphere%20with%20natural%20light%2C%20abstract%20bokeh%20effect%20creating%20depth%2C%20premium%20business%20photography%20style%20%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=900&seq=bg-interview-section-v1&orientation=landscape" opacity={0.05} id="インタビュー">
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Voice</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">社員インタビュー</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">社員インタビュー</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
             <AnimatedSection animation="fade" delay={100}>
@@ -826,7 +826,7 @@ export default function HomePage() {
                       key={index}
                       onClick={() => goToSlide(index, index > currentSlide ? 'right' : 'left')}
                       className={`relative rounded-full overflow-hidden transition-all duration-400 cursor-pointer flex-shrink-0 ${
-                        currentSlide === index ? 'w-9 h-9 sm:w-12 sm:h-12 ring-2 ring-[#FF6B00] ring-offset-1 sm:ring-offset-2' : 'w-7 h-7 sm:w-10 sm:h-10 opacity-50 hover:opacity-80 grayscale hover:grayscale-0'
+                        currentSlide === index ? 'w-11 h-11 sm:w-12 sm:h-12 ring-2 ring-[#FF6B00] ring-offset-1 sm:ring-offset-2' : 'w-10 h-10 sm:w-10 sm:h-10 opacity-50 hover:opacity-80 grayscale hover:grayscale-0'
                       }`}
                     >
                       <img src={interview.photo} alt={interview.name} className="w-full h-full object-cover" />
@@ -834,10 +834,10 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 ml-3">
-                  <button onClick={prevSlide} className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center rounded-full border-2 border-[#1A2B4C]/20 text-[#1A2B4C] hover:bg-[#1A2B4C] hover:text-white hover:border-[#1A2B4C] transition-all duration-300 cursor-pointer">
+                  <button onClick={prevSlide} className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full border-2 border-[#1A2B4C]/20 text-[#1A2B4C] hover:bg-[#1A2B4C] hover:text-white hover:border-[#1A2B4C] transition-all duration-300 cursor-pointer">
                     <i className="ri-arrow-left-s-line text-lg sm:text-xl"></i>
                   </button>
-                  <button onClick={nextSlide} className="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#1A2B4C] text-white hover:bg-[#FF6B00] transition-all duration-300 cursor-pointer">
+                  <button onClick={nextSlide} className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[#1A2B4C] text-white hover:bg-[#FF6B00] transition-all duration-300 cursor-pointer">
                     <i className="ri-arrow-right-s-line text-lg sm:text-xl"></i>
                   </button>
                 </div>
@@ -850,11 +850,11 @@ export default function HomePage() {
 
       {/* News Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20newspaper%20and%20media%20concept%20background%20with%20soft%20warm%20tones%2C%20minimalist%20editorial%20design%20backdrop%20with%20faint%20text%20columns%20and%20golden%20amber%20highlights%2C%20clean%20modern%20journalism%20aesthetic%20with%20subtle%20geometric%20grid%20pattern%2C%20professional%20muted%20cream%20and%20warm%20white%20surface%20with%20gentle%20shadows%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-news-section-v1&orientation=landscape" opacity={0.04} id="ニュース">
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">News</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">最新ニュース</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">最新ニュース</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
@@ -896,11 +896,11 @@ export default function HomePage() {
 
       {/* Column Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20open%20book%20and%20knowledge%20concept%20background%20with%20warm%20golden%20ambient%20lighting%2C%20soft%20focus%20library%20or%20study%20environment%20with%20cream%20and%20amber%20tones%2C%20sophisticated%20educational%20atmosphere%20with%20gentle%20bokeh%2C%20minimalist%20learning%20aesthetic%20with%20warm%20highlights%20and%20natural%20textures%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-column-section-v1&orientation=landscape" opacity={0.05}>
-        <div className="py-16 sm:py-24 px-4 sm:px-6">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Column</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">コラム</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">コラム</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
@@ -941,11 +941,11 @@ export default function HomePage() {
 
       {/* Selection Flow Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20professional%20growth%20and%20career%20path%20concept%20background%20with%20soft%20warm%20amber%20and%20cream%20tones%2C%20minimalist%20corporate%20design%20backdrop%20with%20subtle%20upward%20arrows%20and%20connecting%20lines%2C%20clean%20modern%20business%20aesthetic%20with%20gentle%20gradients%2C%20professional%20muted%20surface%20with%20warm%20highlights%20and%20faint%20geometric%20shapes%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=1000&seq=bg-selection-flow-v1&orientation=landscape" opacity={0.05} id="選考フロー">
-        <div className="py-20 sm:py-32 px-4 sm:px-6">
+        <div className="py-12 sm:py-32 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection className="text-center mb-16 sm:mb-20">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">Selection Flow</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">
+              <h2 className="text-[28px] sm:text-4xl lg:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">
                 選考フロー詳細
               </h2>
               <p className="text-lg sm:text-xl text-[#64748B] mb-6">ポテンシャルからスペシャリストへ</p>
@@ -1088,13 +1088,13 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20question%20mark%20and%20answer%20concept%20background%20with%20soft%20warm%20cream%20tones%2C%20minimalist%20FAQ%20design%20backdrop%20with%20subtle%20golden%20amber%20geometric%20shapes%2C%20clean%20modern%20help%20center%20aesthetic%20with%20gentle%20gradients%20and%20light%20patterns%2C%20professional%20muted%20surface%20with%20warm%20highlights%20and%20thin%20decorative%20lines%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=900&seq=bg-faq-section-v1&orientation=landscape" opacity={0.04} id="FAQ">
-        <div className="py-16 sm:py-24 px-4 sm:px-6 relative">
+        <div className="py-12 sm:py-24 px-4 sm:px-6 relative">
           <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" style={{ background: 'rgba(255,107,0,0.03)' }}></div>
           <div className="absolute bottom-0 left-0 w-40 sm:w-80 h-40 sm:h-80 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" style={{ background: 'rgba(26,43,76,0.03)' }}></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
               <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">FAQ</p>
-              <h2 className="text-3xl sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">よくある質問</h2>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">よくある質問</h2>
               <p className="text-[#64748B] text-sm sm:text-base">エントリー前の不安を解消します</p>
             </AnimatedSection>
             <StaggerChildren className="space-y-3 sm:space-y-5" interval={100}>
@@ -1153,7 +1153,7 @@ export default function HomePage() {
 
       {/* Final CTA Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Dramatic%20aerial%20night%20view%20of%20Tokyo%20premium%20business%20district%20with%20illuminated%20skyscrapers%20and%20golden%20city%20lights%2C%20deep%20dark%20navy%20atmosphere%20with%20warm%20amber%20reflections%20on%20glass%20buildings%2C%20cinematic%20urban%20landscape%20photography%20with%20rich%20contrast%2C%20sophisticated%20metropolitan%20skyline%20at%20night%20with%20bokeh%20light%20effects%2C%20ultra%20premium%20quality%20architectural%20photography%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-cta-section-v1&orientation=landscape" opacity={0.15}>
-        <div className="py-16 sm:py-24 px-4 sm:px-6 relative">
+        <div className="py-12 sm:py-24 px-4 sm:px-6 relative">
           <div className="absolute top-10 left-10 w-20 sm:w-32 h-20 sm:h-32 bg-[#FF6B00]/5 rounded-full blur-2xl animate-float pointer-events-none"></div>
           <div className="absolute bottom-10 right-10 w-28 sm:w-48 h-28 sm:h-48 bg-[#FF6B00]/5 rounded-full blur-3xl animate-float pointer-events-none" style={{ animationDelay: '2s' }}></div>
           <AnimatedSection className="max-w-4xl mx-auto text-center relative z-10">
