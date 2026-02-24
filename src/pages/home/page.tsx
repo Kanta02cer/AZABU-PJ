@@ -993,10 +993,10 @@ export default function HomePage() {
                   },
                   {
                     step: "04",
-                    title: "内定・入社準備",
-                    desc: "合格後、条件面提示（オファー面談）を経て入社となります。",
+                    title: "内定・採択準備",
+                    desc: "合格後、条件面提示（オファー面談）を経て採択となります。",
                     points: [
-                      "フォロー: 入社前に不安を解消するための面談や、推薦図書・学習アドバイスの共有。",
+                      "フォロー: 採択前に不安を解消するための面談や、推薦図書・学習アドバイスの共有。",
                       "研修スタート: 99.2%が未経験の同期と共に、マンツーマンの教育体制でキャリアをスタート。"
                     ]
                   }
@@ -1081,7 +1081,44 @@ export default function HomePage() {
                 </table>
               </div>
             </AnimatedSection>
+          </div>
+        </div>
+      </SectionBg>
 
+      {/* Important Notes Section */}
+      <SectionBg variant="warm" opacity={0.03} id="留意事項">
+        <div className="py-12 sm:py-24 px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-10 md:mb-16">
+              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-sm md:text-base uppercase mb-2 md:mb-3">Attention</p>
+              <h2 className="text-2xl md:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">
+                留意事項
+              </h2>
+              <div className="w-12 h-1 bg-[#FF6B00] mx-auto md:mb-8"></div>
+            </AnimatedSection>
+            
+            <AnimatedSection animation="slide-up" delay={200}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-5 md:p-10 shadow-lg border border-[#111111]/5">
+                <ul className="space-y-6 md:space-y-8">
+                  {[
+                    "プロジェクト前提について：\n本プロジェクトは、求人者と求職者との出会いの機会を提供することを目的とするものであり、乙は、求人または求職のあっせんを行うものではない。",
+                    "本プロジェクトは、直接の人材紹介を行うものではございません。企業プロジェクトの一部運営参画、リレーションの確立、マッチングの成立までを包括的にサポートすることを目的とする。",
+                    "プロジェクト参加者は、選考を通過した場合は指定の連絡手段で円滑なコミュニケーションを取ること。",
+                    "本プロジェクトへの一次審査フォーム（面談）のエントリー時点で、顔写真のサイト、動画等での本プロジェクトに関わるメディアへの掲載を許諾するものとする。",
+                    "反社会的勢力との関係性を持たず、今後一切の反社会的勢力及びその関係者との接触、関係を持たないこと。",
+                    "本プロジェクトへの参加が困難となる場合は、あらかじめ指定する期日（エントリーから最終採択の間における最終採択の通知から1週間以内）までに本プロジェクト責任者（指定の連絡先：面談担当）に迅速に通知すること。",
+                    "本プロジェクトへの一次審査フォーム（面談）のエントリー時点で、上記の留意事項の全てを了承するものとする。"
+                  ].map((note, idx) => (
+                    <li key={idx} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#111111]/5 flex items-center justify-center mt-0.5">
+                        <span className="text-[#111111] text-xs font-bold">{idx + 1}</span>
+                      </div>
+                      <p className="text-[#111111]/80 text-sm md:text-base leading-relaxed whitespace-pre-wrap">{note}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </SectionBg>
