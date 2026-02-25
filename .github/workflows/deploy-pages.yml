@@ -33,7 +33,7 @@ jobs:
 
       - name: Build with Vite for GitHub Pages
         env:
-          BASE_PATH: /AZABU-PJ/
+          BASE_PATH: /
         run: npm run build
 
       - name: Upload artifact

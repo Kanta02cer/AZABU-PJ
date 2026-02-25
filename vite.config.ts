@@ -3,7 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
 import AutoImport from "unplugin-auto-import/vite";
 
-const base = process.env.BASE_PATH || "/";
+const isProduction = process.env.NODE_ENV === "production";
+const base =
+  process.env.BASE_PATH || (isProduction ? "/AZABU-PJ/" : "/");
 const isPreview = process.env.IS_PREVIEW ? true : false;
 // https://vite.dev/config/
 export default defineConfig({
