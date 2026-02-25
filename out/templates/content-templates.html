@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コンテンツテンプレート — AZABU+ Project</title>
+  <style>
+    /* ============================================================
+       AZABU+ Content Template Styles
+       このCSSはインタビュー・コラム・ニュース記事の
+       コンテンツフォーマットを統一するためのテンプレートです。
+       ============================================================ */
+
+    :root {
+      --color-primary: #FF6B00;
+      --color-primary-light: #FF8C00;
+      --color-dark: #1A1A2E;
+      --color-dark-bg: #0F0F1A;
+      --color-text: #334155;
+      --color-text-muted: #64748B;
+      --color-bg: #FFFFFF;
+      --color-bg-light: #FAFAFA;
+      --color-border: #E2E8F0;
+      --font-sans: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .content-container {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* ── Article Header ── */
+    .article-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: #FFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .article-date {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .article-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .article-subtitle {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── Thumbnail ── */
+    .article-thumbnail {
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .article-thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ── Content Body ── */
+    .article-body h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin: 2.5rem 0 1rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--color-primary);
+    }
+
+    .article-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .article-body p {
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 1.25rem;
+      color: var(--color-text);
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+
+    .article-body li {
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body blockquote {
+      background: linear-gradient(135deg, var(--color-bg-light), #FFF8F0);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.5rem 1.5rem 2rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--color-text);
+    }
+
+    .article-body img {
+      width: 100%;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .article-body .highlight-box {
+      background: linear-gradient(135deg, var(--color-dark), var(--color-dark-bg));
+      color: #FFF;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .article-body .highlight-box h3 {
+      color: var(--color-primary);
+      margin-top: 0;
+    }
+
+    .article-body .highlight-box p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ── Interview Q&A ── */
+    .qa-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .qa-question {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .qa-badge {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+    }
+
+    .qa-question h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      line-height: 1.55;
+      border-left: none;
+      padding-left: 0;
+      margin: 0;
+      padding-top: 0.35rem;
+    }
+
+    .qa-answer {
+      margin-left: 3.5rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .qa-answer::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(255, 107, 0, 0.3), transparent);
+    }
+
+    .qa-divider {
+      margin: 2.5rem 0;
+      border: none;
+      border-top: 1px dashed var(--color-border);
+    }
+
+    /* ── Tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: var(--color-bg-light);
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+    }
+
+    /* ── Message Box ── */
+    .message-box {
+      background: linear-gradient(135deg, var(--color-dark), var(--color-dark-bg));
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message-box::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 5rem;
+      font-family: serif;
+      color: rgba(255, 107, 0, 0.15);
+      line-height: 1;
+    }
+
+    .message-box .message-label {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: #FFF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .message-box h3 {
+      color: #FFF;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .message-box p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.9rem;
+      line-height: 2;
+      margin-bottom: 1rem;
+    }
+
+    .message-box .author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .message-box .author img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 107, 0, 0.3);
+    }
+
+    .message-box .author-name {
+      color: #FFF;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .message-box .author-title {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+    }
+
+    /* ── CTA Button ── */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: #FFF;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3);
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255, 107, 0, 0.4);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .article-title { font-size: 1.35rem; }
+      .article-body h2 { font-size: 1.15rem; }
+      .qa-answer { margin-left: 0; padding-left: 1rem; margin-top: 1rem; }
+      .message-box { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================
+       テンプレート 1: ニュース / お知らせ
+       コピーして、内容を書き換えてお使いください。
+       ========================================================== -->
+  <div class="content-container" id="news-template">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-category">お知らせ</span>
+        <!-- カテゴリは自由に変更可能: お知らせ / プレスリリース / イベント など -->
+        <span class="article-date">2026年2月22日</span>
+      </div>
+      <h1 class="article-title">
+        ここにニュースのタイトルを入力してください
+      </h1>
+      <p class="article-subtitle">
+        ここにニュースの概要を1〜2文で記載します。この文章はニュース一覧にも表示されます。
+      </p>
+    </div>
+
+    <div class="article-thumbnail">
+      <img src="https://placehold.co/1200x630/1A1A2E/FF6B00?text=NEWS+THUMBNAIL" alt="ニュース画像">
+    </div>
+
+    <div class="article-body">
+      <h2>見出し1</h2>
+      <p>
+        本文を記載します。段落ごとに &lt;p&gt; タグで囲んでください。
+        必要に応じて改行や段落分けを行ってください。
+      </p>
+
+      <blockquote>
+        引用やハイライトしたい内容はこのブロックを使います。
+      </blockquote>
+
+      <h2>見出し2</h2>
+      <p>
+        追加の本文です。画像を挿入する場合は下記のように記載します。
+      </p>
+      <img src="https://placehold.co/1200x600/FAFAFA/334155?text=Article+Image" alt="記事内画像">
+
+      <h3>小見出し</h3>
+      <ul>
+        <li>リスト項目 1</li>
+        <li>リスト項目 2</li>
+        <li>リスト項目 3</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h3>ハイライトボックス</h3>
+        <p>特に強調したい情報はこのボックスに入れます。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr style="max-width:768px; margin:4rem auto; border:none; border-top:3px solid #FF6B00;">
+
+  <!-- ==========================================================
+       テンプレート 2: コラム記事
+       コピーして、内容を書き換えてお使いください。
+       ========================================================== -->
+  <div class="content-container" id="column-template">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-category" style="background:#1A1A2E;">キャリア</span>
+        <!-- カテゴリ例: キャリア / 技術解説 / 業界動向 / 資格 -->
+        <span class="article-date">2026年2月22日</span>
+      </div>
+      <h1 class="article-title">
+        ここにコラムのタイトルを入力してください
+      </h1>
+      <p class="article-subtitle">
+        コラムの概要です。読者が読むかどうかを判断する重要な文章です。
+      </p>
+      <div class="tags">
+        <span class="tag">キャリア</span>
+        <span class="tag">IT未経験</span>
+        <span class="tag">資格取得</span>
+      </div>
+    </div>
+
+    <div class="article-thumbnail">
+      <img src="https://placehold.co/1200x630/0F0F1A/FF6B00?text=COLUMN+THUMBNAIL" alt="コラム画像">
+    </div>
+
+    <div class="article-body">
+      <h2>はじめに</h2>
+      <p>導入文をここに記載します。読者の問題意識に訴えかける内容がおすすめです。</p>
+
+      <h2>本論: セクション1</h2>
+      <p>
+        コラムの主要な内容を記載します。データや具体例を交えると説得力が増します。
+      </p>
+
+      <h3>ポイント解説</h3>
+      <ol>
+        <li>番号付きリストで手順やランキングを表示できます</li>
+        <li>読者にとって分かりやすい構成を心がけましょう</li>
+        <li>各項目は簡潔に、具体的に書きます</li>
+      </ol>
+
+      <blockquote>
+        「実際に体験した人のコメントや引用を入れると、信憑性が高まります。」
+      </blockquote>
+
+      <h2>まとめ</h2>
+      <p>
+        記事のまとめと、読者への次のアクション（例: エントリー、詳細ページへの誘導）を記載します。
+      </p>
+
+      <div class="highlight-box">
+        <h3>今すぐアクション</h3>
+        <p>読者に伝えたいメッセージや次のステップをここに記載します。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr style="max-width:768px; margin:4rem auto; border:none; border-top:3px solid #FF6B00;">
+
+  <!-- ==========================================================
+       テンプレート 3: インタビュー記事
+       コピーして、内容を書き換えてお使いください。
+       ========================================================== -->
+  <div class="content-container" id="interview-template">
+    <div class="article-header">
+      <div class="article-meta">
+        <span class="article-category">Interview</span>
+        <span class="article-date">2026年2月22日</span>
+      </div>
+      <h1 class="article-title">
+        ここにインタビューのタイトルを入力
+      </h1>
+      <p class="article-subtitle">
+        インタビュー対象者の簡単な紹介文。入社の経緯や現在のポジションなど。
+      </p>
+      <div class="tags">
+        <span class="tag">未経験入社</span>
+        <span class="tag">エンジニア</span>
+        <span class="tag">文系出身</span>
+      </div>
+    </div>
+
+    <!-- Q&A セクション -->
+    <div class="qa-section">
+      <div class="qa-question">
+        <div class="qa-badge">Q1</div>
+        <h2>現在の仕事内容について教えてください。</h2>
+      </div>
+      <div class="qa-answer">
+        <p>
+          ここに回答を入力します。複数段落の場合は &lt;p&gt; タグで区切ってください。
+        </p>
+        <p>
+          2段落目の回答文です。
+        </p>
+      </div>
+    </div>
+
+    <hr class="qa-divider">
+
+    <div class="qa-section">
+      <div class="qa-question">
+        <div class="qa-badge">Q2</div>
+        <h2>入社を決めた理由について教えてください。</h2>
+      </div>
+      <div class="qa-answer">
+        <p>質問2の回答をここに入力します。</p>
+      </div>
+    </div>
+
+    <hr class="qa-divider">
+
+    <div class="qa-section">
+      <div class="qa-question">
+        <div class="qa-badge">Q3</div>
+        <h2>今後の目標を教えてください。</h2>
+      </div>
+      <div class="qa-answer">
+        <p>質問3の回答をここに入力します。</p>
+      </div>
+    </div>
+
+    <!-- メッセージセクション -->
+    <div class="message-box">
+      <span class="message-label">Message</span>
+      <h3>入社を目指す方へのメッセージをお願いします。</h3>
+      <p>
+        ここにメッセージを入力します。<br>
+        改行は &lt;br&gt; タグを使います。
+      </p>
+      <p>
+        段落を分ける場合は &lt;p&gt; タグで新しい段落を始めます。
+      </p>
+      <div class="author">
+        <img src="https://placehold.co/100x100/1A1A2E/FF6B00?text=Photo" alt="写真">
+        <div>
+          <div class="author-name">名前</div>
+          <div class="author-title">役職・部署</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="max-width:768px; margin:4rem auto; border:none; border-top:3px solid #FF6B00;">
+
+  <!-- ==========================================================
+       使い方ガイド
+       ========================================================== -->
+  <div class="content-container">
+    <div class="article-body">
+      <h2>テンプレートの使い方</h2>
+
+      <h3>ニュース / お知らせ</h3>
+      <ol>
+        <li><code>#news-template</code> セクションをコピー</li>
+        <li>カテゴリ・日付・タイトル・概要を変更</li>
+        <li>サムネイル画像のURLを差し替え</li>
+        <li>本文を <code>&lt;h2&gt;</code> と <code>&lt;p&gt;</code> タグで追加</li>
+        <li>CMS管理画面の「ニュース」→「新規作成」→「本文 (HTML)」欄にペースト</li>
+      </ol>
+
+      <h3>コラム記事</h3>
+      <ol>
+        <li><code>#column-template</code> セクションをコピー</li>
+        <li>カテゴリ色は <code>style="background:#1A1A2E;"</code> で変更可能</li>
+        <li>タグを必要に応じて追加・変更</li>
+        <li>引用 (<code>&lt;blockquote&gt;</code>) やハイライトボックスを活用</li>
+        <li>CMS管理画面の「コラム」→「新規作成」→「本文 (HTML)」欄にペースト</li>
+      </ol>
+
+      <h3>インタビュー</h3>
+      <ol>
+        <li><code>#interview-template</code> セクションをコピー</li>
+        <li>Q&Aセクションは <code>.qa-section</code> を複製して質問数を増やせます</li>
+        <li>メッセージボックスは1つで使用</li>
+        <li>写真URLと名前・役職を差し替え</li>
+        <li>mockデータに追加する場合は <code>src/mocks/interviews.ts</code> を編集</li>
+      </ol>
+
+      <div class="highlight-box">
+        <h3>カラーリファレンス</h3>
+        <p>メイン: <code>#FF6B00</code> (オレンジ)</p>
+        <p>ダーク: <code>#1A1A2E</code></p>
+        <p>テキスト: <code>#334155</code></p>
+        <p>テキスト薄: <code>#64748B</code></p>
+        <p>背景: <code>#FFFFFF</code> / <code>#FAFAFA</code></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
