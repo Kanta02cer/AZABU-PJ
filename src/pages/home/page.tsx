@@ -340,7 +340,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2.5 sm:py-3' : 'bg-transparent py-4 sm:py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -394,7 +394,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Problem</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Problem</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">こんな悩み、ありませんか?</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto origin-center animate-expand-line"></div>
             </AnimatedSection>
@@ -426,7 +426,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-8 sm:mb-12">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Solution</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Solution</p>
               <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] mb-2 leading-relaxed">その悩み、すべて解決する</h2>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">&lsquo;特別な入り口&rsquo;があります。</h2>
             </AnimatedSection>
@@ -457,7 +457,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-32 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection className="text-center mb-16 sm:mb-20">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">About</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">About</p>
               <h2 className="text-[28px] sm:text-5xl lg:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-6">
                 文系・未経験から目指す、<span className="text-[#FF6B00]">ITインフラエンジニア</span>とは？
               </h2>
@@ -504,7 +504,7 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
           <AnimatedSection className="mb-12 sm:mb-16 w-full">
-            <h2 className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl uppercase mb-6 sm:mb-8">Brand Story</h2>
+            <h2 className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl uppercase mb-6 sm:mb-8">Brand Story</h2>
             <h3 className="text-[28px] sm:text-5xl md:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-8 sm:mb-12">
               なぜ、未経験から「麻布台ヒルズ」なのか。
             </h3>
@@ -556,7 +556,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Features</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Features</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest leading-relaxed mb-2">
                 <span className="text-[#111111]">3つの圧倒的</span>
                 <span className="text-[#FF6B00]">教育システム</span>
@@ -613,7 +613,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection animation="slide-in-right" className="mb-8 sm:mb-10">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Location</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Location</p>
               <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-1 sm:mb-2">舞台は日本最高峰のビジネス街、</h2>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">麻布台ヒルズ。</h2>
             </AnimatedSection>
@@ -672,7 +672,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Application Flow</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Application Flow</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed">エントリーまでの流れ</h2>
             </AnimatedSection>
             <div ref={timelineRef} className="relative">
@@ -774,7 +774,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Voice</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Voice</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">社員インタビュー</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
@@ -797,7 +797,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="w-full md:w-3/5 flex flex-col justify-center relative">
-                    <div className="absolute -top-10 sm:-top-20 right-0 text-[#111111]/5 text-8xl sm:text-[150px] leading-none pointer-events-none select-none font-sans">&ldquo;</div>
+                    <div className="absolute -top-10 sm:-top-20 right-0 text-[#111111]/5 text-8xl sm:text-[150px] leading-none pointer-events-none select-none">&ldquo;</div>
                     <div className="relative z-10">
                       <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                         <div className="w-1 h-6 sm:h-8 bg-[#FF6B00]"></div>
@@ -853,7 +853,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">News</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">News</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">最新ニュース</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
@@ -899,7 +899,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Column</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Column</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">コラム</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
@@ -944,7 +944,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-32 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection className="text-center mb-16 sm:mb-20">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">Selection Flow</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">Selection Flow</p>
               <h2 className="text-[28px] sm:text-4xl lg:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">
                 選考フロー詳細
               </h2>
@@ -1011,7 +1011,7 @@ export default function HomePage() {
                       
                       {/* Step Number Content */}
                       <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${idx % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                        <div className={`text-[#FF6B00] font-sans font-light tracking-widest text-5xl sm:text-7xl font-thin opacity-30 group-hover:opacity-100 transition-opacity duration-500 mb-2 md:mb-4 ${idx % 2 === 0 ? '-ml-2 md:ml-0' : '-ml-2 md:-mr-2'}`}>STEP {item.step}</div>
+                        <div className={`text-[#FF6B00] font-light tracking-widest text-5xl sm:text-7xl font-thin opacity-30 group-hover:opacity-100 transition-opacity duration-500 mb-2 md:mb-4 ${idx % 2 === 0 ? '-ml-2 md:ml-0' : '-ml-2 md:-mr-2'}`}>STEP {item.step}</div>
                         <h3 className={`font-bold text-[#111111] leading-tight group-hover:text-[#FF6B00] transition-colors duration-300 ${item.title.length > 12 ? 'text-lg sm:text-xl md:text-2xl tracking-normal' : 'text-2xl sm:text-3xl'}`}>{item.title}</h3>
                       </div>
 
@@ -1090,7 +1090,7 @@ export default function HomePage() {
         <div className="py-12 sm:py-24 px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 md:mb-16">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-sm md:text-base uppercase mb-2 md:mb-3">Attention</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-sm md:text-base uppercase mb-2 md:mb-3">Attention</p>
               <h2 className="text-2xl md:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">
                 留意事項
               </h2>
@@ -1130,7 +1130,7 @@ export default function HomePage() {
           <div className="absolute bottom-0 left-0 w-40 sm:w-80 h-40 sm:h-80 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" style={{ background: 'rgba(26,43,76,0.03)' }}></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
-              <p className="font-sans font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">FAQ</p>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">FAQ</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">よくある質問</h2>
               <p className="text-[#64748B] text-sm sm:text-base">エントリー前の不安を解消します</p>
             </AnimatedSection>

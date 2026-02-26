@@ -64,7 +64,7 @@ export default function InterviewDetailPage() {
   const nextInterview = currentIndex < interviewsData.length - 1 ? interviewsData[currentIndex + 1] : null;
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
