@@ -103,6 +103,10 @@ export default {
             '0%': { strokeDashoffset: '1000' },
             '100%': { strokeDashoffset: '0' },
           },
+          'marquee': {
+            '0%': { transform: 'translateX(0%)' },
+            '100%': { transform: 'translateX(-100%)' },
+          },
         },
         animation: {
           float: 'float 5s ease-in-out infinite',
@@ -124,6 +128,7 @@ export default {
           'tag-slide': 'tag-slide 0.6s ease-out forwards',
           'orbit': 'orbit 20s linear infinite',
           'line-draw': 'line-draw 2s ease-out forwards',
+          'marquee': 'marquee 40s linear infinite',
         },
       },
     },

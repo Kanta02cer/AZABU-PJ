@@ -857,13 +857,13 @@ export default function HomePage() {
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">最新ニュース</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
-              {newsData.slice(0, 4).map((news, index) => (
-                <AnimatedSection key={news.id} animation="slide-up" delay={index * 100}>
-                  <Link to={`/news/${news.id}`} className="block group cursor-pointer border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+            <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8">
+                {[...newsData, ...newsData].map((news, index) => (
+                  <Link to={`/news/${news.id}`} key={`${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
-                        <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                        <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="absolute top-0 left-0 px-3 py-1 bg-[#111111] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{news.category}</div>
                     </div>
@@ -872,16 +872,16 @@ export default function HomePage() {
                         <i className="ri-calendar-line"></i>
                         <span>{news.date}</span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover:text-[#FF6B00] transition-colors duration-300">{news.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{news.title}</h3>
                       <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{news.excerpt}</p>
-                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover:text-[#FF6B00] transition-colors">
+                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
                         <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
-                        <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
                       </div>
                     </div>
                   </Link>
-                </AnimatedSection>
-              ))}
+                ))}
+              </div>
             </div>
             <AnimatedSection className="text-center">
               <Link to="/news" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
@@ -903,13 +903,13 @@ export default function HomePage() {
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">コラム</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-8 sm:mb-12">
-              {columnsData.slice(0, 4).map((column, index) => (
-                <AnimatedSection key={column.id} animation="slide-up" delay={index * 100}>
-                  <Link to={`/column/${column.id}`} className="block group cursor-pointer border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+            <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
+              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8" style={{ animationDirection: "reverse" }}>
+                {[...columnsData, ...columnsData].map((column, index) => (
+                  <Link to={`/column/${column.id}`} key={`${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
-                        <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                        <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
                       </div>
                       <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
                     </div>
@@ -918,16 +918,16 @@ export default function HomePage() {
                         <i className="ri-calendar-line"></i>
                         <span>{column.date}</span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
                       <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
-                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover:text-[#FF6B00] transition-colors">
+                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
                         <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
-                        <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
                       </div>
                     </div>
                   </Link>
-                </AnimatedSection>
-              ))}
+                ))}
+              </div>
             </div>
             <AnimatedSection className="text-center">
               <Link to="/column" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
