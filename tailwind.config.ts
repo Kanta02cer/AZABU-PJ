@@ -8,7 +8,7 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', '"Noto Sans JP"', 'sans-serif'],
         },
         colors: {
           brand: {
