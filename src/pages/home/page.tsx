@@ -932,70 +932,71 @@ export default function HomePage() {
 
     {/* Column Section */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20open%20book%20and%20knowledge%20concept%20background%20with%20warm%20golden%20ambient%20lighting%2C%20soft%20focus%20library%20or%20study%20environment%20with%20cream%20and%20amber%20tones%2C%20sophisticated%20educational%20atmosphere%20with%20gentle%20bokeh%2C%20minimalist%20learning%20aesthetic%20with%20warm%20highlights%20and%20natural%20textures%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-column-section-v1&orientation=landscape" opacity={0.05} id="コラム">
-        <div className="py-12 sm:py-24 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
+        <div className="py-12 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
               <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Magazine</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">AZABU+PRESS</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
-            <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
-              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8" style={{ animationDirection: "reverse" }}>
-                {/* First set of items */}
-                {[...columnsData, ...columnsData].map((column, index) => (
-                  <Link to={`/column/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
-                    <div className="relative overflow-hidden mb-4 rounded-lg">
-                      <div className="w-full aspect-video">
-                        <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
-                      </div>
-                      <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
-                        <i className="ri-calendar-line"></i>
-                        <span>{column.date}</span>
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
-                      <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
-                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
-                        <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
-                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-                {/* Second set of items for seamless loop */}
-                {[...columnsData, ...columnsData].map((column, index) => (
-                  <Link to={`/column/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
-                    <div className="relative overflow-hidden mb-4 rounded-lg">
-                      <div className="w-full aspect-video">
-                        <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
-                      </div>
-                      <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
-                        <i className="ri-calendar-line"></i>
-                        <span>{column.date}</span>
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
-                      <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
-                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
-                        <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
-                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <AnimatedSection className="text-center">
-              <Link to="/column" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
-                <span>もっと見る</span>
-                <i className="ri-arrow-right-line"></i>
-              </Link>
-            </AnimatedSection>
           </div>
+          
+          <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
+            <div className="flex w-max animate-marquee-slow hover:[animation-play-state:paused] gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
+              {/* First set of items */}
+              {[...columnsData, ...columnsData].map((column, index) => (
+                <Link to={`/column/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <div className="relative overflow-hidden mb-4 rounded-lg">
+                    <div className="w-full aspect-video">
+                      <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
+                      <i className="ri-calendar-line"></i>
+                      <span>{column.date}</span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
+                    <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
+                      <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
+                      <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              {/* Second set of items for seamless loop */}
+              {[...columnsData, ...columnsData].map((column, index) => (
+                <Link to={`/column/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <div className="relative overflow-hidden mb-4 rounded-lg">
+                    <div className="w-full aspect-video">
+                      <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
+                      <i className="ri-calendar-line"></i>
+                      <span>{column.date}</span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
+                    <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
+                      <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
+                      <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <AnimatedSection className="text-center">
+            <Link to="/column" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
+              <span>もっと見る</span>
+              <i className="ri-arrow-right-line"></i>
+            </Link>
+          </AnimatedSection>
         </div>
       </SectionBg>
 

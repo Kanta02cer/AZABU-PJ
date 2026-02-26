@@ -129,6 +129,7 @@ export default {
           'orbit': 'orbit 20s linear infinite',
           'line-draw': 'line-draw 2s ease-out forwards',
           'marquee': 'marquee 40s linear infinite',
+          'marquee-slow': 'marquee 80s linear infinite',
         },
       },
     },
