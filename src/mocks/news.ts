@@ -166,5 +166,85 @@ export const newsData = [
   </a>
 </div>
 `
+  },
+  {
+    id: "news-2026-02",
+    thumbnail: __BASE_PATH__ + "images/news/seo_consultation.png",
+    category: "EVENT",
+    date: "2026.03.01",
+    title: "【20代未経験歓迎】麻布台ヒルズオフィスで開催！ITエンジニア転職のための「1dayキャリア相談会＆適職診断」",
+    excerpt: "「IT業界に興味はあるけど、自分に向いているかわからない」「文系・未経験からインフラエンジニアになれるのか不安」そんな20代の皆様に向けた、プロの採用担当による特別キャリア相談会です。",
+    content: `
+<p>
+  今の仕事に漠然とした不安を感じている方、IT業界への転職を考えている20代の皆様へ。「未経験からITエンジニアになりたいけれど、何から始めればいいかわからない」「プログラミングスクールに通うべきか迷っている」という方のために、AZABU+PJ（アザブプラスプロジェクト）では、<strong>無料の「1dayキャリア相談会＆適職診断」</strong>を開催いたします。
+</p>
+
+<h2>IT転職のリアルを聞けるチャンス：なぜ「今」インフラエンジニアなのか？</h2>
+<p>
+  IT業界と一口に言っても、プログラマー、Webデザイナー、SIer、そして<strong>インフラエンジニア</strong>など、様々な職種が存在します。<br>
+  当日の相談会では、ネットの情報だけでは分かりにくい「職種ごとの適性」や「リアルな働き方（年収、残業、リモートワーク事情）」について、現役のIT採用プロフェッショナルが分かりやすく解説します。
+</p>
+
+<div class="highlight-box">
+  <h3>こんな方におすすめの相談会です</h3>
+  <p>
+    <strong style="color: #FF6B00;">・IT未経験・文系出身だが、手に職をつけたい20代の方</strong><br>
+    <strong style="color: #FF6B00;">・インフラエンジニアの仕事内容や将来性について詳しく知りたい方</strong><br>
+    <strong style="color: #FF6B00;">・「プログラミングスクール」と「未経験就職」のどちらが良いか迷っている方</strong><br>
+    <strong style="color: #FF6B00;">・麻布台ヒルズのIT企業で働くことに興味がある方</strong>
+  </p>
+</div>
+
+<h2>キャリア相談会のプログラム内容（予定）</h2>
+<ul style="list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>IT業界マップ解説</strong>：未経験者が狙うべきポジションと、避けるべき「やめとけ」な職種の違い。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>適職診断ワーク</strong>：あなたの強みは「開発」向きか、「インフラ」向きか？簡単なワークで診断します。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>インフラエンジニアのキャリアパス</strong>：入社1年目の業務から、10年後のクラウドスペシャリストまで。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>Q&Aセッション</strong>：どんな些細な疑問でも、プロが直接お答えします。履歴書や経歴書は不要のフランクな場です。</li>
+</ul>
+
+<p>
+  <img src="\${__BASE_PATH__}images/news/seo_consultation.png" alt="麻布台ヒルズ開催 20代未経験向けITエンジニア転職 キャリア相談会" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+</p>
+
+<h2>開催概要とエントリー方法</h2>
+<div style="overflow-x: auto; margin-bottom: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left;">
+    <tbody>
+      <tr>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #334155; width: 30%; background-color: #f8fafc;">開催場所</td>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; color: #1a2b4c;">東京都港区麻布台（麻布台ヒルズ 森JPタワー内オフィス）<br><span style="font-size: 0.875rem; color: #64748b;">※ご希望によりオンライン（Zoom）での個別実施も可能です。</span></td>
+      </tr>
+      <tr>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #334155; width: 30%; background-color: #f8fafc;">対象者</td>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; color: #1a2b4c;">20代の方（IT未経験、フリーター、第二新卒歓迎）</td>
+      </tr>
+      <tr>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #334155; width: 30%; background-color: #f8fafc;">参加費用</td>
+        <td style="padding: 1.25rem; border-bottom: 1px solid #e2e8f0; color: #FF6B00; font-weight: bold;">完全無料</td>
+      </tr>
+      <tr>
+        <td style="padding: 1.25rem; font-weight: bold; color: #334155; width: 30%; background-color: #f8fafc;">服装・持ち物</td>
+        <td style="padding: 1.25rem; color: #1a2b4c;">私服でお気軽にお越しください。履歴書は不要です。</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<blockquote>
+  <p>「自分にITエンジニアが務まるのか不安…という方にこそ参加していただきたいと考えています。選考ではなく『相談』の場ですので、まずはお茶を飲む感覚で、あなたのキャリアについてお話ししましょう。」（採用担当アドバイザーより）</p>
+</blockquote>
+
+<h2>枠に限りがあります！エントリーはお早めに</h2>
+<p>
+  本相談会は、一人ひとりへの丁寧なアドバイスを行うため、少人数制・完全予約制となっております。下記の専用カレンダーより、ご都合の良い日時を選択してエントリーを完了させてください。
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    📅 無料キャリア相談会に予約する
+  </a>
+</div>
+`
   }
 ];

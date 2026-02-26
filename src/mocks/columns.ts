@@ -180,5 +180,119 @@ export const columnsData = [
   </a>
 </div>
 `
+  },
+  {
+    id: "column-3",
+    thumbnail: __BASE_PATH__ + "images/column/server_network_diff.png",
+    category: "CAREER",
+    date: "2026.03.05",
+    title: "サーバーとネットワークの違いとは？未経験からインフラエンジニアを目指す基礎知識",
+    excerpt: "「サーバーエンジニアとネットワークエンジニア、未経験からなるならどっち？」という疑問にお答えします。日常生活に例えた分かりやすい解説と、将来のキャリアパス（クラウド技術）を見据えた企業選びのポイントを大公開。",
+    tags: ["職種図鑑", "基礎知識", "インフラエンジニア"],
+    content: `
+<p>
+  未経験からIT業界、特に「インフラエンジニア」を目指して調べていくと、必ず「サーバーエンジニア」と「ネットワークエンジニア」という2つの職種に出会います。
+</p>
+<p>
+  「この2つは何が違うの？」「プログラミング知識ゼロの未経験から目指すなら、どちらを選ぶべき？」と疑問に思う方も多いでしょう。<br>
+  本記事では、IT用語を使わずに日常生活に例えて「サーバーとネットワークの違い」を分かりやすく解説し、最終的などのようにキャリアパスを描くべきか、優良な企業選びのポイントまでをお伝えします。
+</p>
+
+<h2>日常生活に例える！サーバーとネットワークの違い</h2>
+<p>
+  ITインフラの仕組みは、「街づくり」によく似ています。<br>
+  ここでは、<strong>サーバーを「建物（お店や家）」、ネットワークを「道路」</strong>に例えて考えてみましょう。
+</p>
+
+<h3>サーバーエンジニア＝「建物（お店）」を作るプロ</h3>
+<p>
+  サーバーとは、皆さんが普段使うWebサイト、アプリ、ゲームなどの「データやサービスを提供している大きなパソコン」のことです。<br>
+  サーバーエンジニアの仕事は、この<strong>「お店＝サーバー」を建てて、商品（サービス）を安全に運営できるようにすること</strong>です。
+</p>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>構築</strong>：どんなお店（OS：LinuxやWindowsなど）にするか決めて準備する。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>運用保守</strong>：お店が停電しないか、泥棒が入らないか（セキュリティ）を管理する。</li>
+</ul>
+
+<h3>ネットワークエンジニア＝「道路と交通網」を作るプロ</h3>
+<p>
+  いくら立派なお店（サーバー）があっても、そこへ行くための「道路」がなければお客さんは辿り着けません。<br>
+  ネットワークエンジニアの仕事は、<strong>スマホやPCからお店への道のり（道路網）を安全かつスムーズに繋ぐこと</strong>です。
+</p>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>構築</strong>：どのルートを通れば一番早く情報が届くか（ルーティング）を設計し、ルーターやスイッチといった交通整理の機械を設置する。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>運用保守</strong>：道が渋滞（回線混雑）していないか、事故が起きていないかを監視する。</li>
+</ul>
+
+<div class="highlight-box">
+  <h3>それぞれの違い・まとめ</h3>
+  <table style="width: 100%; text-align: left; margin-top: 1rem;">
+    <tr>
+      <th style="padding: 0.5rem; border-bottom: 1px solid #FF6B00; color: #1a2b4c;">項目</th>
+      <th style="padding: 0.5rem; border-bottom: 1px solid #FF6B00; color: #1a2b4c;">サーバーエンジニア</th>
+      <th style="padding: 0.5rem; border-bottom: 1px solid #FF6B00; color: #1a2b4c;">ネットワークエンジニア</th>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">例え</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">お店（建物・機能）</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">道路（交通インフラ）</td>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">扱う主要技術</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">Linux, Windows Server</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">Cisco, ルーター, スイッチ</td>
+    </tr>
+    <tr>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">主な資格</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">LinuC, LPIC</td>
+      <td style="padding: 0.5rem; border-bottom: 1px dashed #cbd5e1;">CCNA</td>
+    </tr>
+  </table>
+</div>
+
+<p>
+  <img src="\${__BASE_PATH__}images/column/server_network_diff.png" alt="サーバーエンジニアとネットワークエンジニアの違いと未経験からのキャリアパス" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+</p>
+
+<h2>【結論】未経験から目指すなら「どっち」が良い？</h2>
+<p>
+  結論から言うと、<strong>「最初はどちらからのスタートでも良い。なぜなら、最終的には両方の知識が必要になるから」</strong>です。
+</p>
+<p>
+  近年はAWS（Amazon Web Services）などに代表される「クラウド化」が主流となっています。クラウドの世界では、「サーバーを立てる設定」と「ネットワークを繋ぐ設定」を同時に一つの画面上で行うため、サーバー担当・ネットワーク担当という明確な垣根がなくなりつつあります。<br>
+  これを<strong>「クラウドインフラエンジニア」</strong>や<strong>「SRE（Site Reliability Engineering）」</strong>と呼び、現在IT業界で最も市場価値が高く、年収レンジも高い職種の一つです。
+</p>
+
+<h3>未経験者が絶対に間違えてはいけない「ファーストキャリア」</h3>
+<p>
+  未経験者が重視すべきなのは、「サーバーかネットワークか」という職種選びではなく、<strong>「基礎から学ばせてくれて、数年後に設計やクラウド技術へステップアップさせてくれる会社を選ぶこと」</strong>です。
+</p>
+<p>
+  IT業界には、いつまでも単純なマニュアル監視作業だけをやらせてスキルアップさせてくれない企業も存在します。「やめとけ」と言われるインフラエンジニアは、こうした成長環境のない会社に入ってしまったケースが大半です。
+</p>
+
+<h2>失敗しない企業選びをAZABU+がサポートします</h2>
+<p>
+  「未経験から優良なIT企業に入りたいけれど、求人が多すぎて自分では見分けがつかない…」とお悩みの方へ。
+</p>
+<p>
+  AZABU+PJ（アザブプラスプロジェクト）では、20代・未経験からITエンジニアを目指す方へ向けて、東証プライム上場企業などの「ホワイトな学習環境」が整ったポジションをご紹介する【1dayキャリア相談会＆適職オーディション】を開催しています。
+</p>
+
+<blockquote>
+  <p><strong>「まずはサーバーの基礎研修（LinuC取得支援）からスタート→2年後にAWSのクラウド構築チームへ配属」</strong></p>
+</blockquote>
+<p>
+  といった、具体的で実現可能なキャリアパスを提示できる企業への直結ルートをご案内します。IT業界への第一歩を踏み出したい方は、ぜひお気軽にカジュアル面談へお申し込みください。
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    無料キャリア相談会で詳しく話を聞く
+  </a>
+</div>
+`
   }
 ];
