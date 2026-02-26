@@ -183,7 +183,7 @@ export const columnsData = [
   },
   {
     id: "column-3",
-    thumbnail: __BASE_PATH__ + "images/column/netserver_cover.png",
+    thumbnail: __BASE_PATH__ + "images/column/server&network_cover.png",
     category: "CAREER",
     date: "2026.03.05",
     title: "サーバーとネットワークの違いとは？未経験からインフラエンジニアを目指す基礎知識",
@@ -253,7 +253,7 @@ export const columnsData = [
 </div>
 
 <p>
-  <img src="\${__BASE_PATH__}images/column/server_network_diff.png" alt="サーバーエンジニアとネットワークエンジニアの違いと未経験からのキャリアパス" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+  <img src="\${__BASE_PATH__}images/column/server&network_cover.png" alt="サーバーエンジニアとネットワークエンジニアの違いと未経験からのキャリアパス" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
 </p>
 
 <h2>【結論】未経験から目指すなら「どっち」が良い？</h2>
@@ -381,6 +381,174 @@ export const columnsData = [
 <div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
   <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
     エンジニア適性診断もできる！無料面談に予約する
+  </a>
+</div>
+`
+  },
+  {
+    id: "column-5",
+    thumbnail: __BASE_PATH__ + "images/column/sekitsui_cover.png",
+    category: "CAREER",
+    date: "2026.03.15",
+    title: "インフラエンジニアはきつい？向いていない人の特徴と未経験からの転職のコツ",
+    excerpt: "「インフラエンジニアはやめとけ」と言われる理由とは？実際の仕事のきつさや、向いていない人の特徴を包み隠さず解説。失敗しない企業選びのコツも公開します。",
+    tags: ["インフラエンジニア", "未経験転職", "向いていない人"],
+    content: `
+<p>
+  未経験からIT業界を目指す際、「インフラエンジニア」という選択肢を検討する方も多いでしょう。<br>
+  しかし、インターネットで検索すると「きつい」「やめとけ」「夜勤がつらい」といったネガティブな言葉を見かけることも少なくありません。
+</p>
+<p>
+  果たして、本当にインフラエンジニアは「きつい」仕事なのでしょうか？<br>
+  本記事では、インフラエンジニアの仕事のリアルな苦労と、<strong>「向いていない人の特徴」</strong>、そして未経験からでも<strong>「優良な労働環境を手に入れるための転職のコツ」</strong>を解説します。
+</p>
+
+<h2>「インフラエンジニアはきつい」と言われる3つの理由</h2>
+<p>
+  まずは、なぜ「きつい」というイメージを持たれやすいのか、その背景にある主な理由を3つ紹介します。
+</p>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>1. 24時間365日の監視・夜勤がある（運用保守フェーズ）</strong><br>
+  サーバーやネットワークは止められないため、未経験者が最初に配属されることの多い「監視業務」ではシフト制の夜勤が発生する場合があります。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>2. 絶対にミスが許されないプレッシャー</strong><br>
+  少しの設定ミスで大規模なシステム障害を引き起こす可能性があるため、常に正確な作業が求められます。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>3. 常に新しい技術の勉強が必要</strong><br>
+  一度覚えたら終わりではなく、クラウド（AWSなど）や新しいセキュリティ技術など、働きながら学び続ける姿勢が不可欠です。</li>
+</ul>
+
+<p>
+  <img src="\${__BASE_PATH__}images/column/sekitsui_cover.png" alt="インフラエンジニアの仕事のリアル" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+</p>
+
+<h2>インフラエンジニアに向いていない人の特徴</h2>
+<p>
+  仕事の特性上、以下のような特徴を持つ方は、入社後にギャップを感じやすいかもしれません。
+</p>
+
+<h3>マニュアルを読まずに感覚で進めてしまう人</h3>
+<p>
+  インフラの現場では「正確性」が命です。「だいたいこんな感じでいいだろう」と手順書を無視して行動してしまう人は、重大なトラブルを引き起こすリスクがあり、この職種には不向きです。
+</p>
+
+<h3>自ら学ぶ意欲がなく、受け身な人</h3>
+<p>
+  IT技術は日々進化しています。会社から言われたことだけをこなすのではなく、休日に少しでも資格（LinuCやCCNAなど）の勉強を進めるといった<strong>「自己研鑽」</strong>ができないと、単純作業（監視オペレーター等）から抜け出せず「きついだけの仕事」になってしまいます。
+</p>
+
+<h2>未経験からの転職のコツ！「きつい」を回避する企業選び</h2>
+<p>
+  実は、インフラエンジニアの環境は「所属する企業」によって天国と地獄ほど分かれます！<br>
+  失敗しないキャリアを作るためには、以下のポイントを満たす企業を選びましょう。
+</p>
+
+<div class="highlight-box">
+  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+    <li style="margin-bottom: 1rem;">
+      <strong style="color: #FF6B00; font-size: 1.1em;">✓ 充実した「社内研修制度」があるか</strong><br>
+      いきなり現場に放り投げられるのではなく、数ヶ月間の座学や実機を使った研修期間を設けている企業を選びましょう。
+    </li>
+    <li style="margin-bottom: 1rem;">
+      <strong style="color: #FF6B00; font-size: 1.1em;">✓ キャリアパス（上流工程へのステップアップ）が明確か</strong><br>
+      いつまでも夜勤の監視業務をさせるのではなく、数年後に「構築・設計（上流工程）」へ引き上げてくれる評価制度があるかが重要です。設計フェーズになれば、土日休み・日勤のみのホワイトな働き方が基本になります。
+    </li>
+  </ul>
+</div>
+
+<h2>優良な環境でITキャリアをスタートさせませんか？</h2>
+<p>
+  「未経験からインフラエンジニアに挑戦したいけれど、ブラックな環境は絶対に避けたい」とお考えなら、AZABU+がサポートします。<br>
+  私たちは、20代未経験の方へ向けて、東証プライム上場企業などの「圧倒的にホワイトな教育環境・労働条件」が整ったポジションをご紹介しています。
+</p>
+<p>
+  まずはカジュアル面談で、実際の働き方や適性について気軽にお話ししてみませんか？
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    無料カジュアル面談・キャリア相談はこちら
+  </a>
+</div>
+`
+  },
+  {
+    id: "column-6",
+    thumbnail: __BASE_PATH__ + "images/column/20se_cover.png",
+    category: "CAREER",
+    date: "2026.03.20",
+    title: "20代未経験からITエンジニアになるメリットとは？好条件で転職できる理由",
+    excerpt: "20代という若さを活かしてIT業界へ転職する圧倒的なメリットを解説！なぜ今20代の未経験エンジニアが求められているのか、そして好待遇の優良企業に入るための戦略を大公開します。",
+    tags: ["20代転職", "ITエンジニア", "未経験"],
+    content: `
+<p>
+  「今の仕事に将来性を感じない」「年収を上げたいけれど、特にスキルもない」<br>
+  そんな20代の方にとって、<strong>完全未経験からの「ITエンジニアへの転職」</strong>は人生を大きく変える最高の手段の一つです。
+</p>
+<p>
+  「専門職だから難しそう…」と思うかもしれませんが、実は今、<strong>20代の若手であれば、文系・未経験からでも「好条件」でITエンジニアになれるチャンス</strong>が広がっています。<br>
+  本記事では、20代でエンジニアになる圧倒的なメリットと、なぜ企業が未経験の20代を強く求めているのか、その理由を解説します。
+</p>
+
+<p>
+  <img src="\${__BASE_PATH__}images/column/20se_cover.png" alt="20代未経験からITエンジニアになるメリット" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+</p>
+
+<h2>企業が「未経験の20代」を喉から手が出るほど欲しい理由</h2>
+<p>
+  なぜ、IT経験が全くない20代が、多くの企業から求められているのでしょうか？<br>
+  その背景には、IT業界が抱える深刻な「人材不足」があります。経済産業省の調査によると、2030年には最大で約79万人のIT人材が不足すると予測されています。
+</p>
+<p>
+  即戦力の経験者は採用市場に少なく、企業間で激しい争奪戦となっています。そこで体力のある優良企業は、<strong>「経験者を高いコストで採用するよりも、ポテンシャルのある20代・未経験者を採用し、自社の充実した研修でイチからプロに育て上げる」</strong>という方針にシフトしているのです。
+</p>
+<p>
+  20代であれば、過去の経験よりも「新しい知識を吸収する素直さ」や「柔軟性」が何よりも高く評価されます。
+</p>
+
+<h2>20代でITエンジニアになる3つのメリット</h2>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 1.5rem;">
+    <strong>1. 年功序列がない！スキル次第で圧倒的な年収アップ</strong><br>
+    IT業界は実力主義です。特にクラウド技術（AWSなど）を身につけたインフラエンジニアであれば、20代後半で年収600万円〜800万円、あるいはそれ以上に到達することも珍しくありません。
+  </li>
+  <li style="margin-bottom: 1.5rem;">
+    <strong>2. 「手に職」がつき、どこでも働けるようになる</strong><br>
+    エンジニアという専門スキルを持っていれば、将来どの企業に転職しても通用します。また、経験を積めばリモートワーク（在宅勤務）やフルフレックスなどの柔軟な働き方が選びやすいのも大きな魅力です。
+  </li>
+  <li style="margin-bottom: 1.5rem;">
+    <strong>3. 土日祝休み・福利厚生の整ったホワイト企業が多い</strong><br>
+    未経験者をゼロから育てられる企業は、経営基盤の安定した大手企業や上場企業が中心です。そのため、年間休日120日以上、残業代全額支給、資格取得手当などの労働条件が非常に整っています。
+  </li>
+</ul>
+
+<h2>「好条件」での転職を成功させるためのコツ</h2>
+<p>
+  20代なら誰もが転職できるわけではありません。優良企業（好条件）へ転職するためには、以下の姿勢を面接でアピールすることが重要です。
+</p>
+
+<div class="highlight-box">
+  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+    <li style="margin-bottom: 0.5rem;"><strong>・明確な学習意欲を見せる</strong>（少しでもいいので、ITパスポートなどの基礎資格の勉強を始めていると◎）</li>
+    <li style="margin-bottom: 0.5rem;"><strong>・コミュニケーション能力を活かす</strong>（営業や接客など、前職での対人スキルはIT業界でも重宝されます）</li>
+    <li><strong>・自分に合った「研修制度が手厚い会社」を見極める</strong>（放置されるブラック企業を選ばない）</li>
+  </ul>
+</div>
+
+<h2>20代のポテンシャルを最大限に活かせる環境へ</h2>
+<p>
+  未経験からITエンジニアを目指すなら、<strong>「今」が最大のチャンス</strong>です。年齢を重ねるごとに未経験へのハードルは上がっていきます。
+</p>
+<p>
+  AZABU+では、完全未経験の20代の方を対象に、東証プライム上場企業などの「圧倒的ホワイトな環境」で、数ヶ月の専門研修を受けながら一生モノのスキルを身につけられる特別選考ルートをご案内しています。
+</p>
+<p>
+  「本当に自分でもエンジニアになれるのかな？」と少しでも気になった方は、まずは無料のカジュアル面談でお話ししませんか？あなたの今の不安を解消し、明るいキャリアパスをご提案します。
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    無料面談に予約する
   </a>
 </div>
 `
