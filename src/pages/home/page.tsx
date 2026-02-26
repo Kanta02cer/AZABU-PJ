@@ -5,8 +5,14 @@ import { newsData } from '../../mocks/news';
 import { columnsData } from '../../mocks/columns';
 import { SEO } from '../../components/SEO';
 import { AnimatedSection, StaggerChildren } from '../../components/Animate';
+import { MobileStickyCTA } from '../../components/MobileStickyCTA';
 import { Heart } from 'lucide-react';
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
 
 function SalaryCounter({
   value,
@@ -200,6 +206,15 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
             href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'cv_click',
+                  button_location: 'mobile_menu_cta'
+                });
+              }
+            }}
             className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white text-sm font-bold shadow-lg cursor-pointer whitespace-nowrap"
           >
             <i className="ri-calendar-check-fill text-lg" />
@@ -225,6 +240,16 @@ export default function HomePage() {
   const [progressKey, setProgressKey] = useState(0);
   const { ref: timelineRef, isVisible: timelineVisible } = useScrollAnimation({ threshold: 0.15 });
   const [activeStep, setActiveStep] = useState(-1);
+
+  const handleCTAClick = () => {
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cv_click',
+        button_location: 'home_page_cta'
+      });
+    }
+  };
 
   useEffect(() => {
     setHeroLoaded(true);
@@ -1239,7 +1264,7 @@ export default function HomePage() {
             </StaggerChildren>
             <AnimatedSection className="text-center mt-8 sm:mt-12" delay={300}>
               <p className="text-[#64748B] text-xs sm:text-sm mb-3 sm:mb-4">その他のご質問はお気軽にお問い合わせください</p>
-              <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#1A2B4C] text-white text-xs sm:text-sm font-bold hover:bg-[#FF6B00] transition-all duration-300 cursor-pointer whitespace-nowrap">
+              <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick} className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#1A2B4C] text-white text-xs sm:text-sm font-bold hover:bg-[#FF6B00] transition-all duration-300 cursor-pointer whitespace-nowrap">
                 <i className="ri-calendar-event-line text-base sm:text-lg"></i>
                 <span>面談へエントリーする</span>
               </a>
@@ -1259,8 +1284,8 @@ export default function HomePage() {
             <p className="text-white/90 text-xs sm:text-sm mb-8 sm:mb-10">
               <span className="text-[#FF6B00] font-bold">定員に達し次第、予告なく締め切ります</span>のでお早めにエントリーください。
             </p>
-            <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" rel="noopener noreferrer" className="inline-block w-full max-w-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white py-4 sm:py-6 rounded-full shadow-[0_12px_32px_rgba(255,107,0,0.5)] hover:shadow-[0_16px_40px_rgba(255,107,0,0.6)] transition-all duration-300 hover:-translate-y-2 cursor-pointer animate-cta-glow">
-              <div className="flex items-center justify-center gap-2 sm:gap-4">
+            <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" rel="noopener noreferrer" onClick={handleCTAClick} className="inline-block w-full max-w-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white py-5 sm:py-6 rounded-full shadow-[0_12px_32px_rgba(255,107,0,0.5)] hover:shadow-[0_16px_40px_rgba(255,107,0,0.6)] transition-all duration-300 hover:-translate-y-2 cursor-pointer animate-cta-glow">
+              <div className="flex items-center justify-center gap-2 sm:gap-4 px-2">
                 <i className="ri-calendar-check-line text-2xl sm:text-4xl"></i>
                 <span className="text-base sm:text-xl font-bold whitespace-nowrap">一次審査・面談へエントリー(無料)</span>
                 <i className="ri-arrow-right-line text-xl sm:text-3xl animate-slide-right"></i>
@@ -1288,7 +1313,7 @@ export default function HomePage() {
 
 
       {/* Footer */}
-      <footer className="relative bg-white border-t border-slate-200 overflow-hidden">
+      <footer className="relative bg-white border-t border-slate-200 overflow-hidden pb-20 md:pb-0">
         {/* Subtle decorative line */}
         <div className="absolute top-0 right-0 w-[50%] h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-[#FF6B00] transform -translate-y-1/2"></div>
         
@@ -1331,6 +1356,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      <MobileStickyCTA />
     </div>
   );
 }

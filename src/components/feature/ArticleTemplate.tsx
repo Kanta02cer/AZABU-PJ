@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { RelatedContents } from '../RelatedContents';
+import { SEO } from '../SEO';
 
 interface ArticleTemplateProps {
   title: string;
@@ -48,8 +50,31 @@ export default function ArticleTemplate({
     });
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "image": [
+      thumbnail.startsWith('http') ? thumbnail : `https://azabuplus.jp${thumbnail}`
+    ],
+    "datePublished": date,
+    "dateModified": date,
+    "author": [{
+        "@type": "Organization",
+        "name": "AZABU+ Project",
+        "url": "https://azabuplus.jp/"
+      }]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={`${title} - ${type === 'news' ? 'ニュース' : 'コラム'}`}
+        description={subtitle || content.substring(0, 160).replace(/<[^>]*>?/gm, '')}
+        ogImage={thumbnail}
+        canonical={`https://azabuplus.jp/${type}/${title}`}
+        articleSchema={articleSchema}
+      />
       {/* Breadcrumb */}
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 py-4">
@@ -240,48 +265,13 @@ export default function ArticleTemplate({
       </article>
 
       {/* Related Articles */}
-      {relatedArticles.length > 0 && (
-        <section className="bg-slate-50 py-16">
-          <div className="max-w-6xl mx-auto px-4">
-            <div
-              ref={relatedRef}
-              className={`transition-all duration-1000 ${
-                relatedVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-            >
-              <h2 className="text-2xl font-bold text-[#1A2B4C] mb-8">関連記事</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {relatedArticles.slice(0, 3).map((article) => (
-                  <Link
-                    key={article.id}
-                    to={`/${type}/${article.id}`}
-                    className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                  >
-                    <div className="relative w-full aspect-video overflow-hidden">
-                      <img
-                        src={article.thumbnail}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <span className="absolute top-3 left-3 px-3 py-1 bg-[#FF6B00] text-white text-xs font-medium rounded-full">
-                        {article.category}
-                      </span>
-                    </div>
-                    <div className="p-5">
-                      <time className="text-xs text-slate-500 mb-2 block">
-                        {formatDate(article.date)}
-                      </time>
-                      <h3 className="text-base font-bold text-[#334155] group-hover:text-[#FF6B00] transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      <RelatedContents 
+        items={relatedArticles.map(article => ({
+          ...article,
+          excerpt: ''
+        }))} 
+        basePath={type === 'news' ? '/news' : '/column'} 
+      />
 
       {/* Back to List Button */}
       <div className="max-w-4xl mx-auto px-4 py-12">

@@ -15,6 +15,8 @@ interface SEOProps {
   ogImage?: string;
   /** Canonical URL for the page. */
   canonical?: string;
+  /** JSON-LD Article Schema Object */
+  articleSchema?: Record<string, any>;
 }
 
 /**
@@ -29,6 +31,7 @@ export function SEO({
   ogDescription,
   ogImage,
   canonical,
+  articleSchema,
 }: SEOProps) {
   React.useEffect(() => {
     // Handling Title
@@ -67,6 +70,8 @@ export function SEO({
     if (ogTitle || title) updateMeta('twitter:title', ogTitle || title || '', 'name');
     if (ogDescription || description) updateMeta('twitter:description', ogDescription || description || '', 'name');
     if (ogImage) updateMeta('twitter:image', ogImage, 'name');
+    
+    // Canonical
     if (canonical) {
       let canonicalLink = document.head.querySelector('link[rel="canonical"]');
       if (canonicalLink) {
@@ -78,7 +83,25 @@ export function SEO({
         document.head.appendChild(canonicalLink);
       }
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, canonical]);
+
+    // JSON-LD Schema
+    if (articleSchema) {
+      let script = document.head.querySelector('script[type="application/ld+json"]');
+      if (script) {
+        script.innerHTML = JSON.stringify(articleSchema);
+      } else {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        script.innerHTML = JSON.stringify(articleSchema);
+        document.head.appendChild(script);
+      }
+    }
+
+    // Cleanup logic (optional, but good practice for SPA routing)
+    return () => {
+      // document.title = 'AZABU+ Project'; // Keep previous title or default
+    };
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, canonical, articleSchema]);
 
   return null;
 }
