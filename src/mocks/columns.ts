@@ -552,5 +552,282 @@ export const columnsData = [
   </a>
 </div>
 `
+  },
+  {
+    id: "column-7",
+    thumbnail: __BASE_PATH__ + "images/column/20代向け転職成功ガイド_cover.png",
+    category: "CAREER",
+    date: "2026.03.25",
+    title: "インフラエンジニアの適正年収は？20代向け転職成功ガイド",
+    excerpt: "インフラエンジニアの年収は低い？高い？20代未経験からでも年収アップを実現するためのキャリアパスと、将来的に高年収を狙える企業選びのポイントを徹底解説します。",
+    tags: ["年収アップ", "20代転職", "キャリアパス"],
+    content: `
+<p>
+  これからIT業界を目指す20代の方にとって、気になるのは何よりも「実際のところ、インフラエンジニアの年収はいくらなのか？」ということではないでしょうか。
+</p>
+<p>
+  「最初は低いと聞いた」「いや、将来は1,000万円も夢じゃないらしい」など、様々な情報が飛び交っていますが、本記事では<strong>20代におけるリアルな適正年収</strong>と、将来的に高所得を目指すための具体的なキャリア戦略を分かりやすく解説します。
+</p>
+
+<h2>インフラエンジニアの「適正年収」のリアル</h2>
+<p>
+  まず結論から言ってしまうと、インフラエンジニアの年収は<strong>「どのフェーズ（工程）を担当できるか」</strong>と<strong>「どんな技術（クラウド等）を扱えるか」</strong>によって驚くほど変わります。
+</p>
+
+<h3>未経験スタート（運用・監視フェーズ）：年収300万円〜400万円</h3>
+<p>
+  IT業界に足を踏み入れたばかりの頃は、マニュアルに沿ったシステムの監視や運用保守業務がメインとなります。この段階での年収は一般的な他業種の初任給と同等から少し多い程度です。しかし、ここはあくまでも「助走期間」です。
+</p>
+
+<h3>経験3〜5年（構築・設計フェーズ）：年収500万円〜700万円</h3>
+<p>
+  実務経験を積み、資格（LinuCやCCNAなど）を取得して「システムの構築（構築）」や「設計（上流工程）」を任されるようになると、年収は一気に跳ね上がります。20代後半でこの年収帯に到達する人が多いのがIT業界の魅力です。
+</p>
+
+<h3>スペシャリスト（クラウド技術・PM）：年収800万円〜</h3>
+<p>
+  近年需要が急増している「AWS」や「Azure」といったクラウドインフラの設計から構築までを一人でこなせるレベルになると、年収800万円以上、トップ層になれば1,000万円以上を稼ぐことも十分に可能です。
+</p>
+
+<h2>20代から「年収を上げるため」の3つの戦略</h2>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>1. 資格取得でアピールする</strong><br>インフラの世界は資格がモノを言います。基礎的なLinuCから始まり、さらに高度な資格を取得することで、会社内での昇給や転職時の強力な武器になります。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>2. クラウド技術（AWS等）をいち早く身につける</strong><br>従来のオンプレミス（物理サーバー）だけでなく、クラウド環境の構築スキルを身につけることが、これからの年収アップの最短ルートです。</li>
+  <li style="margin-bottom: 0.5rem;"><strong>3. 「上流工程」に行ける会社を選ぶ</strong><br>いつまでも監視作業しかやらせてくれない会社では年収は上がりません。「入社後に構築や設計へステップアップできる制度」が整っている企業を選ぶことが最も重要です。</li>
+</ul>
+
+<h2>AZABU+で「稼げるエンジニア」への第一歩を</h2>
+<p>
+  年収の高いインフラエンジニアになるための最大の秘訣は、最初の転職で<strong>「成長できる優良企業」に入ること</strong>です。
+</p>
+<p>
+  AZABU+では、20代未経験の方へ向けて、将来的にクラウドエンジニアや上流工程へキャリアアップできる「プライム上場企業などのホワイト優良企業」への直結ルートをご用意しています。まずはカジュアル面談で、あなただけの「年収アップ戦略」を一緒に描いてみませんか？
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    無料カジュアル面談でキャリアプランを相談する
+  </a>
+</div>
+`
+  },
+  {
+    id: "column-8",
+    thumbnail: __BASE_PATH__ + "images/column/remotework_cover.png",
+    category: "LIFESTYLE",
+    date: "2026.03.30",
+    title: "フルリモートは可能？インフラエンジニアの多様な働き方と優良求人の探し方",
+    excerpt: "「ITエンジニア＝在宅ワーク」のイメージは本当？インフラエンジニアのリモートワーク事情と、自由な働き方を手に入れるための具体的なステップを大公開します。",
+    tags: ["フルリモート", "働き方改革", "インフラエンジニア"],
+    content: `
+<p>
+  IT業界への転職を考える際、「満員電車に乗りたくない」「在宅でフルリモートで働きたい」という希望を持つ方は非常に多いです。<br>
+  プログラマーなどと同じように、インフラエンジニアもそのような自由な働き方は可能なのでしょうか？
+</p>
+<p>
+  結論から言うと、<strong>経験を積み、選ぶ企業さえ間違えなければフルリモート（完全在宅）での働き方は十分に可能</strong>です。本記事では、インフラエンジニアのリアルな勤務事情と、リモートワークを実現するためのステップを解説します。
+</p>
+
+<h2>インフラエンジニアのリモートワーク事情のリアル</h2>
+<p>
+  インフラエンジニアの働き方は、担当する業務内容（フェーズ）によって大きく異なります。
+</p>
+
+<h3>未経験スタート時（現場出社が多い理由）</h3>
+<p>
+  未経験からスタートした直後（特に最初の1〜2年）は、物理的な機器（サーバーやルーター）の配線やランプの確認などを行うために、データセンターやお客様先のオフィスに出社する必要があるケースが多いです。また、先輩から直接指導を受けるためにも、最初は出社ベースでの勤務が基本となります。
+</p>
+
+<h3>設計・構築フェーズ（リモートの割合が急増）</h3>
+<p>
+  仕事に慣れ、システムの「設計（上流工程）」や、遠隔からサーバーに接続して設定を行う「構築」フェーズを担当するようになると、出社の必要性は一気に下がります。週に2〜3回のリモートワーク、あるいは完全フルリモートで業務を行うエンジニアが多くなります。
+</p>
+
+<h3>クラウド技術の普及がフルリモートを後押し</h3>
+<p>
+  近年の「リモートワーク化」を決定づけているのが「クラウド（AWS等）」の普及です。物理的な機械を直接触る必要がなく、パソコンとインターネットさえあれば世界中どこからでもサーバーを構築・管理できるため、インフラエンジニアのフルリモート求人は年々増加しています。
+</p>
+
+<h2>自由な働き方を手に入れるための「優良求人」の選び方</h2>
+<p>
+  「どうしてもフルリモートで働きたい！」という方が、未経験から転職活動をする際に注意すべきポイントは以下の通りです。
+</p>
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><strong>将来的にクラウド案件（AWS/Azure）を任せてくれる企業か</strong></li>
+  <li style="margin-bottom: 0.5rem;"><strong>「ずっと客先常駐のネットワーク監視」ではないか</strong><br>（物理機器の監視がメインだと、リモート化は難しいため）</li>
+  <li style="margin-bottom: 0.5rem;"><strong>企業自体がDX化や働き方改革に積極的か</strong></li>
+</ul>
+
+<h2>AZABU+を利用して「理想の働き方」へ最短ルートで進む</h2>
+<p>
+  「自分に合った会社を求人サイトだけで見分けるのは不安…」<br>
+  そんな方は、私たちが提供するAZABU+プロジェクトをご活用ください。未経験からでも、入社後の充実した研修を経て、将来的にリモートワーク・フレックスタイムなどの「多様な働き方」を実現できる東証プライム上場企業などの求人をご紹介しています。
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    無料相談会であなたに合う優良企業を探す
+  </a>
+</div>
+`
+  },
+  {
+    id: "column-9",
+    thumbnail: __BASE_PATH__ + "images/column/ブラックなSESを避けろ！_cover.png",
+    category: "CAREER",
+    date: "2026.04.05",
+    title: "ブラックなSESを回避！インフラエンジニアが高単価案件を獲得する方法",
+    excerpt: "IT業界の闇とも言われる「ブラックSES」の実態とは？未経験者が陥りやすい罠と、優良企業で確かなスキルアップ・高年収を実現するための見極め方を徹底解説します。",
+    tags: ["SES", "ブラック企業回避", "高単価"],
+    content: `
+<p>
+  未経験からITエンジニアを目指すにあたり、必ず耳にするのが「SES（システムエンジニアリングサービス）」という言葉。<br>
+  SNSやネットニュースで「SESはやめとけ」「ブラックだ」という声を聞いて不安になっている方も多いのではないでしょうか。
+</p>
+<p>
+  本記事では、未経験者が絶対に回避すべき<strong>「ブラックなSES企業」の特徴</strong>と、逆にスキルアップして高単価・高年収を実現できる<strong>「優良企業」の見極め方</strong>を解説します。
+</p>
+
+<h2>SES（客先常駐）とは？全てがブラックなわけではない</h2>
+<p>
+  SESとは、自社ではなく「お客様先のオフィス（またはリモート）」に常駐して技術を提供する働き方のことです。実は、IT業界のエンジニアの多くがこの働き方をしており、SES自体が悪というわけではありません。<br>
+  問題なのは、エンジニアの成長を全く考えずに「ただの人手」として送り出す「ブラックなSES企業」の存在です。
+</p>
+
+<h2>絶対に避けるべき「ブラックSES」の3つの特徴</h2>
+
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;">
+    <strong>1. 「ITとは無関係の仕事」をさせられる</strong><br>
+    「最初の数ヶ月は研修も兼ねてコールセンターや家電量販店で働いてね」と言われ、いつまで経ってもエンジニアの仕事をさせてくれない（俗に言う「家電量販店送りの刑」）。これは最も危険なサインです。
+  </li>
+  <li style="margin-bottom: 0.5rem;">
+    <strong>2. 「単価」や「評価基準」が不透明</strong><br>
+    自分が現場でいくら売り上げているのか知らされず、どれだけ頑張っても給料が上がらない。昇給の明確なルールがない企業は要注意です。
+  </li>
+  <li style="margin-bottom: 0.5rem;">
+    <strong>3. いつまでも「誰でもできる監視作業」から抜け出せない</strong><br>
+    何年経ってもマニュアルを見るだけの単純作業から、上流工程（設計・構築）へステップアップさせる気がない（営業力のない）企業です。
+  </li>
+</ul>
+
+<h2>失敗しないための「優良IT企業」の見極め方</h2>
+<p>
+  では、未経験からでもしっかりと成長でき、将来的に高単価案件・高年収を獲得できる企業はどのように探せば良いのでしょうか？
+</p>
+
+<div class="highlight-box">
+  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+    <li style="margin-bottom: 0.5rem;"><strong>✓ 採用面接で「キャリアパス」を明確に示してくれるか</strong><br>「まずは〇〇の資格を取って運用保守から開始し、2年後には構築案件へアサインする」といった具体的なプランがあるか。</li>
+    <li style="margin-bottom: 0.5rem;"><strong>✓ 自前での「教育研修設備・カリキュラム」があるか</strong><br>未経験者を現場に丸投げせず、自社で1〜3ヶ月の充実したIT研修を行ってから配属させる体力のある企業を選ぶこと。</li>
+    <li><strong>✓ 「大手企業（プライム市場上場など）」との直接取引があるか</strong><br>間に多くの仲介会社を挟まない（商流が浅い）企業ほど、エンジニアへの給与還元率が高く、優良な経験が積めます。</li>
+  </ul>
+</div>
+
+<h2>AZABU+で「本物のインフラエンジニア」へ</h2>
+<p>
+  ネットの求人情報だけで「ブラックかホワイトか」を見極めるのは、未経験者には至難の業です。
+</p>
+<p>
+  だからこそ、AZABU+プロジェクトを利用してください。私たちは、厳しい審査基準をクリアした「東証プライム上場企業」をはじめとする、圧倒的にホワイトな労働環境と教育体制が整った求人のみをご紹介しています。<br>
+  「ブラック企業で時間を無駄にしたくない」という方は、ぜひ一度無料カジュアル面談にお越しください。
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    安心の企業選びを相談する（無料面談予約）
+  </a>
+</div>
+`
+  },
+  {
+    id: "column-10",
+    thumbnail: __BASE_PATH__ + "images/column/インフラSE必須スキル_cover.png",
+    category: "SKILL",
+    date: "2026.04.10",
+    title: "インフラエンジニアの必須スキル一覧！実務で活きるLinuxコマンドと勉強法",
+    excerpt: "「文系・未経験からITエンジニアになるには、まず何を勉強すればいい？」現場で最も使うスキル（Linux）や資格（LinuC）、効率的な学習アプローチを未経験者向けに徹底解説します。",
+    tags: ["必須スキル", "Linux", "勉強法"],
+    content: `
+<p>
+  インフラエンジニアを目指してみたいけれど、「プログラミング言語は何を学べばいいの？」「パソコン初心者だけど大丈夫？」と不安に感じる方は多いでしょう。
+</p>
+<p>
+  実は、インフラエンジニアのスタートラインに立つために「高度なプログラミング能力」は必須ではありません。<br>
+  本記事では、IT未経験者が最優先で身につけるべき<strong>「必須スキル」</strong>と、その具体的な<strong>「勉強法」</strong>について分かりやすく解説します。
+</p>
+
+<h2>「これだけは知っておきたい」インフラエンジニアの3大スキル</h2>
+<p>
+  インフラエンジニアとして活躍するために基盤となるスキルは、大きく分けて以下の3つです。
+</p>
+
+<div class="highlight-box">
+  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+    <li style="margin-bottom: 1rem;">
+      <strong style="color: #FF6B00; font-size: 1.1em;">1. Linux（リナックス）の操作スキル</strong><br>
+      世の中のWebサイトやWebサービスの多くは、Windowsではなく「Linux」というOS（基本システム）で動いています。マウスを使わず、キーボードの黒い画面（コマンドライン）で様々な命令を出すスキルがインフラエンジニアの基本中の基本です。
+    </li>
+    <li style="margin-bottom: 1rem;">
+      <strong style="color: #FF6B00; font-size: 1.1em;">2. ネットワークの基礎知識</strong><br>
+      「インターネットはなぜ繋がるのか？」「IPアドレスとは？」といった、データを安全かつ正確に届けるための通信の仕組み（TCP/IPなど）の知識です。
+    </li>
+    <li>
+      <strong style="color: #FF6B00; font-size: 1.1em;">3. コミュニケーション能力（対人スキル）</strong><br>
+      技術と同じくらい重要なのが、チームメンバーやお客様との「報連相（報告・連絡・相談）」です。過去の接客業や営業経験などの対人スキルは、IT業界でも即戦力として高く評価されます。
+    </li>
+  </ul>
+</div>
+
+<h2>実務で差がつく！「Linuxコマンド」の第一歩</h2>
+<p>
+  現場で最も頻繁に使うのは、やはり「Linux」です。最初は暗号のように見えるかもしれませんが、実は英語の略語になっていることが多く、覚えてしまえば簡単です。<br>
+  未経験者が最初に出会う「超頻出コマンド」を少しだけ紹介します。
+</p>
+<ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 2rem;">
+  <li style="margin-bottom: 0.5rem;"><code>ls</code> (list) : 今いる場所にどんなファイルがあるか一覧を表示する</li>
+  <li style="margin-bottom: 0.5rem;"><code>cd</code> (change directory) : 別のフォルダ（場所）へ移動する</li>
+  <li style="margin-bottom: 0.5rem;"><code>cp</code> (copy) : ファイルをコピーする</li>
+  <li style="margin-bottom: 0.5rem;"><code>mkdir</code> (make directory) : 新しいフォルダを作成する</li>
+</ul>
+<p>
+  これらの「コマンド」を使いこなし、サーバーという建物を管理していくのが最初のミッションとなります。
+</p>
+
+<h2>未経験からの最強の勉強法は「資格勉強」から入ること</h2>
+<p>
+  「よし、Linuxを勉強しよう！」と思っても、何から手をつければ良いか迷いますよね。<br>
+  最も効率が良く、転職活動でもそのままアピール材料になるのが<strong>「資格取得を目標に勉強すること」</strong>です。
+</p>
+
+<h3>おすすめ資格1：LinuC（リナック）レベル1</h3>
+<p>
+  Linuxの基本的な操作やシステム管理の知識を証明する資格です。未経験からインフラエンジニア（特にサーバー運用）への転職を目指すなら、まず最初に取得を目指すべき登竜門です。
+</p>
+
+<h3>おすすめ資格2：CCNA（シーシーエヌエー）</h3>
+<p>
+  世界最大のネットワーク機器メーカーであるCisco社が認定する資格です。「ネットワークエンジニア」を目指すなら、これを持っていれば基礎力がある証明となり、面接での評価が格段に上がります。
+</p>
+
+<h2>「勉強する環境」を会社に用意してもらうという選択肢</h2>
+<p>
+  もちろん独学で資格の勉強を始めるのは素晴らしいことですが、「一人だと挫折しそう」「パソコンすら持っていないから実機で練習できない」という方も多いはず。
+</p>
+<p>
+  そこで私たちが提案するのが、<strong>「研修制度が充実した優良企業に入社し、給料をもらいながらプロの講師に教えてもらう」</strong>という方法です。<br>
+  AZABU+プロジェクトがご紹介する企業群は、文系・未経験者をイチから育てるための強力な研修施設（自社内でのLinuC取得サポートなど）を持ったプライム上場企業が中心です。
+</p>
+<p>
+  「本気でIT業界に行きたいけれど、自分一人での勉強に限界を感じている」方は、ぜひAZABU+のカジュアル面談にお越しください。プロのキャリアコンサルタントが、あなたのエンジニアデビューを全力でサポートします！
+</p>
+
+<div style="text-align: center; margin-top: 3rem; margin-bottom: 3rem;">
+  <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B00, #FF8C00); color: white; padding: 1.25rem 3rem; border-radius: 9999px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 14px rgba(255,107,0,0.3); transition: transform 0.2s;">
+    エンジニア適性診断もできる！無料面談に予約する
+  </a>
+</div>
+`
   }
 ];
