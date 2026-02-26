@@ -56,8 +56,17 @@ export function SEO({
     if (ogTitle || title) updateMeta('og:title', ogTitle || title || '', 'property');
     if (ogDescription || description) updateMeta('og:description', ogDescription || description || '', 'property');
     if (ogImage) updateMeta('og:image', ogImage, 'property');
+    updateMeta('og:type', 'website', 'property');
     
     // Canonical
+    const currentUrl = canonical || window.location.href;
+    updateMeta('og:url', currentUrl, 'property');
+
+    // Twitter Card
+    updateMeta('twitter:card', 'summary_large_image', 'name');
+    if (ogTitle || title) updateMeta('twitter:title', ogTitle || title || '', 'name');
+    if (ogDescription || description) updateMeta('twitter:description', ogDescription || description || '', 'name');
+    if (ogImage) updateMeta('twitter:image', ogImage, 'name');
     if (canonical) {
       let canonicalLink = document.head.querySelector('link[rel="canonical"]');
       if (canonicalLink) {

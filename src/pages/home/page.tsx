@@ -178,14 +178,20 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
           </button>
         </div>
         <nav className="p-5 space-y-1">
-          {['特徴', 'インタビュー', 'ニュース', 'FAQ'].map((item) => (
+          {[
+              { label: '特徴', href: '#特徴' }, 
+              { label: 'インタビュー', href: '#インタビュー' }, 
+              { label: 'ニュース', href: '#ニュース' }, 
+              { label: 'AZABU+PRESS', href: '#コラム' },
+              { label: 'FAQ', href: '#FAQ' }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item}`}
+              key={item.label}
+              href={item.href}
               onClick={onClose}
               className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-[#1A2B4C] text-base font-medium hover:bg-[#FF6B00]/5 hover:text-[#FF6B00] transition-all cursor-pointer"
             >
-              <span>{item}</span>
+              <span>{item.label}</span>
             </a>
           ))}
         </nav>
@@ -268,42 +274,42 @@ export default function HomePage() {
       position: '第三技術本部 本部長',
       title: '20代でプロジェクトマネージャーに昇進',
       quote: '未経験からのスタートでしたが、充実した研修と先輩方のサポートのおかげで、20代でプロジェクトマネージャーに昇進できました。挑戦を後押ししてくれる環境が最大の魅力です。',
-      photo: './images/interviews/gm_is.png',
+      photo: __BASE_PATH__ + 'images/interviews/gm_is.png',
     },
     {
       name: 'U.Y さん',
       position: '第五技術部',
       title: '仕事と家庭を両立しながらプロジェクトリーダーに',
       quote: '育児と仕事の両立に不安がありましたが、柔軟な働き方を支援してくれる制度のおかげで、プロジェクトリーダーとして活躍できています。',
-      photo: './images/interviews/leader_uy.png',
+      photo: __BASE_PATH__ + 'images/interviews/leader_uy.png',
     },
     {
       name: 'M.K さん',
       position: '第六技術部',
       title: 'チャレンジできる環境',
       quote: '新しい技術に挑戦したいという気持ちを尊重してくれる会社です。失敗を恐れず挑戦できる環境が、自分の成長を加速させてくれました。',
-      photo: './images/interviews/eng_mk.png',
+      photo: __BASE_PATH__ + 'images/interviews/eng_mk.png',
     },
     {
       name: 'O.R さん',
       position: '第四技術部 メンバー',
       title: '研修制度の手厚さに惹かれて',
       quote: '入社の決め手は研修制度の充実さ。未経験でも安心してスキルアップできる環境が整っていて、資格取得のサポートも手厚いです。',
-      photo: './images/interviews/member_or.png',
+      photo: __BASE_PATH__ + 'images/interviews/member_or.png',
     },
     {
       name: 'I.T さん',
       position: '第二技術部',
       title: '社員の人柄で入社を決意',
       quote: '面接で感じた社員の温かさが入社の決め手でした。チーム全体で助け合う文化があり、困った時はいつでも相談できる安心感があります。',
-      photo: './images/interviews/it2_it.png',
+      photo: __BASE_PATH__ + 'images/interviews/it2_it.png',
     },
     {
       name: 'I.T さん',
       position: '営業社員',
       title: '公務員からITベンチャーの営業職に転職',
       quote: '公務員から転職して、裁量と責任を持って働ける環境に大きなやりがいを感じています。自分の提案が直接成果に繋がる実感があります。',
-      photo: './images/interviews/sales_it.png',
+      photo: __BASE_PATH__ + 'images/interviews/sales_it.png',
     },
   ];
 
@@ -352,13 +358,19 @@ export default function HomePage() {
             />
           </div>
           <nav className={`hidden md:flex items-center gap-8 transition-all duration-700 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            {['特徴', 'インタビュー', 'ニュース', 'FAQ'].map((item) => (
+            {[
+              { label: '特徴', href: '#特徴' }, 
+              { label: 'インタビュー', href: '#インタビュー' }, 
+              { label: 'ニュース', href: '#ニュース' }, 
+              { label: 'AZABU+PRESS', href: '#コラム' },
+              { label: 'FAQ', href: '#FAQ' }
+            ].map((item) => (
               <a
-                key={item}
-                href={`#${item}`}
+                key={item.label}
+                href={item.href}
                 className="text-sm font-medium cursor-pointer text-[#111111] hover:text-[#FF6B00] transition-colors"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </nav>
@@ -859,8 +871,32 @@ export default function HomePage() {
             </AnimatedSection>
             <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
               <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8">
+                {/* First set of items */}
                 {[...newsData, ...newsData].map((news, index) => (
-                  <Link to={`/news/${news.id}`} key={`${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <Link to={`/news/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                    <div className="relative overflow-hidden mb-4 rounded-lg">
+                      <div className="w-full aspect-video">
+                        <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
+                      </div>
+                      <div className="absolute top-0 left-0 px-3 py-1 bg-[#111111] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{news.category}</div>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
+                        <i className="ri-calendar-line"></i>
+                        <span>{news.date}</span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{news.title}</h3>
+                      <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{news.excerpt}</p>
+                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
+                        <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
+                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+                {/* Second set of items for seamless loop */}
+                {[...newsData, ...newsData].map((news, index) => (
+                  <Link to={`/news/${news.id}`} key={`second-${news.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
                         <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -905,8 +941,32 @@ export default function HomePage() {
             </AnimatedSection>
             <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
               <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8" style={{ animationDirection: "reverse" }}>
+                {/* First set of items */}
                 {[...columnsData, ...columnsData].map((column, index) => (
-                  <Link to={`/column/${column.id}`} key={`${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <Link to={`/column/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                    <div className="relative overflow-hidden mb-4 rounded-lg">
+                      <div className="w-full aspect-video">
+                        <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
+                      </div>
+                      <div className="absolute top-0 left-0 px-3 py-1 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase">{column.category}</div>
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-2 text-xs text-[#111111]/60 font-medium">
+                        <i className="ri-calendar-line"></i>
+                        <span>{column.date}</span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-3 line-clamp-2 group-hover/card:text-[#FF6B00] transition-colors duration-300">{column.title}</h3>
+                      <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed line-clamp-3 mb-4">{column.excerpt}</p>
+                      <div className="flex items-center gap-2 text-[#111111] text-xs font-bold group-hover/card:text-[#FF6B00] transition-colors">
+                        <span className="uppercase tracking-widest whitespace-nowrap">Read More</span>
+                        <i className="ri-arrow-right-line group-hover/card:translate-x-1 transition-transform"></i>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+                {/* Second set of items for seamless loop */}
+                {[...columnsData, ...columnsData].map((column, index) => (
+                  <Link to={`/column/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
                         <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -1247,6 +1307,9 @@ export default function HomePage() {
                 </a>
                 <a href="#ニュース" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   ニュース
+                </a>
+                <a href="#コラム" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                  AZABU+PRESS
                 </a>
                 <a href="#FAQ" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   FAQ
