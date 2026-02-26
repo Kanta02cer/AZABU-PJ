@@ -36,7 +36,7 @@ function SectionBg({
   id,
 }: {
   variant?: 'light' | 'warm';
-  imageUrl: string;
+  imageUrl?: string;
   opacity?: number;
   children: React.ReactNode;
   className?: string;
