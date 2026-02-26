@@ -930,13 +930,13 @@ export default function HomePage() {
       </SectionBg>
 
 
-      {/* Column Section */}
-      <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20open%20book%20and%20knowledge%20concept%20background%20with%20warm%20golden%20ambient%20lighting%2C%20soft%20focus%20library%20or%20study%20environment%20with%20cream%20and%20amber%20tones%2C%20sophisticated%20educational%20atmosphere%20with%20gentle%20bokeh%2C%20minimalist%20learning%20aesthetic%20with%20warm%20highlights%20and%20natural%20textures%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-column-section-v1&orientation=landscape" opacity={0.05}>
+    {/* Column Section */}
+      <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20open%20book%20and%20knowledge%20concept%20background%20with%20warm%20golden%20ambient%20lighting%2C%20soft%20focus%20library%20or%20study%20environment%20with%20cream%20and%20amber%20tones%2C%20sophisticated%20educational%20atmosphere%20with%20gentle%20bokeh%2C%20minimalist%20learning%20aesthetic%20with%20warm%20highlights%20and%20natural%20textures%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-column-section-v1&orientation=landscape" opacity={0.05} id="コラム">
         <div className="py-12 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
-              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Column</p>
-              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">コラム</h2>
+              <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Magazine</p>
+              <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">AZABU+PRESS</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
             <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
