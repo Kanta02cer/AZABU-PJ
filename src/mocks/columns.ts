@@ -183,7 +183,7 @@ export const columnsData = [
   },
   {
     id: "column-3",
-    thumbnail: __BASE_PATH__ + "images/column/server_network_diff.png",
+    thumbnail: __BASE_PATH__ + "images/column/netserver_cover.png",
     category: "CAREER",
     date: "2026.03.05",
     title: "サーバーとネットワークの違いとは？未経験からインフラエンジニアを目指す基礎知識",
