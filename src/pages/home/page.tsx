@@ -822,7 +822,7 @@ export default function HomePage() {
                 入社を希望する方へのメッセージなどをご紹介します。
               </p>
             </AnimatedSection>
-            <div className="relative" onMouseEnter={pauseAutoPlay} onMouseLeave={resumeAutoPlay}>
+            <div className="relative">
               <div className="relative bg-transparent border-t border-b border-black/10 py-8 sm:py-12 overflow-hidden mb-6 sm:mb-8">
                 <div className={`flex flex-col md:flex-row gap-8 md:gap-16 ${slideDirection === 'right' ? 'animate-carousel-right' : 'animate-carousel-left'}`} key={currentSlide}>
                   <div className="relative w-full md:w-2/5 h-64 sm:h-96 md:h-[500px]">
@@ -896,7 +896,7 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
-            <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8 px-4 sm:px-6">
+            <div className="flex w-max animate-marquee gap-5 sm:gap-8 px-4 sm:px-6">
                 {/* First set of items */}
                 {[...newsData, ...newsData].map((news, index) => (
                   <Link to={`/news/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
@@ -969,7 +969,7 @@ export default function HomePage() {
           </div>
           
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
-            <div className="flex w-max animate-marquee-slow hover:[animation-play-state:paused] gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
+            <div className="flex w-max animate-marquee-slow gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
               {/* First set of items */}
               {[...columnsData, ...columnsData].map((column, index) => (
                 <Link to={`/column/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
