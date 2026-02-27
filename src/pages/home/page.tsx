@@ -887,15 +887,16 @@ export default function HomePage() {
 
       {/* News Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20newspaper%20and%20media%20concept%20background%20with%20soft%20warm%20tones%2C%20minimalist%20editorial%20design%20backdrop%20with%20faint%20text%20columns%20and%20golden%20amber%20highlights%2C%20clean%20modern%20journalism%20aesthetic%20with%20subtle%20geometric%20grid%20pattern%2C%20professional%20muted%20cream%20and%20warm%20white%20surface%20with%20gentle%20shadows%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-news-section-v1&orientation=landscape" opacity={0.04} id="ニュース">
-        <div className="py-12 sm:py-24 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
+        <div className="py-12 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimatedSection className="text-center mb-4 sm:mb-6">
               <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">News</p>
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#111111] leading-relaxed mb-4 sm:mb-6">最新ニュース</h2>
               <div className="w-12 sm:w-16 h-1 bg-[#FF6B00] mx-auto"></div>
             </AnimatedSection>
-            <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
-              <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8">
+          </div>
+          <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
+            <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-5 sm:gap-8 px-4 sm:px-6">
                 {/* First set of items */}
                 {[...newsData, ...newsData].map((news, index) => (
                   <Link to={`/news/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
@@ -942,8 +943,9 @@ export default function HomePage() {
                     </div>
                   </Link>
                 ))}
-              </div>
             </div>
+          </div>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimatedSection className="text-center">
               <Link to="/news" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
                 <span>もっと見る</span>
