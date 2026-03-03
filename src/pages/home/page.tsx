@@ -611,10 +611,10 @@ export default function HomePage() {
                 },
                 {
                   number: '02',
-                  icon: 'ri-money-dollar-circle-line',
-                  title: 'お給料をもらいながら学べる',
+                  icon: 'ri-book-read-line',
+                  title: '充実した研修カリキュラム',
                   description:
-                    '入社前研修からお給料が支給されます。生活の心配なく、スキル習得に集中できる環境を提供。ブートキャンプ期間中も安心して学習に専念できます。',
+                    '入社後は基礎から体系的に学べる豊富な研修をご用意。専任の講師が丁寧にサポートし、未経験からでも着実に現場で通用するスキルを身につけられる環境を提供します。',
                   animation: 'slide-in-right' as const,
                 },
                 {
