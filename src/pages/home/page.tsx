@@ -622,7 +622,7 @@ export default function HomePage() {
                   icon: 'ri-award-line',
                   title: '資格取得マラソン(CCNA等)',
                   description:
-                    '研修スタート時点（＝人事面接→資格取得の無料サポート）は「内定」。業界標準資格CCNA等の取得を会社が全面サポート。受験代も不要、対策教材も不要、プロエンジニアからの直接指導を受けられます。',
+                    '研修は人事面接通過者を対象に採用前からプロのエンジニアが完全サポートで取得まで伴走いたします。業界標準資格CCNA等の取得を会社が全面サポート。受験代も不要、対策教材も不要、プロエンジニアからの直接指導を受けられます。',
                   animation: 'slide-in-left' as const,
                 },
               ].map((feature, index) => (
