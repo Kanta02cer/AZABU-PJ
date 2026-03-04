@@ -622,7 +622,7 @@ export default function HomePage() {
                   icon: 'ri-award-line',
                   title: '資格取得マラソン(CCNA等)',
                   description:
-                    '業界標準資格CCNA의取得を会社が全面サポート。受験費用、教材費、研修費用はすべて会社負担。資格取得で給与アップも実現できます。',
+                    '研修スタート時点（＝人事面接→資格取得の無料サポート）は「内定」。業界標準資格CCNA等の取得を会社が全面サポート。受験代も不要、対策教材も不要、プロエンジニアからの直接指導を受けられます。',
                   animation: 'slide-in-left' as const,
                 },
               ].map((feature, index) => (
@@ -730,7 +730,7 @@ export default function HomePage() {
                 },
                 {
                   step: '02',
-                  title: '役員オンライン面談',
+                  title: '役員・人事オンライン面談',
                   description: '専任のキャリアアドバイザーがあなたの適性や希望をヒアリング。オンラインで気軽に参加できます。',
                   time: '約30分',
                   icon: 'ri-video-chat-line',
@@ -1060,7 +1060,7 @@ export default function HomePage() {
                   },
                   {
                     step: "02",
-                    title: "役員面接",
+                    title: "人事面接",
                     desc: "現場に近い担当者、または採用担当との対話を通じて、相互のミスマッチをなくす場です。\n内容: 会社概要の説明、インフラエンジニアという職業のリアルな姿の共有。",
                     points: [
                       "コミュニケーション能力: チームで動くための基本的な対話スキル。",
