@@ -737,8 +737,8 @@ export default function HomePage() {
                 },
                 {
                   step: '03',
-                  title: '1day 就職オーディション参加！',
-                  description: '実際の業務を体験しながら、あなたのポテンシャルを評価。その場で結果をお伝えします。',
+                  title: '役員との最終面接に挑戦！',
+                  description: '実際の業務を想定して、役員との実務ベースの質問や、ポテンシャルをプレゼン。',
                   time: '1日',
                   icon: 'ri-trophy-line',
                 },
