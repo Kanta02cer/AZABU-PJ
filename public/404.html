@@ -5,8 +5,8 @@
     <title>AZABU+ Project</title>
     <script>
       // GitHub Pages SPA redirect
-      // /AZABU-PJ/ というベースパスを考慮してリダイレクト
-      var segmentCount = 1; // リポジトリのサブパス数（AZABU-PJ = 1）
+      // カスタムドメイン（azabuplus-project.com）使用でルートパス
+      var segmentCount = 0; // カスタムドメインはサブパスなし
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
