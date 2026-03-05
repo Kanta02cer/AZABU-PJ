@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useInvitation } from './InvitationContext';
 
 /**
  * Mobile-only sticky CTA that appears at the bottom of the screen
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
  */
 export function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const { openInvitation } = useInvitation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +30,22 @@ export function MobileStickyCTA() {
       }`}
     >
       <div className="bg-white/95 backdrop-blur-md border-t border-[#111111]/10 px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-        <a
-          href="#エントリー"
+        <button
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({
+                event: 'cv_click',
+                button_location: 'mobile_sticky_cta'
+              });
+            }
+            openInvitation("https://calendar.app.google/8cVcUkLokHP1w48Y6");
+          }}
           className="flex items-center justify-center gap-2 w-full bg-[#FF6B00] text-white py-3 px-4 rounded-full font-bold shadow-[0_4px_15px_rgba(255,107,0,0.3)] hover:opacity-90 transition-opacity active:scale-[0.98]"
         >
           <i className="ri-mail-send-line text-lg"></i>
           <span>まずは相談する（1dayキャリア相談会）</span>
-        </a>
+        </button>
       </div>
     </div>
   );

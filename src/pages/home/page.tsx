@@ -217,20 +217,20 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
         </div>
         <nav className="p-5 space-y-1">
           {[
-              { label: '特徴', href: '#特徴' }, 
-              { label: 'インタビュー', href: '#インタビュー' }, 
-              { label: 'ニュース', href: '#ニュース' }, 
-              { label: 'AZABU+PRESS', href: '#コラム' },
-              { label: 'FAQ', href: '#FAQ' }
+              { label: '特徴', href: '/#特徴' }, 
+              { label: 'インタビュー', href: '/#インタビュー' }, 
+              { label: 'ニュース', href: '/#ニュース' }, 
+              { label: 'AZABU+PRESS', href: '/#コラム' },
+              { label: 'FAQ', href: '/#FAQ' }
           ].map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               onClick={onClose}
               className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-[#1A2B4C] text-base font-medium hover:bg-[#FF6B00]/5 hover:text-[#FF6B00] transition-all cursor-pointer"
             >
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-slate-100">
@@ -416,19 +416,19 @@ export default function HomePage() {
           </div>
           <nav className={`hidden md:flex items-center gap-8 transition-all duration-700 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`}>
             {[
-              { label: '特徴', href: '#特徴' }, 
-              { label: 'インタビュー', href: '#インタビュー' }, 
-              { label: 'ニュース', href: '#ニュース' }, 
-              { label: 'AZABU+PRESS', href: '#コラム' },
-              { label: 'FAQ', href: '#FAQ' }
+              { label: '特徴', href: '/#特徴' }, 
+              { label: 'インタビュー', href: '/#インタビュー' }, 
+              { label: 'ニュース', href: '/#ニュース' }, 
+              { label: 'AZABU+PRESS', href: '/#コラム' },
+              { label: 'FAQ', href: '/#FAQ' }
             ].map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-sm font-medium cursor-pointer text-[#111111] hover:text-[#FF6B00] transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="flex items-center gap-3">
@@ -1360,32 +1360,32 @@ export default function HomePage() {
                 <p className="text-[#111111]/70 text-sm">未経験から麻布台ヒルズで働く</p>
               </div>
               <div className="flex flex-wrap justify-center sm:justify-end items-center gap-6 sm:gap-8">
-                <a href="#特徴" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                <Link to="/#特徴" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   特徴
-                </a>
-                <a href="#インタビュー" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                </Link>
+                <Link to="/#インタビュー" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   インタビュー
-                </a>
-                <a href="#ニュース" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                </Link>
+                <Link to="/#ニュース" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   ニュース
-                </a>
-                <a href="#コラム" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                </Link>
+                <Link to="/#コラム" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   AZABU+PRESS
-                </a>
-                <a href="#FAQ" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                </Link>
+                <Link to="/#FAQ" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   FAQ
-                </a>
+                </Link>
               </div>
             </div>
             <div className="border-t border-slate-200 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-center text-[#111111]/50 text-xs">&copy; 2025 AZABU+ Project. All rights reserved.</p>
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[#111111]/50 text-xs">
-                <a href="#privacy" className="hover:text-[#111111] transition-colors">
+                <Link to="/#privacy" className="hover:text-[#111111] transition-colors">
                   プライバシーポリシー
-                </a>
-                <a href="#terms" className="hover:text-[#111111] transition-colors">
+                </Link>
+                <Link to="/#terms" className="hover:text-[#111111] transition-colors">
                   利用規約
-                </a>
+                </Link>
               </div>
             </div>
           </div>
