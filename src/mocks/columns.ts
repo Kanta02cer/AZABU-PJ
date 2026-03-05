@@ -205,7 +205,7 @@ export const columnsData = [
 `
   },
   {
-    id: "it-subcontracting-structure-guide",
+    id: "infrastructure-engineer-job-overview",
     thumbnail: __BASE_PATH__ + "images/column/infrase.png",
     category: "AZABU+PRESS",
     date: "2026.03.10",
@@ -264,7 +264,7 @@ export const columnsData = [
 `
   },
   {
-    id: "infrastructure-engineer-salary-roadmap",
+    id: "infrastructure-engineer-tough-reality",
     thumbnail: __BASE_PATH__ + "images/column/sekitsui_cover.png",
     category: "CAREER",
     date: "2026.03.15",
@@ -321,7 +321,7 @@ export const columnsData = [
 `
   },
   {
-    id: "ccna-certification-benefits-study-guide",
+    id: "20s-inexperienced-it-career-strategy",
     thumbnail: __BASE_PATH__ + "images/column/20se_cover.png",
     category: "CAREER",
     date: "2026.03.20",
@@ -375,7 +375,7 @@ export const columnsData = [
 `
   },
   {
-    id: "inexperienced-engineer-interview-ng-answers",
+    id: "infrastructure-engineer-salary-guide",
     thumbnail: __BASE_PATH__ + "images/column/20代向け転職成功ガイド_cover.png",
     category: "CAREER",
     date: "2026.03.25",
@@ -429,7 +429,7 @@ export const columnsData = [
 `
   },
   {
-    id: "cloud-technology-aws-azure-gcp-guide",
+    id: "infrastructure-engineer-remote-work",
     thumbnail: __BASE_PATH__ + "images/column/remotework_cover.png",
     category: "LIFESTYLE",
     date: "2026.03.30",
@@ -480,7 +480,7 @@ export const columnsData = [
 `
   },
   {
-    id: "liberal-arts-infrastructure-engineer-reasons",
+    id: "avoid-black-ses-high-value-engineer",
     thumbnail: __BASE_PATH__ + "images/column/ブラックなSESを避けろ！_cover.png",
     category: "CAREER",
     date: "2026.04.05",
@@ -539,7 +539,7 @@ export const columnsData = [
 `
   },
   {
-    id: "career-change-it-industry-30s-success",
+    id: "infrastructure-engineer-essential-skills-linux",
     thumbnail: __BASE_PATH__ + "images/column/インフラSE必須スキル_cover.png",
     category: "SKILL",
     date: "2026.04.10",

@@ -6,7 +6,7 @@ import { newsData } from '../src/mocks/news.ts';
 import { columnsData } from '../src/mocks/columns.ts';
 import { interviewsData } from '../src/mocks/interviews.ts';
 
-const HOSTNAME = 'https://azabuplus-project.com';
+const HOSTNAME = 'https://azabuplus.jp';
 const PUBLIC_DIR = resolve(process.cwd(), 'public');
 const SITEMAP_FILE_PUBLIC = resolve(PUBLIC_DIR, 'sitemap.xml');
 
