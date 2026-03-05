@@ -1,21 +1,32 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { columnsData } from '../../mocks/columns';
+import { newsData } from '../../mocks/news';
 import { NewsSearchFilter } from '../../components/NewsSearchFilter';
 import { SEO } from '../../components/SEO';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
 import { AnimatedSection } from '../../components/Animate';
 
-// Magazine Style Column Card
-function ColumnCard({ 
-  column, 
+type ArticleItem = {
+  id: string;
+  thumbnail: string;
+  category: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  tags: string[];
+  source: 'column' | 'news';
+};
+
+function ArticleCard({ 
+  article, 
   index,
   isFavorited,
   onToggleFavorite,
   isFeatured = false
 }: { 
-  column: typeof columnsData[0]; 
+  article: ArticleItem; 
   index: number;
   isFavorited: boolean;
   onToggleFavorite: (e: React.MouseEvent) => void;
@@ -30,23 +41,30 @@ function ColumnCard({
     });
   };
 
+  const linkPath = article.source === 'news' ? `/news/${article.id}` : `/column/${article.id}`;
+
   if (isFeatured) {
     return (
       <AnimatedSection animation="slide-up" className="w-full mb-16 sm:mb-24">
         <Link
-          to={`/column/${column.id}`}
+          to={linkPath}
           className="group flex flex-col md:flex-row gap-8 lg:gap-16 items-center"
         >
-          <div className="w-full md:w-3/5 lg:w-2/3 relative aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden">
+          <div className="w-full md:w-3/5 lg:w-2/3 relative aspect-video overflow-hidden">
             <img
-              src={column.thumbnail}
-              alt={column.title}
+              src={article.thumbnail}
+              alt={article.title}
               className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2">
               <span className="px-4 py-1.5 bg-[#111111] text-white text-xs font-bold tracking-widest uppercase">
-                {column.category}
+                {article.category}
               </span>
+              {article.source === 'news' && (
+                <span className="px-3 py-1 bg-[#FF6B00] text-white text-[10px] font-bold tracking-widest uppercase">
+                  NEWS
+                </span>
+              )}
             </div>
             <button
               onClick={onToggleFavorite}
@@ -61,13 +79,13 @@ function ColumnCard({
           </div>
           <div className="w-full md:w-2/5 lg:w-1/3 flex flex-col justify-center py-4">
             <time className="text-sm text-[#111111]/50 mb-4 tracking-[0.2em] uppercase block">
-              {formatDate(column.date)}
+              {formatDate(article.date)}
             </time>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#111111] mb-6 leading-[1.3] group-hover:text-[#FF6B00] transition-colors">
-              {column.title}
+              {article.title}
             </h2>
             <p className="text-[#111111]/70 text-base leading-loose line-clamp-4 mb-8">
-              {column.excerpt}
+              {article.excerpt}
             </p>
             <div className="flex items-center text-[#111111] font-bold text-sm tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-500 uppercase">
               <div className="w-8 h-px bg-[#111111] mr-4 group-hover:w-12 transition-all duration-500"></div>
@@ -82,19 +100,24 @@ function ColumnCard({
   return (
     <AnimatedSection animation="slide-up" delay={index > 0 ? (index % 3) * 150 : 0}>
       <Link
-        to={`/column/${column.id}`}
+        to={linkPath}
         className="group block"
       >
-        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden mb-6">
+        <div className="relative w-full aspect-video overflow-hidden mb-6">
           <img
-            src={column.thumbnail}
-            alt={column.title}
+            src={article.thumbnail}
+            alt={article.title}
             className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-1000 ease-out"
           />
           <div className="absolute top-4 left-4 flex items-center gap-2">
             <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-[#111111] text-[10px] font-bold tracking-widest uppercase">
-              {column.category}
+              {article.category}
             </span>
+            {article.source === 'news' && (
+              <span className="px-2 py-0.5 bg-[#FF6B00] text-white text-[9px] font-bold tracking-widest uppercase">
+                NEWS
+              </span>
+            )}
           </div>
           <button
             onClick={onToggleFavorite}
@@ -109,13 +132,13 @@ function ColumnCard({
         </div>
         <div>
           <time className="text-xs sm:text-sm text-[#111111]/50 mb-3 tracking-[0.2em] uppercase block">
-            {formatDate(column.date)}
+            {formatDate(article.date)}
           </time>
           <h2 className="text-xl sm:text-2xl font-serif text-[#111111] mb-3 leading-snug group-hover:text-[#FF6B00] transition-colors line-clamp-3">
-            {column.title}
+            {article.title}
           </h2>
           <p className="text-[#111111]/60 text-sm leading-relaxed line-clamp-2">
-            {column.excerpt}
+            {article.excerpt}
           </p>
         </div>
       </Link>
@@ -126,10 +149,41 @@ function ColumnCard({
 export default function ColumnListPage() {
   const [activeCategory, setActiveCategory] = useState('すべて');
   const [searchQuery, setSearchQuery] = useState('');
-  const { isFavorite, toggleFavorite } = useFavorites('column_favorites');
+  const { isFavorite, toggleFavorite } = useFavorites('press_favorites');
 
-  const filteredColumns = useMemo(() => {
-    return columnsData.filter((item) => {
+  // Merge columns and news into a single list, sorted by date (latest first)
+  const allArticles: ArticleItem[] = useMemo(() => {
+    const columns: ArticleItem[] = columnsData.map(c => ({
+      id: c.id,
+      thumbnail: c.thumbnail,
+      category: c.category,
+      date: c.date,
+      title: c.title,
+      excerpt: c.excerpt,
+      tags: c.tags,
+      source: 'column' as const,
+    }));
+
+    const news: ArticleItem[] = newsData.map(n => ({
+      id: n.id,
+      thumbnail: n.thumbnail,
+      category: n.category,
+      date: n.date,
+      title: n.title,
+      excerpt: n.excerpt,
+      tags: [],
+      source: 'news' as const,
+    }));
+
+    return [...columns, ...news].sort((a, b) => {
+      const dateA = new Date(a.date.replace(/\./g, '/'));
+      const dateB = new Date(b.date.replace(/\./g, '/'));
+      return dateB.getTime() - dateA.getTime();
+    });
+  }, []);
+
+  const filteredArticles = useMemo(() => {
+    return allArticles.filter((item) => {
       const matchesSearch =
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -139,25 +193,31 @@ export default function ColumnListPage() {
       if (activeCategory === 'お気に入り') {
         matchesCategory = isFavorite(item.id);
       }
+      if (activeCategory === 'NEWS') {
+        matchesCategory = item.source === 'news';
+      }
+      if (activeCategory === 'COLUMN') {
+        matchesCategory = item.source === 'column';
+      }
       
       return matchesSearch && matchesCategory;
     });
-  }, [activeCategory, searchQuery, isFavorite]);
+  }, [allArticles, activeCategory, searchQuery, isFavorite]);
 
   const categories = useMemo(() => {
-    const cats = Array.from(new Set(columnsData.map((column) => column.category)));
-    return ['お気に入り', ...cats.sort()];
-  }, []);
+    const cats = Array.from(new Set(allArticles.map((a) => a.category)));
+    return ['お気に入り', 'NEWS', 'COLUMN', ...cats.sort()];
+  }, [allArticles]);
 
-  const featuredPost = filteredColumns.length > 0 ? filteredColumns[0] : null;
-  const standardPosts = filteredColumns.length > 1 ? filteredColumns.slice(1) : [];
+  const featuredPost = filteredArticles.length > 0 ? filteredArticles[0] : null;
+  const standardPosts = filteredArticles.length > 1 ? filteredArticles.slice(1) : [];
 
   return (
     <div className="min-h-screen bg-[#FDFDFD]">
       <SEO 
-        title="Regalis Journal | AZABU+ Project"
-        description="20代のエンジニア転職に役立つ知識。麻布台ヒルズでのキャリア、ITインフラ業界の動向、未経験からの資格取得まで幅広く解説。"
-        keywords="エンジニア転職,コラム,キャリア,インフラエンジニア,麻布台ヒルズ"
+        title="AZABU+PRESS | AZABU+ Project"
+        description="20代のエンジニア転職に役立つ知識。麻布台ヒルズでのキャリア、ITインフラ業界の動向、未経験からの資格取得まで幅広く解説。ニュースとコラムを一挙にお届け。"
+        keywords="エンジニア転職,AZABU+PRESS,キャリア,インフラエンジニア,麻布台ヒルズ,ニュース,コラム"
       />
       
       {/* Editorial Hero Section */}
@@ -166,11 +226,14 @@ export default function ColumnListPage() {
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <AnimatedSection animation="zoom">
             <p className="text-[#FF6B00] text-xs sm:text-sm tracking-[0.3em] font-bold uppercase mb-4 sm:mb-6">
-              キャリアとITの交差点
+              元外コン出身SIer採用担当が業界を超分析するデジタル専門誌
             </p>
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif text-[#111111] mb-6 sm:mb-8 font-light lowercase">
-              Journal
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif text-[#111111] mb-4 sm:mb-6 font-light">
+              AZABU+PRESS
             </h1>
+            <p className="text-[#111111]/50 text-sm sm:text-base tracking-widest max-w-xl mx-auto mb-6 sm:mb-8">
+              ニュース・コラムの全記事アーカイブ
+            </p>
             <div className="w-px h-16 sm:h-24 bg-gradient-to-b from-[#111111]/30 to-transparent mx-auto"></div>
           </AnimatedSection>
         </div>
@@ -185,20 +248,29 @@ export default function ColumnListPage() {
             onCategoryChange={setActiveCategory}
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
-            placeholder="Search Journal..."
+            placeholder="記事を検索..."
           />
         </div>
       </section>
 
-      {/* Journal Content Layout */}
-      <section className="py-16 sm:py-24">
+      {/* Article Count */}
+      <section className="py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {filteredColumns.length > 0 ? (
+          <p className="text-[#111111]/40 text-xs sm:text-sm tracking-widest uppercase">
+            {filteredArticles.length} Articles Found
+          </p>
+        </div>
+      </section>
+
+      {/* Article Content Layout */}
+      <section className="pb-16 sm:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {filteredArticles.length > 0 ? (
             <>
               {/* Featured Post (100% width) */}
               {featuredPost && (
-                <ColumnCard 
-                  column={featuredPost} 
+                <ArticleCard 
+                  article={featuredPost} 
                   index={0}
                   isFeatured={true}
                   isFavorited={isFavorite(featuredPost.id)}
@@ -212,15 +284,15 @@ export default function ColumnListPage() {
               {/* Grid Posts */}
               {standardPosts.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                  {standardPosts.map((column, index) => (
-                    <ColumnCard 
-                      key={column.id} 
-                      column={column} 
+                  {standardPosts.map((article, index) => (
+                    <ArticleCard 
+                      key={`${article.source}-${article.id}`} 
+                      article={article} 
                       index={index + 1} 
-                      isFavorited={isFavorite(column.id)}
+                      isFavorited={isFavorite(article.id)}
                       onToggleFavorite={(e) => {
                         e.preventDefault();
-                        toggleFavorite(column.id);
+                        toggleFavorite(article.id);
                       }}
                     />
                   ))}
@@ -229,17 +301,16 @@ export default function ColumnListPage() {
             </>
           ) : (
             <div className="text-center py-32 bg-white/50 border border-[#111111]/5">
-              <p className="text-2xl font-serif text-[#111111] mb-4">No stories found.</p>
+              <p className="text-2xl font-serif text-[#111111] mb-4">記事が見つかりませんでした</p>
               <p className="text-[#111111]/50 tracking-widest uppercase text-sm mb-8">条件を変えて再度検索してみてください</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setActiveCategory('すべて');
                 }}
-                className="text-xs font-bold tracking-[0.2em] uppercase text-[#FF6B00] hover:text-[#111111] transition-colors"
-                style={{ cursor: "none" }}
+                className="text-xs font-bold tracking-[0.2em] uppercase text-[#FF6B00] hover:text-[#111111] transition-colors cursor-pointer"
               >
-                Clear Search Restrictions
+                フィルターをリセット
               </button>
             </div>
           )}

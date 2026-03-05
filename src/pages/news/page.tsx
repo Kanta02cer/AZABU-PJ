@@ -25,10 +25,10 @@ function FeaturedCard({
     <AnimatedSection animation="slide-up" className="w-full mb-16 sm:mb-28">
       <Link
         to={`/news/${news.id}`}
-        className="group relative flex flex-col lg:flex-row gap-0 border border-black/8 hover:border-[#FF6B00]/40 transition-colors duration-500 overflow-hidden bg-white shadow-sm hover:shadow-xl"
+        className="group flex flex-col lg:flex-row gap-8 lg:gap-16 items-center p-6 lg:p-0"
       >
-        {/* Image */}
-        <div className="relative w-full lg:w-[58%] aspect-[16/10] lg:aspect-auto lg:min-h-[480px] overflow-hidden flex-shrink-0">
+        {/* Thumbnail Stack */}
+        <div className="relative w-full lg:w-[58%] aspect-video overflow-hidden flex-shrink-0">
           <img
             src={news.thumbnail}
             alt={news.title}
@@ -123,7 +123,7 @@ function PressCard({
         className="group flex flex-col h-full border border-black/8 hover:border-[#FF6B00]/40 bg-white overflow-hidden transition-all duration-400 hover:shadow-lg"
       >
         {/* Thumbnail */}
-        <div className="relative w-full aspect-[4/3] overflow-hidden flex-shrink-0">
+        <div className="relative w-full aspect-video overflow-hidden flex-shrink-0">
           <img
             src={news.thumbnail}
             alt={news.title}
