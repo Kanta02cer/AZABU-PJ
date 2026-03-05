@@ -365,10 +365,10 @@ export default function NewsListPage() {
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               to="/"
-              className="group inline-flex items-center gap-3 text-white font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white text-white text-sm sm:text-base font-bold hover:bg-white hover:text-[#111111] transition-all duration-300 cursor-pointer whitespace-nowrap group"
             >
-              <i className="ri-arrow-left-line text-xl group-hover:-translate-x-2 transition-transform duration-500" />
-              <span className="text-sm">Back to Home</span>
+              <i className="ri-arrow-left-line group-hover:-translate-x-1 transition-transform"></i>
+              <span>Homeに戻る</span>
             </Link>
           </div>
         </div>

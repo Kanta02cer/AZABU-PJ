@@ -360,15 +360,17 @@ export default function ArticleTemplate({
         />
       </div>
 
-      {/* Back to List Button */}
-      <div className="bg-[#111111] py-16 flex justify-center">
-        <Link
-          to={type === 'news' ? '/news' : '/column'}
-          className="group relative inline-flex items-center gap-4 text-white font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors"
-        >
-          <i className="ri-arrow-left-line text-2xl group-hover:-translate-x-2 transition-transform duration-500"></i>
-          <span className="text-sm">Back to {type === 'news' ? 'Updates' : 'Journal'}</span>
-        </Link>
+      {/* もっと見る Button */}
+      <div className="bg-[#FDFDFD] py-16 flex justify-center items-center border-t border-black/10">
+        <AnimatedSection className="text-center">
+          <Link
+            to={type === 'news' ? '/news' : '/column'}
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap group"
+          >
+            <span>もっと見る</span>
+            <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform border-[#1A2B4C]"></i>
+          </Link>
+        </AnimatedSection>
       </div>
     </div>
   );

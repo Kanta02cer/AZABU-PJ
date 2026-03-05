@@ -242,9 +242,10 @@ export default function InterviewDetailPage() {
 
             <Link
               to="/#インタビュー"
-              className="px-6 py-3 rounded-full border-2 border-[#111111] text-[#111111] text-sm font-bold hover:bg-[#111111] hover:text-white transition-all"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap group"
             >
-              一覧に戻る
+              <span>もっと見る</span>
+              <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
             </Link>
 
             {nextInterview ? (

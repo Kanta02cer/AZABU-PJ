@@ -247,14 +247,16 @@ export default function ColumnListPage() {
       </section>
 
       {/* Back to Home */}
-      <section className="py-16 bg-[#111111] flex flex-col items-center justify-center">
-        <Link
-          to="/"
-          className="group relative inline-flex items-center gap-4 text-white font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors"
-        >
-          <i className="ri-arrow-left-line text-2xl group-hover:-translate-x-2 transition-transform duration-500"></i>
-          <span className="text-sm">Back to Home</span>
-        </Link>
+      <section className="py-16 bg-[#FDFDFD] border-t border-black/10 flex flex-col items-center justify-center">
+        <AnimatedSection className="text-center">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap group"
+          >
+            <i className="ri-arrow-left-line group-hover:-translate-x-1 transition-transform"></i>
+            <span>Homeに戻る</span>
+          </Link>
+        </AnimatedSection>
       </section>
     </div>
   );
