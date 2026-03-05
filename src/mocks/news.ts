@@ -17,7 +17,7 @@ export const newsData = [
 </p>
 
 <p>
-  <img src="\${__BASE_PATH__}images/news/firstpress_cover.png" alt="AZABU+PRESS正式リリース 元外コン出身Sier採用担当が業界を超分析するデジタル専門誌" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
+  <img src="${__BASE_PATH__}images/news/firstpress_cover.png" alt="AZABU+PRESS正式リリース 元外コン出身Sier採用担当が業界を超分析するデジタル専門誌" style="width: 100%; height: auto; border-radius: 8px; margin: 2rem 0;">
 </p>
 
 <h3>デジタル専門誌で発信していく主なコンテンツ</h3>

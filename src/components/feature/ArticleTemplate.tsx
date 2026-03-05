@@ -291,7 +291,46 @@ export default function ArticleTemplate({
             color: rgba(255,255,255,0.8);
             margin-bottom: 0;
           }
+          .article-content .qa-section {
+            margin: 2rem 0;
+            border-left: 3px solid #FF6B00;
+            padding-left: 1.5rem;
+          }
+          .article-content .qa-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+          }
+          .article-content .qa-badge {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #FF6B00;
+            color: white;
+            font-weight: 900;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+          }
+          .article-content .qa-question h2 {
+            font-size: 1.25rem;
+            margin: 0;
+            padding-top: 0.25rem;
+            color: #111111;
+          }
+          .article-content .qa-answer p {
+            background: rgba(255,107,0,0.04);
+            padding: 1rem 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.9;
+          }
         `}</style>
+
 
         {/* Share Buttons */}
         <div className="mt-20 pt-10 border-t border-[#111111]/10 flex flex-col items-center">
