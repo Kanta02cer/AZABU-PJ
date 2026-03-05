@@ -1,6 +1,7 @@
-import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { useNavigate, useLocation, type NavigateFunction } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, cloneElement } from "react";
+import { AnimatePresence } from "framer-motion";
 import routes from "./config";
 import Loading from "../components/Loading";
 
@@ -19,9 +20,20 @@ export const navigatePromise = new Promise<NavigateFunction>((resolve) => {
 export function AppRoutes() {
   const element = useRoutes(routes);
   const navigate = useNavigate();
+  const location = useLocation();
+  
   useEffect(() => {
     window.REACT_APP_NAVIGATE = navigate;
     navigateResolver(window.REACT_APP_NAVIGATE);
   });
-  return <Suspense fallback={<Loading />}>{element}</Suspense>;
+  
+  if (!element) return null;
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <AnimatePresence mode="wait">
+        {cloneElement(element, { key: location.pathname })}
+      </AnimatePresence>
+    </Suspense>
+  );
 }

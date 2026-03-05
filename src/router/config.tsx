@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
+import { PageTransition } from '../components/PageTransition';
 
 const HomePage = lazy(() => import('../pages/home/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
@@ -15,45 +16,44 @@ const DesignSystemPage = lazy(() => import('../pages/design-system/page'));
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <HomePage />,
+    element: <PageTransition><HomePage /></PageTransition>,
   },
   {
     path: '/news',
-    element: <NewsListPage />,
+    element: <PageTransition><NewsListPage /></PageTransition>,
   },
   {
     path: '/news/:id',
-    element: <NewsDetailPage />,
+    element: <PageTransition><NewsDetailPage /></PageTransition>,
   },
   {
     path: '/column',
-    element: <ColumnListPage />,
+    element: <PageTransition><ColumnListPage /></PageTransition>,
   },
   {
     path: '/column/:id',
-    element: <ColumnDetailPage />,
+    element: <PageTransition><ColumnDetailPage /></PageTransition>,
   },
   {
     path: '/interview/:id',
-    element: <InterviewDetailPage />,
+    element: <PageTransition><InterviewDetailPage /></PageTransition>,
   },
   {
     path: '/admin',
-    element: <AdminPage />,
+    element: <PageTransition><AdminPage /></PageTransition>,
   },
   {
     path: '/admin/login',
-    element: <AdminLoginPage />,
+    element: <PageTransition><AdminLoginPage /></PageTransition>,
   },
   {
     path: '/design-system',
-    element: <DesignSystemPage />,
+    element: <PageTransition><DesignSystemPage /></PageTransition>,
   },
   {
     path: '*',
-    element: <NotFoundPage />,
+    element: <PageTransition><NotFoundPage /></PageTransition>,
   },
 ];
 
 export default routes;
-

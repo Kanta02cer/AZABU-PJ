@@ -6,6 +6,9 @@ import i18n from "./i18n";
 
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
+import { InvitationProvider } from "./components/InvitationContext";
+import { CustomCursor } from "./components/CustomCursor";
+
 function AppContent() {
   useSmoothScroll();
   return <AppRoutes />;
@@ -15,7 +18,10 @@ function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <BrowserRouter basename={__BASE_PATH__}>
-        <AppContent />
+        <CustomCursor />
+        <InvitationProvider>
+          <AppContent />
+        </InvitationProvider>
       </BrowserRouter>
     </I18nextProvider>
   );

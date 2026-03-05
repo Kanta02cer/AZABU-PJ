@@ -7,6 +7,7 @@ import { SEO } from '../../components/SEO';
 import { AnimatedSection, StaggerChildren } from '../../components/Animate';
 import { MobileStickyCTA } from '../../components/MobileStickyCTA';
 import { Heart } from 'lucide-react';
+import { useInvitation } from '../../components/InvitationContext';
 
 declare global {
   interface Window {
@@ -82,6 +83,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 /* HERO SECTION */
 function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
+  const { openInvitation } = useInvitation();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -173,16 +175,14 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
             </p>
           </div>
 
-          <a
-            href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-4 text-[#111111] font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors pr-8"
+          <button
+            onClick={() => openInvitation("https://calendar.app.google/8cVcUkLokHP1w48Y6")}
+            className="group relative inline-flex items-center gap-4 text-[#111111] font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors pr-8 cursor-pointer"
           >
             <span className="text-lg sm:text-xl">面談エントリー</span>
             <div className="w-12 h-px bg-[#111111] group-hover:bg-[#FF6B00] group-hover:w-20 transition-all duration-500"></div>
             <i className="ri-arrow-right-line text-2xl absolute right-0 opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" />
-          </a>
+          </button>
         </div>
       </div>
 
@@ -197,6 +197,8 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
 
 /* Mobile Menu Component */
 function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose: () => void; isScrolled: boolean }) {
+  const { openInvitation } = useInvitation();
+  
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -244,10 +246,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
           ))}
         </nav>
         <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-slate-100">
-          <a
-            href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             onClick={() => {
               if (typeof window !== 'undefined') {
                 window.dataLayer = window.dataLayer || [];
@@ -256,12 +255,14 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
                   button_location: 'mobile_menu_cta'
                 });
               }
+              onClose();
+              openInvitation("https://calendar.app.google/8cVcUkLokHP1w48Y6");
             }}
             className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white text-sm font-bold shadow-lg cursor-pointer whitespace-nowrap"
           >
             <i className="ri-calendar-check-fill text-lg" />
             面談へエントリー
-          </a>
+          </button>
         </div>
       </div>
     </>
@@ -269,6 +270,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
 }
 
 export default function HomePage() {
+  const { openInvitation } = useInvitation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -442,15 +444,13 @@ export default function HomePage() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a
-              href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-500 whitespace-nowrap bg-[#FF6B00] text-white hover:bg-[#FFB800]"
+            <button
+              onClick={() => openInvitation("https://calendar.app.google/8cVcUkLokHP1w48Y6")}
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-500 whitespace-nowrap bg-[#FF6B00] text-white hover:bg-[#FFB800] cursor-pointer"
             >
               <i className="ri-calendar-check-fill text-base" />
               面談エントリー
-            </a>
+            </button>
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
