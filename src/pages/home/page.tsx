@@ -76,9 +76,17 @@ function SectionBg({
 }
 
 
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 /* HERO SECTION */
 function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const typographyRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 2;
@@ -89,8 +97,41 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  useLayoutEffect(() => {
+    if (!heroLoaded) return;
+    
+    // Setup scroll-triggered cinematic zoom and parallax
+    const ctx = gsap.context(() => {
+      gsap.to(imageWrapperRef.current, {
+        scale: 1.15,
+        opacity: 0.8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        }
+      });
+      
+      gsap.to(typographyRef.current, {
+        y: -100,
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert(); // Cleanup GSAP animations on unmount
+  }, [heroLoaded]);
+
   return (
-    <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-white px-4 sm:px-6">
+    <section ref={sectionRef} className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-white px-4 sm:px-6">
       <SEO 
         title="東京・麻布台ヒルズでエンジニア転職 | AZABU+ Project"
         description="20代のエンジニア転職なら麻布台ヒルズのAZABU+ Project。未経験から年収350万円からのキャリアを。1day就職オーディション開催中。"
@@ -107,7 +148,8 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
 
         {/* Huge centered image with slight parallax based on mouse */}
         <div 
-          className={`relative w-full max-w-4xl lg:max-w-6xl transition-all duration-1000 ease-out flex-grow flex items-center justify-center my-8 ${heroLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          ref={imageWrapperRef}
+          className={`relative w-full max-w-4xl lg:max-w-6xl transition-all duration-1000 ease-out flex-grow flex items-center justify-center my-8 ${heroLoaded ? 'opacity-100' : 'opacity-0 scale-95'}`}
           style={{
             transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px)`,
           }}
@@ -120,7 +162,7 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
         </div>
 
         {/* Minimal Bottom CTA & Typography */}
-        <div className={`w-full flex flex-col sm:flex-row items-center justify-between mt-auto transition-all duration-1000 ${heroLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
+        <div ref={typographyRef} className={`w-full flex flex-col sm:flex-row items-center justify-between mt-auto transition-all duration-1000 ${heroLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
           
           <div className="flex flex-col mb-12 sm:mb-0 text-center sm:text-left">
             <h2 className="text-[#FF6B00] text-xl sm:text-3xl font-bold tracking-widest mb-2">
@@ -533,52 +575,55 @@ export default function HomePage() {
       </SectionBg>
 
       {/* Brand Story Section */}
-      <section className="relative py-12 sm:py-32 bg-white overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         {/* Minimalist Accents */}
         <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FF6B00]/20 to-transparent transform -translate-y-1/2" />
         <div className="absolute top-0 right-10 sm:right-20 w-px h-full bg-gradient-to-b from-transparent via-[#FF6B00]/10 to-transparent" />
         <div className="absolute top-10 left-10 sm:left-20 w-px h-[200px] bg-gradient-to-b from-[#FF6B00]/20 to-transparent" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
-          <AnimatedSection className="mb-12 sm:mb-16 w-full">
-            <h2 className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl uppercase mb-6 sm:mb-8">Brand Story</h2>
-            <h3 className="text-[28px] sm:text-5xl md:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-8 sm:mb-12">
-              なぜ、未経験から「麻布台ヒルズ」なのか。
-            </h3>
-            <div className="w-px h-16 sm:h-24 bg-gradient-to-b from-[#FF6B00] to-transparent mx-auto"></div>
-          </AnimatedSection>
+        {/* Cinematic Pinned Wrapper */}
+        <div className="w-full relative min-h-[150vh] sm:min-h-[200vh]">
+          <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
+              <AnimatedSection className="mb-12 sm:mb-16 w-full">
+                <h2 className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl uppercase mb-6 sm:mb-8">Brand Story</h2>
+                <h3 className="text-[28px] sm:text-5xl md:text-6xl font-light tracking-widest text-[#111111] leading-relaxed mb-8 sm:mb-12">
+                  なぜ、未経験から「麻布台ヒルズ」なのか。
+                </h3>
+                <div className="w-px h-16 sm:h-24 bg-gradient-to-b from-[#FF6B00] to-transparent mx-auto"></div>
+              </AnimatedSection>
 
-          <AnimatedSection animation="slide-up" delay={200} className="w-full">
-            <div className="space-y-10 sm:space-y-16">
-              <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
-                「未経験だから」「文系だから」と、自分の可能性を小さく見積もっていませんか。
-              </p>
-              <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
-                私たちが拠点を置く麻布台ヒルズは、日本中から最先端のビジネスと熱量を持った人々が集う、特別な場所です。
-              </p>
-              
-              <div className="py-8 sm:py-12 my-8 sm:my-12 border-y border-black/5 relative">
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6B00]/30"></div>
-                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6B00]/30"></div>
-                <p className="text-[#111111] text-2xl sm:text-4xl leading-loose font-light tracking-widest">
-                  「環境が人を創る」
-                </p>
-              </div>
+              <div className="w-full space-y-10 sm:space-y-16">
+                <AnimatedSection animation="slide-up">
+                  <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
+                    「未経験だから」「文系だから」と、自分の可能性を小さく見積もっていませんか。<br/><br/>
+                    私たちが拠点を置く麻布台ヒルズは、日本中から最先端のビジネスと熱量を持った人々が集う、特別な場所です。
+                  </p>
+                </AnimatedSection>
+                
+                <AnimatedSection animation="zoom" delay={200}>
+                  <div className="py-8 sm:py-12 my-8 sm:my-12 border-y border-black/5 relative">
+                    <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6B00]/30"></div>
+                    <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-[#FF6B00]/30"></div>
+                    <p className="text-[#111111] text-2xl sm:text-4xl leading-loose font-light tracking-widest">
+                      「環境が人を創る」
+                    </p>
+                  </div>
+                </AnimatedSection>
 
-              <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
-                未経験からプロフェッショナルを目指す道のりは、決して平坦ではありません。だからこそ、妥協のない「最高峰の環境」が必要なのです。
-              </p>
-              <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
-                一流の刺激に触れ、高い視座を持った仲間と共に切磋琢磨する。その熱量の伝播が、あなたの成長を劇的に加速させます。
-              </p>
-
-              <div className="pt-10 sm:pt-16">
-                <p className="text-[#FF6B00] text-2xl sm:text-4xl font-light tracking-widest leading-relaxed">
-                  最高の舞台で、あなたの新しい人生を始めよう。
-                </p>
+                <AnimatedSection animation="slide-up" delay={400}>
+                  <p className="text-[#111111]/80 text-lg sm:text-2xl leading-loose font-light tracking-wide">
+                    一流の刺激に触れ、高い視座を持った仲間と共に切磋琢磨する。<br/>その熱量の伝播が、あなたの成長を劇的に加速させます。
+                  </p>
+                  <div className="pt-10 sm:pt-16">
+                    <p className="text-[#FF6B00] text-2xl sm:text-4xl font-light tracking-widest leading-relaxed">
+                      最高の舞台で、あなたの新しい人生を始めよう。
+                    </p>
+                  </div>
+                </AnimatedSection>
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,7 @@
-import { ReactNode } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import React, { ReactNode, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -11,7 +13,7 @@ interface AnimatedSectionProps {
 }
 
 /**
- * A reusable wrapper for scroll-triggered entrance animations.
+ * A reusable wrapper for GSAP scroll-triggered entrance animations.
  */
 export function AnimatedSection({ 
   children, 
@@ -20,29 +22,59 @@ export function AnimatedSection({
   animation = 'slide-up',
   threshold = 0.1
 }: AnimatedSectionProps) {
-  const { ref, isVisible } = useScrollAnimation({ threshold });
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const getAnimationClasses = () => {
-    switch (animation) {
-      case 'fade':
-        return isVisible ? 'opacity-100' : 'opacity-0';
-      case 'zoom':
-        return isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90';
-      case 'slide-in-right':
-        return isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20';
-      case 'slide-in-left':
-        return isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20';
-      default: // slide-up
-        return isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20';
-    }
-  };
+  useIsomorphicLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const el = containerRef.current;
+      if (!el) return;
+
+      let fromVars: gsap.TweenVars = { opacity: 0 };
+      let toVars: gsap.TweenVars = { opacity: 1 };
+
+      switch (animation) {
+        case 'zoom':
+          fromVars.scale = 0.9;
+          toVars.scale = 1;
+          break;
+        case 'slide-in-right':
+          fromVars.x = 50;
+          toVars.x = 0;
+          break;
+        case 'slide-in-left':
+          fromVars.x = -50;
+          toVars.x = 0;
+          break;
+        case 'fade':
+          // Just opacity
+          break;
+        default: // slide-up
+          fromVars.y = 50;
+          toVars.y = 0;
+          break;
+      }
+
+      gsap.fromTo(el, 
+        fromVars, 
+        {
+          ...toVars,
+          duration: 1.2,
+          ease: "power3.out",
+          delay: delay / 1000,
+          scrollTrigger: {
+            trigger: el,
+            start: `top ${100 - (threshold * 100)}%`, // Trigger earlier depending on threshold
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [animation, delay, threshold]);
 
   return (
-    <div
-      ref={ref}
-      className={`${getAnimationClasses()} transition-all duration-1000 ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <div ref={containerRef} className={className} style={{ opacity: 0 }}>
       {children}
     </div>
   );
@@ -56,8 +88,7 @@ interface StaggerChildrenProps {
 }
 
 /**
- * A wrapper to stagger the entrance animations of its children.
- * Works by injecting transitionDelay into each child.
+ * A wrapper to stagger the entrance animations of its children using GSAP.
  */
 export function StaggerChildren({ 
   children, 
@@ -65,21 +96,40 @@ export function StaggerChildren({
   className = '',
   threshold = 0.1 
 }: StaggerChildrenProps) {
-  const { ref, isVisible } = useScrollAnimation({ threshold });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const childrenElements = containerRef.current?.children;
+      if (!childrenElements || childrenElements.length === 0) return;
+
+      gsap.fromTo(childrenElements, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: interval / 1000,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: `top ${100 - (threshold * 100)}%`,
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [interval, threshold, children]);
 
   return (
-    <div ref={ref} className={className}>
-      {Array.isArray(children) ? children.map((child, index) => (
-        <div
-          key={index}
-          className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-          style={{ transitionDelay: `${index * interval}ms` }}
-        >
+    <div ref={containerRef} className={className}>
+      {React.Children.map(children, (child, i) => (
+        <div key={i} style={{ opacity: 0 }}>
           {child}
         </div>
-      )) : children}
+      ))}
     </div>
   );
 }
