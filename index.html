@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <base href="%BASE_URL%" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
     
     <!-- SEO Meta Tags -->
     <title>東京・麻布台ヒルズでエンジニア転職 | AZABU+ Project 未経験・20代歓迎</title>
