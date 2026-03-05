@@ -17,15 +17,15 @@
 }
 
 .article-content h2 {
-  @apply text-2xl font-bold text-[#1A2B4C] mt-12 mb-6 pb-3 border-b-2 border-[#FF6B00];
+  @apply text-2xl font-bold text-[#1A2B4C] mt-12 mb-6 pb-3 border-b-2 border-[#FF6B00] leading-relaxed sm:leading-[1.7];
 }
 
 .article-content h3 {
-  @apply text-xl font-bold text-[#1A2B4C] mt-8 mb-4;
+  @apply text-xl font-bold text-[#1A2B4C] mt-8 mb-4 leading-relaxed sm:leading-[1.7];
 }
 
 .article-content h4 {
-  @apply text-lg font-bold text-[#334155] mt-6 mb-3;
+  @apply text-lg font-bold text-[#334155] mt-6 mb-3 leading-relaxed sm:leading-[1.7];
 }
 
 .article-content p {

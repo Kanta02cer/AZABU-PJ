@@ -1,6 +1,6 @@
 export const columnsData = [
   {
-    id: "column-1",
+    id: "inexperienced-engineer-career-guide",
     thumbnail: __BASE_PATH__ + "images/column/itinfra_cover.png",
     category: "CAREER",
     date: "2025.10.05",
@@ -79,7 +79,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-2",
+    id: "newgrad-infrastructure-engineer-guide",
     thumbnail: __BASE_PATH__ + "images/column/firstcareer_cover.png",
     category: "CAREER",
     date: "2025.10.15",
@@ -143,7 +143,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-3",
+    id: "server-network-difference-basics",
     thumbnail: __BASE_PATH__ + "images/column/server&network_cover.png",
     category: "CAREER",
     date: "2026.03.05",
@@ -205,7 +205,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-4",
+    id: "it-subcontracting-structure-guide",
     thumbnail: __BASE_PATH__ + "images/column/infrase.png",
     category: "AZABU+PRESS",
     date: "2026.03.10",
@@ -264,7 +264,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-5",
+    id: "infrastructure-engineer-salary-roadmap",
     thumbnail: __BASE_PATH__ + "images/column/sekitsui_cover.png",
     category: "CAREER",
     date: "2026.03.15",
@@ -321,7 +321,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-6",
+    id: "ccna-certification-benefits-study-guide",
     thumbnail: __BASE_PATH__ + "images/column/20se_cover.png",
     category: "CAREER",
     date: "2026.03.20",
@@ -375,7 +375,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-7",
+    id: "inexperienced-engineer-interview-ng-answers",
     thumbnail: __BASE_PATH__ + "images/column/20代向け転職成功ガイド_cover.png",
     category: "CAREER",
     date: "2026.03.25",
@@ -429,7 +429,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-8",
+    id: "cloud-technology-aws-azure-gcp-guide",
     thumbnail: __BASE_PATH__ + "images/column/remotework_cover.png",
     category: "LIFESTYLE",
     date: "2026.03.30",
@@ -480,7 +480,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-9",
+    id: "liberal-arts-infrastructure-engineer-reasons",
     thumbnail: __BASE_PATH__ + "images/column/ブラックなSESを避けろ！_cover.png",
     category: "CAREER",
     date: "2026.04.05",
@@ -539,7 +539,7 @@ export const columnsData = [
 `
   },
   {
-    id: "column-10",
+    id: "career-change-it-industry-30s-success",
     thumbnail: __BASE_PATH__ + "images/column/インフラSE必須スキル_cover.png",
     category: "SKILL",
     date: "2026.04.10",

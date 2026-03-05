@@ -1,6 +1,6 @@
 export const newsData = [
   {
-    id: "news-2026-01",
+    id: "azabu-press-official-release",
     thumbnail: __BASE_PATH__ + "images/news/firstpress_cover.png",
     category: "PRESS RELEASE",
     date: "2026.02.22",
@@ -50,7 +50,7 @@ export const newsData = [
 `
   },
   {
-    id: "news-2025-01",
+    id: "azabu-plus-project-launch",
     thumbnail: __BASE_PATH__ + "images/news/azabu+_cover.png",
     category: "PRESS RELEASE",
     date: "2025.10.01",
