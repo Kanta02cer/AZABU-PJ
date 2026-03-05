@@ -64,7 +64,7 @@ export function AnimatedSection({
           scrollTrigger: {
             trigger: el,
             start: `top ${100 - (threshold * 100)}%`, // Trigger earlier depending on threshold
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none none"
           }
         }
       );
@@ -114,7 +114,7 @@ export function StaggerChildren({
           scrollTrigger: {
             trigger: containerRef.current,
             start: `top ${100 - (threshold * 100)}%`,
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none none"
           }
         }
       );
