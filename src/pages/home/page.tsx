@@ -219,8 +219,8 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
           {[
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'ニュース', href: '/#ニュース' }, 
-              { label: 'AZABU+PRESS', href: '/#コラム' },
+              { label: 'ニュース', href: '/news' }, 
+              { label: 'AZABU+PRESS', href: '/column' },
               { label: 'FAQ', href: '/#FAQ' }
           ].map((item) => (
             <Link
@@ -418,8 +418,8 @@ export default function HomePage() {
             {[
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'ニュース', href: '/#ニュース' }, 
-              { label: 'AZABU+PRESS', href: '/#コラム' },
+              { label: 'ニュース', href: '/news' }, 
+              { label: 'AZABU+PRESS', href: '/column' },
               { label: 'FAQ', href: '/#FAQ' }
             ].map((item) => (
               <Link
@@ -878,10 +878,10 @@ export default function HomePage() {
                       </div>
                       <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111111] mb-6 sm:mb-8 leading-snug tracking-tight">{interviews[currentSlide].title}</h3>
                       <p className="text-[#111111]/70 text-base sm:text-lg leading-loose mb-8 sm:mb-10 max-w-2xl">{interviews[currentSlide].quote}</p>
-                      <a href={`/interview/${currentSlide + 1}`} className="inline-flex items-center gap-3 text-[#111111] text-sm sm:text-base font-bold hover:text-[#FF6B00] transition-colors duration-300 cursor-pointer group/link">
+                      <Link to={`/interview/${currentSlide + 1}`} className="inline-flex items-center gap-3 text-[#111111] text-sm sm:text-base font-bold hover:text-[#FF6B00] transition-colors duration-300 cursor-pointer group/link">
                         <span className="uppercase tracking-widest relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[#FF6B00] group-hover/link:after:w-full after:transition-all after:duration-300">Read Full Interview</span>
                         <i className="ri-arrow-right-line group-hover/link:translate-x-2 transition-transform"></i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -1366,10 +1366,10 @@ export default function HomePage() {
                 <Link to="/#インタビュー" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   インタビュー
                 </Link>
-                <Link to="/#ニュース" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                <Link to="/news" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   ニュース
                 </Link>
-                <Link to="/#コラム" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                <Link to="/column" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   AZABU+PRESS
                 </Link>
                 <Link to="/#FAQ" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">

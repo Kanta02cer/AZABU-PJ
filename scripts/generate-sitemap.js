@@ -4,6 +4,7 @@ import { resolve, join } from 'path';
 
 import { newsData } from '../src/mocks/news.ts';
 import { columnsData } from '../src/mocks/columns.ts';
+import { interviewsData } from '../src/mocks/interviews.ts';
 
 const HOSTNAME = 'https://azabuplus-project.com';
 const PUBLIC_DIR = resolve(process.cwd(), 'public');
@@ -60,6 +61,17 @@ async function generateSitemap() {
   // 3. Dynamic Column Pages
   columnsData.forEach(column => {
     const url = `/column/${column.id}`;
+    smStream.write({
+      url,
+      changefreq: 'monthly',
+      priority: 0.6,
+    });
+    routes.push(url);
+  });
+
+  // 4. Dynamic Interview Pages
+  interviewsData.forEach(interview => {
+    const url = `/interview/${interview.id}`;
     smStream.write({
       url,
       changefreq: 'monthly',
