@@ -327,6 +327,7 @@ export default function HomePage() {
 
   const interviews = [
     {
+      id: 1,
       name: 'I.S さん',
       position: '第三技術本部 本部長',
       title: '20代でプロジェクトマネージャーに昇進',
@@ -334,6 +335,7 @@ export default function HomePage() {
       photo: __BASE_PATH__ + 'images/interviews/gm_is.png',
     },
     {
+      id: 3,
       name: 'U.Y さん',
       position: '第五技術部',
       title: '仕事と家庭を両立しながらプロジェクトリーダーに',
@@ -341,6 +343,7 @@ export default function HomePage() {
       photo: __BASE_PATH__ + 'images/interviews/leader_uy.png',
     },
     {
+      id: 4,
       name: 'M.K さん',
       position: '第六技術部',
       title: 'チャレンジできる環境',
@@ -348,6 +351,7 @@ export default function HomePage() {
       photo: __BASE_PATH__ + 'images/interviews/eng_mk.png',
     },
     {
+      id: 2,
       name: 'O.R さん',
       position: '第四技術部 メンバー',
       title: '研修制度の手厚さに惹かれて',
@@ -355,6 +359,7 @@ export default function HomePage() {
       photo: __BASE_PATH__ + 'images/interviews/member_or.png',
     },
     {
+      id: 5,
       name: 'I.T さん',
       position: '第二技術部',
       title: '社員の人柄で入社を決意',
@@ -362,6 +367,7 @@ export default function HomePage() {
       photo: __BASE_PATH__ + 'images/interviews/it2_it.png',
     },
     {
+      id: 6,
       name: 'I.T さん',
       position: '営業社員',
       title: '公務員からITベンチャーの営業職に転職',
@@ -878,7 +884,7 @@ export default function HomePage() {
                       </div>
                       <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#111111] mb-6 sm:mb-8 leading-snug tracking-tight">{interviews[currentSlide].title}</h3>
                       <p className="text-[#111111]/70 text-base sm:text-lg leading-loose mb-8 sm:mb-10 max-w-2xl">{interviews[currentSlide].quote}</p>
-                      <Link to={`/interview/${currentSlide + 1}`} className="inline-flex items-center gap-3 text-[#111111] text-sm sm:text-base font-bold hover:text-[#FF6B00] transition-colors duration-300 cursor-pointer group/link">
+                      <Link to={`/interview/${interviews[currentSlide].id}`} className="inline-flex items-center gap-3 text-[#111111] text-sm sm:text-base font-bold hover:text-[#FF6B00] transition-colors duration-300 cursor-pointer group/link">
                         <span className="uppercase tracking-widest relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[#FF6B00] group-hover/link:after:w-full after:transition-all after:duration-300">Read Full Interview</span>
                         <i className="ri-arrow-right-line group-hover/link:translate-x-2 transition-transform"></i>
                       </Link>
