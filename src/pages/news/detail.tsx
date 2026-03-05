@@ -4,8 +4,9 @@ import { newsData } from '../../mocks/news';
 
 export default function NewsDetailPage() {
   const { id } = useParams<{ id: string }>();
+  const cleanId = id?.replace(/\/$/, '') || '';
   
-  const news = newsData.find(n => n.id === id);
+  const news = newsData.find(n => n.id === cleanId);
   
   if (!news) {
     return <Navigate to="/news" replace />;

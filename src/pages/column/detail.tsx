@@ -4,8 +4,9 @@ import { columnsData } from '../../mocks/columns';
 
 export default function ColumnDetailPage() {
   const { id } = useParams<{ id: string }>();
+  const cleanId = id?.replace(/\/$/, '') || '';
   
-  const column = columnsData.find(c => c.id === id);
+  const column = columnsData.find(c => c.id === cleanId);
   
   if (!column) {
     return <Navigate to="/column" replace />;
