@@ -1,26 +1,26 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { newsData } from '../../mocks/news';
 import { NewsSearchFilter } from '../../components/NewsSearchFilter';
 import { SEO } from '../../components/SEO';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
+import { AnimatedSection } from '../../components/Animate';
 
-// カードコンポーネントを分離
+// Magazine Style News Card
 function NewsCard({ 
   news, 
-  index, 
-  isFavorited, 
-  onToggleFavorite 
+  index,
+  isFavorited,
+  onToggleFavorite,
+  isFeatured = false
 }: { 
   news: typeof newsData[0]; 
   index: number;
   isFavorited: boolean;
   onToggleFavorite: (e: React.MouseEvent) => void;
+  isFeatured?: boolean;
 }) {
-  const { ref, isVisible } = useScrollAnimation();
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('ja-JP', {
@@ -30,62 +30,100 @@ function NewsCard({
     });
   };
 
+  if (isFeatured) {
+    return (
+      <AnimatedSection animation="slide-up" className="w-full mb-16 sm:mb-24">
+        <Link
+          to={`/news/${news.id}`}
+          className="group flex flex-col md:flex-row-reverse gap-8 lg:gap-16 items-center"
+        >
+          <div className="w-full md:w-3/5 lg:w-2/3 relative aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden">
+            <img
+              src={news.thumbnail}
+              alt={news.title}
+              className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-1000 ease-out"
+            />
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2">
+              <span className="px-4 py-1.5 bg-[#FF6B00] text-white text-xs font-bold tracking-widest uppercase">
+                {news.category}
+              </span>
+            </div>
+            <button
+              onClick={onToggleFavorite}
+              className={`absolute top-4 left-4 sm:top-6 sm:left-6 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 z-10 ${
+                isFavorited 
+                  ? 'bg-[#111111] text-white' 
+                  : 'bg-white/90 backdrop-blur-md text-[#111111] hover:bg-[#111111] hover:text-white'
+              }`}
+            >
+              <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
+            </button>
+          </div>
+          <div className="w-full md:w-2/5 lg:w-1/3 flex flex-col justify-center py-4">
+            <time className="text-sm text-[#111111]/50 mb-4 tracking-[0.2em] uppercase block">
+              {formatDate(news.date)}
+            </time>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#111111] mb-6 leading-[1.3] group-hover:text-[#FF6B00] transition-colors">
+              {news.title}
+            </h2>
+            <p className="text-[#111111]/70 text-base leading-loose line-clamp-4 mb-8">
+              {news.excerpt}
+            </p>
+            <div className="flex items-center text-[#111111] font-bold text-sm tracking-[0.2em] group-hover:translate-x-2 transition-transform duration-500 uppercase">
+              <div className="w-8 h-px bg-[#111111] mr-4 group-hover:w-12 transition-all duration-500"></div>
+              <span>Read Details</span>
+            </div>
+          </div>
+        </Link>
+      </AnimatedSection>
+    );
+  }
+
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
+    <AnimatedSection animation="slide-up" delay={index > 0 ? (index % 3) * 150 : 0}>
       <Link
         to={`/news/${news.id}`}
-        className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100"
+        className="group block"
       >
-        <div className="relative w-full aspect-video overflow-hidden">
+        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden mb-6">
           <img
             src={news.thumbnail}
             alt={news.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-1000 ease-out"
           />
-          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2">
-            <span className="px-2.5 py-1 sm:px-4 sm:py-1.5 bg-[#FF6B00] text-white text-[10px] sm:text-xs font-black rounded-full shadow-lg uppercase tracking-wider">
+          <div className="absolute top-4 left-4 flex items-center gap-2">
+            <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-[#111111] text-[10px] font-bold tracking-widest uppercase">
               {news.category}
             </span>
           </div>
           <button
             onClick={onToggleFavorite}
-            className={`absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+            className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 z-10 ${
               isFavorited 
-                ? 'bg-[#FF6B00] text-white shadow-lg' 
-                : 'bg-white/80 backdrop-blur-md text-slate-400 hover:text-[#FF6B00] hover:bg-white'
+                ? 'bg-[#FF6B00] text-white' 
+                : 'bg-white/90 backdrop-blur-md text-[#111111] hover:bg-[#FF6B00] hover:text-white'
             }`}
           >
-            <Heart className={`w-5 h-5 ${isFavorited ? 'fill-current' : ''}`} />
+            <Heart className={`w-4 h-4 ${isFavorited ? 'fill-current' : ''}`} />
           </button>
         </div>
-        <div className="p-4 sm:p-5 md:p-6">
-          <time className="text-xs sm:text-sm text-slate-500 mb-2 sm:mb-3 block">
+        <div>
+          <time className="text-xs sm:text-sm text-[#111111]/50 mb-3 tracking-[0.2em] uppercase block">
             {formatDate(news.date)}
           </time>
-          <h2 className="text-base sm:text-lg md:text-xl font-bold text-[#111111] mb-2 sm:mb-3 group-hover:text-[#FF6B00] transition-colors line-clamp-2">
+          <h2 className="text-xl sm:text-2xl font-serif text-[#111111] mb-3 leading-snug group-hover:text-[#FF6B00] transition-colors line-clamp-3">
             {news.title}
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+          <p className="text-[#111111]/60 text-sm leading-relaxed line-clamp-2">
             {news.excerpt}
           </p>
-          <div className="mt-3 sm:mt-4 flex items-center text-[#FF6B00] font-medium text-xs sm:text-sm group-hover:translate-x-2 transition-transform">
-            <span>続きを読む</span>
-            <i className="ri-arrow-right-line ml-2"></i>
-          </div>
         </div>
       </Link>
-    </div>
+    </AnimatedSection>
   );
 }
 
 export default function NewsListPage() {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const [activeCategory, setActiveCategory] = useState('すべて');
   const [searchQuery, setSearchQuery] = useState('');
   const { isFavorite, toggleFavorite } = useFavorites('news_favorites');
@@ -110,78 +148,97 @@ export default function NewsListPage() {
     });
   }, [searchQuery, activeCategory, isFavorite]);
 
+  const featuredNews = filteredNews.length > 0 ? filteredNews[0] : null;
+  const standardNews = filteredNews.length > 1 ? filteredNews.slice(1) : [];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FDFDFD]">
       <SEO 
-        title="最新ニュース | AZABU+ Project"
+        title="Regalis Updates | AZABU+ Project"
         description="AZABU+ Projectの最新情報、イベント、各種お知らせ。東京・麻布台ヒルズでの20代エンジニア転職に関する情報を発信中。"
         keywords="AZABU+ Project,ニュース,麻布台ヒルズ,エンジニア転職"
       />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#111111] to-[#222222] py-14 sm:py-16 md:py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-          <div
-            ref={headerRef}
-            className={`text-center transition-all duration-1000 ${
-              headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
-              最新ニュース
-            </h1>
-            <p className="text-base sm:text-lg text-slate-300">
-              AZABU+ Projectの最新情報をお届けします
+      {/* Editorial Hero Section */}
+      <section className="pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FF6B00]/10 to-transparent transform -translate-y-1/2 -z-10" />
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+          <AnimatedSection animation="zoom">
+            <p className="text-[#FF6B00] text-xs sm:text-sm tracking-[0.3em] font-bold uppercase mb-4 sm:mb-6">
+              最新情報とイベント
             </p>
-          </div>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif text-[#111111] mb-6 sm:mb-8 font-light lowercase">
+              Updates
+            </h1>
+            <div className="w-px h-16 sm:h-24 bg-gradient-to-b from-[#111111]/30 to-transparent mx-auto"></div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* News List */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      {/* Filter Options */}
+      <section className="pb-12 border-b border-black/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <NewsSearchFilter
             categories={categories}
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
+            placeholder="Search Updates..."
           />
+        </div>
+      </section>
 
+      {/* News Content Layout */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {filteredNews.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-              {filteredNews.map((news, index) => (
+            <>
+              {/* Featured News (100% width) */}
+              {featuredNews && (
                 <NewsCard 
-                  key={news.id} 
-                  news={news} 
-                  index={index} 
-                  isFavorited={isFavorite(news.id)}
+                  news={featuredNews} 
+                  index={0}
+                  isFeatured={true}
+                  isFavorited={isFavorite(featuredNews.id)}
                   onToggleFavorite={(e) => {
                     e.preventDefault();
-                    toggleFavorite(news.id);
+                    toggleFavorite(featuredNews.id);
                   }}
                 />
-              ))}
-            </div>
+              )}
+
+              {/* Grid News */}
+              {standardNews.length > 0 && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                  {standardNews.map((news, index) => (
+                    <NewsCard 
+                      key={news.id} 
+                      news={news} 
+                      index={index + 1} 
+                      isFavorited={isFavorite(news.id)}
+                      onToggleFavorite={(e) => {
+                        e.preventDefault();
+                        toggleFavorite(news.id);
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           ) : (
-            <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-              <i className="ri-search-eye-line text-5xl text-slate-300 mb-4 block"></i>
-              <p className="text-xl font-bold text-[#111111] mb-2">一致するニュースが見つかりません</p>
-              <p className="text-slate-500">条件を変えて再度検索してみてください</p>
+            <div className="text-center py-32 bg-white/50 border border-[#111111]/5">
+              <p className="text-2xl font-serif text-[#111111] mb-4">No updates found.</p>
+              <p className="text-[#111111]/50 tracking-widest uppercase text-sm mb-8">条件を変えて再度検索してみてください</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setActiveCategory('すべて');
                 }}
-                className="mt-6 text-[#FF6B00] font-bold hover:underline"
+                className="text-xs font-bold tracking-[0.2em] uppercase text-[#FF6B00] hover:text-[#111111] transition-colors"
+                style={{ cursor: "none" }}
               >
-                検索条件をクリア
+                Clear Search Restrictions
               </button>
             </div>
           )}
@@ -189,16 +246,14 @@ export default function NewsListPage() {
       </section>
 
       {/* Back to Home */}
-      <section className="py-8 sm:py-10 md:py-12 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <Link
-            to="/"
-            className="inline-flex items-center space-x-2 text-[#111111] hover:text-[#FF6B00] font-medium transition-colors group text-sm sm:text-base"
-          >
-            <i className="ri-arrow-left-line text-lg sm:text-xl group-hover:-translate-x-1 transition-transform"></i>
-            <span>ホームに戻る</span>
-          </Link>
-        </div>
+      <section className="py-16 bg-[#111111] flex flex-col items-center justify-center">
+        <Link
+          to="/"
+          className="group relative inline-flex items-center gap-4 text-white font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors"
+        >
+          <i className="ri-arrow-left-line text-2xl group-hover:-translate-x-2 transition-transform duration-500"></i>
+          <span className="text-sm">Back to Home</span>
+        </Link>
       </section>
     </div>
   );

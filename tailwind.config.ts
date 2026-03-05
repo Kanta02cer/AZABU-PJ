@@ -9,6 +9,7 @@ export default {
       extend: {
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', '"Noto Sans JP"', 'sans-serif'],
+          serif: ['"Playfair Display"', '"Noto Serif JP"', 'serif'],
         },
         colors: {
           brand: {
