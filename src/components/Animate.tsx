@@ -3,71 +3,53 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect';
 
+gsap.registerPlugin(ScrollTrigger);
+
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  /** Animation type. Default is 'slide-up' */
   animation?: 'slide-up' | 'fade' | 'zoom' | 'slide-in-right' | 'slide-in-left';
   threshold?: number;
 }
 
-/**
- * A reusable wrapper for GSAP scroll-triggered entrance animations.
- */
-export function AnimatedSection({ 
-  children, 
-  className = '', 
-  delay = 0, 
+export function AnimatedSection({
+  children,
+  className = '',
+  delay = 0,
   animation = 'slide-up',
   threshold = 0.1
 }: AnimatedSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const fromVars: gsap.TweenVars = { opacity: 0 };
+
+    if (animation === 'slide-up') fromVars.y = 30;
+    else if (animation === 'slide-in-right') fromVars.x = 30;
+    else if (animation === 'slide-in-left') fromVars.x = -30;
+    else if (animation === 'zoom') fromVars.scale = 0.95;
+
+    const toVars: gsap.TweenVars = {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: delay / 1000,
+      scrollTrigger: {
+        trigger: el,
+        start: `top ${100 - threshold * 100}%`,
+        once: true,   // ← 発火したらトリガーを破棄。絶対に逆再生しない
+      },
+    };
+
     const ctx = gsap.context(() => {
-      const el = containerRef.current;
-      if (!el) return;
-
-      let fromVars: gsap.TweenVars = { opacity: 0 };
-      let toVars: gsap.TweenVars = { opacity: 1 };
-
-      switch (animation) {
-        case 'zoom':
-          fromVars.scale = 0.9;
-          toVars.scale = 1;
-          break;
-        case 'slide-in-right':
-          fromVars.x = 50;
-          toVars.x = 0;
-          break;
-        case 'slide-in-left':
-          fromVars.x = -50;
-          toVars.x = 0;
-          break;
-        case 'fade':
-          // Just opacity
-          break;
-        default: // slide-up
-          fromVars.y = 50;
-          toVars.y = 0;
-          break;
-      }
-
-      gsap.fromTo(el, 
-        fromVars, 
-        {
-          ...toVars,
-          duration: 1.2,
-          ease: "power3.out",
-          delay: delay / 1000,
-          scrollTrigger: {
-            trigger: el,
-            start: `top ${100 - (threshold * 100)}%`, // Trigger earlier depending on threshold
-            toggleActions: "play none none none"
-          }
-        }
-      );
+      gsap.fromTo(el, fromVars, toVars);
     }, containerRef);
 
     return () => ctx.revert();
@@ -87,35 +69,33 @@ interface StaggerChildrenProps {
   threshold?: number;
 }
 
-/**
- * A wrapper to stagger the entrance animations of its children using GSAP.
- */
-export function StaggerChildren({ 
-  children, 
-  interval = 100, 
+export function StaggerChildren({
+  children,
+  interval = 100,
   className = '',
-  threshold = 0.1 
+  threshold = 0.1
 }: StaggerChildrenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const childrenElements = containerRef.current?.children;
-      if (!childrenElements || childrenElements.length === 0) return;
+    const els = containerRef.current?.children;
+    if (!els || els.length === 0) return;
 
-      gsap.fromTo(childrenElements, 
-        { opacity: 0, y: 30 },
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        els,
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
-          ease: "power3.out",
+          duration: 0.6,
+          ease: 'power2.out',
           stagger: interval / 1000,
           scrollTrigger: {
             trigger: containerRef.current,
-            start: `top ${100 - (threshold * 100)}%`,
-            toggleActions: "play none none none"
-          }
+            start: `top ${100 - threshold * 100}%`,
+            once: true,   // ← 発火したらトリガーを破棄。絶対に逆再生しない
+          },
         }
       );
     }, containerRef);
