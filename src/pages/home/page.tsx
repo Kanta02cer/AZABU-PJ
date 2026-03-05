@@ -1353,6 +1353,93 @@ export default function HomePage() {
       </SectionBg>
 
 
+      {/* Privacy Policy Section */}
+      <SectionBg variant="light" opacity={0.02} id="privacy">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-10 sm:mb-16">
+              <p className="font-light tracking-widest text-[#FF6B00] text-sm sm:text-base uppercase mb-2 sm:mb-3">Privacy Policy</p>
+              <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">プライバシーポリシー</h2>
+              <div className="w-12 h-1 bg-[#FF6B00] mx-auto"></div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={200}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-10 shadow-lg border border-[#111111]/5 space-y-6">
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">1. 個人情報の収集について</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">本プロジェクト（以下「AZABU+」）は、一次審査フォームおよび面談エントリーにおいて、氏名、メールアドレス、電話番号等の個人情報を取得する場合があります。これらの情報は、選考プロセスの遂行および合否連絡のためにのみ使用いたします。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">2. 個人情報の利用目的</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">収集した個人情報は、以下の目的で利用いたします。</p>
+                  <ul className="list-disc pl-6 mt-2 space-y-1 text-[#111111]/70 text-sm sm:text-base leading-relaxed">
+                    <li>選考に関するご連絡およびご案内</li>
+                    <li>面談日程の調整</li>
+                    <li>プロジェクトに関する重要な情報の通知</li>
+                    <li>サービス改善のための統計データの作成（個人を特定できない形式）</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">3. 個人情報の第三者提供</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">法令に基づく場合を除き、ご本人の同意なく第三者に個人情報を提供することはありません。ただし、選考プロセスにおいて提携企業との情報共有が必要な場合は、事前にご本人の同意を得た上で行います。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">4. 個人情報の管理</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">取得した個人情報は、不正アクセス・紛失・漏洩等を防止するため、適切なセキュリティ対策を講じた上で厳重に管理いたします。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">5. お問い合わせ</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">個人情報の取り扱いに関するお問い合わせは、面談担当者までご連絡ください。</p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </SectionBg>
+
+      {/* Terms of Use Section */}
+      <SectionBg variant="warm" opacity={0.02} id="terms">
+        <div className="py-12 sm:py-24 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection className="text-center mb-10 sm:mb-16">
+              <p className="font-light tracking-widest text-[#FF6B00] text-sm sm:text-base uppercase mb-2 sm:mb-3">Terms of Use</p>
+              <h2 className="text-2xl sm:text-4xl font-light tracking-widest text-[#111111] leading-relaxed mb-4">利用規約</h2>
+              <div className="w-12 h-1 bg-[#FF6B00] mx-auto"></div>
+            </AnimatedSection>
+            <AnimatedSection animation="slide-up" delay={200}>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-10 shadow-lg border border-[#111111]/5 space-y-6">
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">第1条（適用範囲）</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">本規約は、AZABU+ Projectが提供するWebサイト（以下「本サイト」）の利用に関する条件を定めるものです。本サイトを利用するすべてのユーザーに適用されます。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">第2条（禁止事項）</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">ユーザーは、本サイトの利用にあたり、以下の行為をしてはなりません。</p>
+                  <ul className="list-disc pl-6 mt-2 space-y-1 text-[#111111]/70 text-sm sm:text-base leading-relaxed">
+                    <li>法令または公序良俗に違反する行為</li>
+                    <li>本サイトの運営を妨害する行為</li>
+                    <li>他のユーザーまたは第三者の権利を侵害する行為</li>
+                    <li>虚偽の情報を登録・提供する行為</li>
+                    <li>本サイトのコンテンツを無断で複製・転載する行為</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">第3条（免責事項）</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">本サイトに掲載される情報の正確性には万全を期しておりますが、その内容を保証するものではありません。本サイトの利用により生じた損害について、当プロジェクトは一切の責任を負いません。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">第4条（知的財産権）</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">本サイトに掲載されているテキスト、画像、動画、デザインその他一切のコンテンツに関する著作権およびその他の知的財産権は、当プロジェクトまたは正当な権利を有する第三者に帰属します。</p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#111111] text-base sm:text-lg mb-3">第5条（規約の変更）</h3>
+                  <p className="text-[#111111]/70 text-sm sm:text-base leading-relaxed">当プロジェクトは、必要と判断した場合には、ユーザーに通知することなく本規約を変更することができるものとします。変更後の利用規約は、本サイトに掲載された時点で効力を生じるものとします。</p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </SectionBg>
+
       {/* Footer */}
       <footer className="relative bg-white border-t border-slate-200 overflow-hidden pb-20 md:pb-0">
         {/* Subtle decorative line */}

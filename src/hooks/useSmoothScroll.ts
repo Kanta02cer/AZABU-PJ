@@ -43,14 +43,18 @@ export function useSmoothScroll() {
 
     if (hash) {
       const targetId = hash.replace('#', '');
-      // DOM element may take a moment to be rendered if we just switched pages
-      setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          // scroll to the element with a slight offset for sticky header
-          lenisInstance.scrollTo(element, { offset: -80, duration: 1.2 });
-        }
-      }, 150);
+      // Wait for PageTransition animation (800ms) before scrolling to hash target.
+      // Use two attempts in case the element hasn't rendered yet on the first try.
+      const scrollToHash = (delay: number) => {
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            lenisInstance.scrollTo(element, { offset: -80, duration: 1.2 });
+          }
+        }, delay);
+      };
+      scrollToHash(500);
+      scrollToHash(1200); // Retry for slow renders
     } else {
       // scroll to top immediately on route change without hash
       lenisInstance.scrollTo(0, { immediate: true });

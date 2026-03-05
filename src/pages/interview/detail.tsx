@@ -282,6 +282,17 @@ export default function InterviewDetailPage() {
           </a>
         </div>
       </section>
+
+      {/* Homeに戻る */}
+      <section className="py-16 bg-[#FAFAFA] border-t border-black/10 flex flex-col items-center justify-center">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap group"
+        >
+          <i className="ri-arrow-left-line group-hover:-translate-x-1 transition-transform" />
+          <span>Homeに戻る</span>
+        </Link>
+      </section>
     </div>
   );
 }

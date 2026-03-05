@@ -372,6 +372,19 @@ export default function ArticleTemplate({
           </Link>
         </AnimatedSection>
       </div>
+
+      {/* Homeに戻る Button */}
+      <div className="bg-[#FDFDFD] py-16 flex flex-col items-center justify-center border-t border-black/10">
+        <AnimatedSection className="text-center">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap group"
+          >
+            <i className="ri-arrow-left-line group-hover:-translate-x-1 transition-transform"></i>
+            <span>Homeに戻る</span>
+          </Link>
+        </AnimatedSection>
+      </div>
     </div>
   );
 }
