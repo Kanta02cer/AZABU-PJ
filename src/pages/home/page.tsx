@@ -458,7 +458,7 @@ export default function HomePage() {
 
       {/* Problem Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20geometric%20pattern%20with%20soft%20warm%20tones%2C%20minimalist%20corporate%20background%20texture%20with%20subtle%20golden%20amber%20lines%20on%20light%20cream%20surface%2C%20elegant%20business%20presentation%20backdrop%2C%20clean%20modern%20design%20with%20faint%20network%20connection%20nodes%20and%20thin%20lines%2C%20professional%20muted%20aesthetic%20with%20warm%20highlights%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-problem-section-v1&orientation=landscape" opacity={0.05}>
-        <div className="py-12 sm:py-20 px-4 sm:px-6">
+        <div className="py-16 sm:py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection className="text-center mb-10 sm:mb-16">
               <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-2 sm:mb-3">Problem</p>
@@ -521,7 +521,7 @@ export default function HomePage() {
         opacity={0.03}
         id="about-infra"
       >
-        <div className="py-12 sm:py-32 px-4 sm:px-6">
+        <div className="py-16 sm:py-20 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <AnimatedSection className="text-center mb-16 sm:mb-20">
               <p className="font-light tracking-widest text-[#FF6B00] text-xl sm:text-2xl tracking-widest uppercase mb-3">About</p>
@@ -570,7 +570,7 @@ export default function HomePage() {
         <div className="absolute top-10 left-10 sm:left-20 w-px h-[200px] bg-gradient-to-b from-[#FF6B00]/20 to-transparent" />
 
         {/* Cinematic Pinned Wrapper */}
-        <div className="w-full relative min-h-[150vh] sm:min-h-[200vh]">
+        <div className="w-full relative min-h-[90vh] sm:min-h-[120vh]">
           <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
               <AnimatedSection className="mb-12 sm:mb-16 w-full">
