@@ -102,20 +102,8 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
   useLayoutEffect(() => {
     if (!heroLoaded) return;
     
-    // Setup scroll-triggered cinematic zoom and parallax
+    // Image stays fully visible — only animate the CTA text on scroll
     const ctx = gsap.context(() => {
-      gsap.to(imageWrapperRef.current, {
-        scale: 1.15,
-        opacity: 0.8,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
-      
       gsap.to(typographyRef.current, {
         y: -100,
         opacity: 0,
@@ -129,7 +117,7 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
       });
     }, sectionRef);
 
-    return () => ctx.revert(); // Cleanup GSAP animations on unmount
+    return () => ctx.revert();
   }, [heroLoaded]);
 
   return (
