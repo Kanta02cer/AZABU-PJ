@@ -219,8 +219,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
           {[
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'ニュース', href: '/news' }, 
-              { label: 'AZABU+PRESS', href: '/column' },
+              { label: 'AZABU+PRESS', href: '/azabu-press' },
               { label: 'FAQ', href: '/#FAQ' }
           ].map((item) => (
             <Link
@@ -424,8 +423,7 @@ export default function HomePage() {
             {[
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'ニュース', href: '/news' }, 
-              { label: 'AZABU+PRESS', href: '/column' },
+              { label: 'AZABU+PRESS', href: '/azabu-press' },
               { label: 'FAQ', href: '/#FAQ' }
             ].map((item) => (
               <Link
@@ -938,7 +936,7 @@ export default function HomePage() {
             <div className="flex w-max animate-marquee gap-5 sm:gap-8 px-4 sm:px-6">
                 {/* First set of items */}
                 {[...newsData, ...newsData].map((news, index) => (
-                  <Link to={`/news/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <Link to={`/_post/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
                         <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -961,7 +959,7 @@ export default function HomePage() {
                 ))}
                 {/* Second set of items for seamless loop */}
                 {[...newsData, ...newsData].map((news, index) => (
-                  <Link to={`/news/${news.id}`} key={`second-${news.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                  <Link to={`/_post/${news.id}`} key={`second-${news.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
                         <img src={news.thumbnail} alt={news.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -986,7 +984,7 @@ export default function HomePage() {
           </div>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimatedSection className="text-center">
-              <Link to="/news" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
+              <Link to="/azabu-press" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
                 <span>もっと見る</span>
                 <i className="ri-arrow-right-line"></i>
               </Link>
@@ -1011,7 +1009,7 @@ export default function HomePage() {
             <div className="flex w-max animate-marquee-slow gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
               {/* First set of items */}
               {[...columnsData, ...columnsData].map((column, index) => (
-                <Link to={`/column/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                <Link to={`/_post/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">
                       <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -1034,7 +1032,7 @@ export default function HomePage() {
               ))}
               {/* Second set of items for seamless loop */}
               {[...columnsData, ...columnsData].map((column, index) => (
-                <Link to={`/column/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
+                <Link to={`/_post/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">
                       <img src={column.thumbnail} alt={column.title} className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500" />
@@ -1058,7 +1056,7 @@ export default function HomePage() {
             </div>
           </div>
           <AnimatedSection className="text-center">
-            <Link to="/column" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
+            <Link to="/azabu-press" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-[#1A2B4C] text-[#1A2B4C] text-sm sm:text-base font-bold hover:bg-[#1A2B4C] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap">
               <span>もっと見る</span>
               <i className="ri-arrow-right-line"></i>
             </Link>
@@ -1459,10 +1457,7 @@ export default function HomePage() {
                 <Link to="/#インタビュー" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   インタビュー
                 </Link>
-                <Link to="/news" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
-                  ニュース
-                </Link>
-                <Link to="/column" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
+                <Link to="/azabu-press" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
                   AZABU+PRESS
                 </Link>
                 <Link to="/#FAQ" className="text-[#111111]/80 text-sm font-bold hover:text-[#FF6B00] transition-colors">
