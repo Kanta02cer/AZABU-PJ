@@ -692,16 +692,17 @@ export default function HomePage() {
               <h2 className="text-[28px] sm:text-5xl font-light tracking-widest text-[#FF6B00] leading-relaxed">麻布台ヒルズ。</h2>
             </AnimatedSection>
             <AnimatedSection animation="zoom" delay={100}>
-              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden mb-8 sm:mb-10 group">
-                <div className="w-full h-56 sm:h-96">
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden mb-8 sm:mb-10 group cursor-pointer">
+                <div className="w-full h-56 sm:h-96 overflow-hidden">
                   <img
                     src="https://readdy.ai/api/search-image?query=Premium%20modern%20office%20workspace%20interior%20with%20panoramic%20Tokyo%20city%20views%20through%20large%20windows%2C%20contemporary%20furniture%20with%20navy%20blue%20and%20gold%20accents%2C%20sophisticated%20business%20lounge%20area%20with%20comfortable%20seating%20%2C%20natural%20daylight%20streaming%20through%20glass%20walls%2C%20minimalist%20corporate%20design%20with%20high-end%20finishes%2C%20professional%20photography%20style%20%2C%20clean%20and%20spacious%20layout&width=1400&height=800&seq=office-interior-002&orientation=landscape"
                     alt="オフィス環境"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-[1500ms] ease-out origin-center"
+                    style={{ willChange: 'transform' }}
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2B4C]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#1A2B4C] text-white text-xs sm:text-sm font-bold">麻布台ヒルズ 森JPタワー</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2B4C]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#1A2B4C]/90 backdrop-blur-md text-white text-xs sm:text-sm font-bold shadow-lg transform group-hover:-translate-y-1 transition-transform duration-500">麻布台ヒルズ 森JPタワー</div>
               </div>
             </AnimatedSection>
             <StaggerChildren className="grid grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-12" interval={100}>
@@ -862,9 +863,9 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative bg-transparent border-t border-b border-black/10 py-8 sm:py-12 overflow-hidden mb-6 sm:mb-8">
                 <div className={`flex flex-col md:flex-row gap-8 md:gap-16 ${slideDirection === 'right' ? 'animate-carousel-right' : 'animate-carousel-left'}`} key={currentSlide}>
-                  <div className="relative w-full md:w-2/5 h-64 sm:h-96 md:h-[500px]">
-                    <img src={interviews[currentSlide].photo} alt={interviews[currentSlide].name} className="w-full h-full object-cover object-center" />
-                    <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-2 bg-white/80 backdrop-blur px-3 py-1">
+                  <div className="relative w-full md:w-2/5 h-64 sm:h-96 md:h-[500px] overflow-hidden group/interview cursor-pointer">
+                    <img src={interviews[currentSlide].photo} alt={interviews[currentSlide].name} className="w-full h-full object-cover object-center group-hover/interview:scale-105 transition-transform duration-[1500ms] ease-out origin-center" style={{ willChange: 'transform' }} />
+                    <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1 shadow-lg transform group-hover/interview:-translate-y-1 transition-transform duration-500">
                       <span className="text-[#FF6B00] text-xl sm:text-2xl font-black">{String(currentSlide + 1).padStart(2, '0')}</span>
                       <span className="text-[#111111]/40 text-sm">/</span>
                       <span className="text-[#111111]/40 text-sm">{String(totalSlides).padStart(2, '0')}</span>

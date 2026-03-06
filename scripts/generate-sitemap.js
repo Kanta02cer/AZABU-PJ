@@ -37,8 +37,7 @@ async function generateSitemap() {
   // 1. Static Pages
   const staticPages = [
     { url: '/', changefreq: 'daily', priority: 1.0 },
-    { url: '/news', changefreq: 'weekly', priority: 0.8 },
-    { url: '/column', changefreq: 'weekly', priority: 0.8 },
+    { url: '/azabu-press', changefreq: 'weekly', priority: 0.8 },
     { url: '/interviews', changefreq: 'monthly', priority: 0.7 },
   ];
 
@@ -49,7 +48,7 @@ async function generateSitemap() {
 
   // 2. Dynamic News Pages
   newsData.forEach(news => {
-    const url = `/news/${news.id}`;
+    const url = `/_post/${news.id}`;
     smStream.write({
       url,
       changefreq: 'monthly',
@@ -60,7 +59,7 @@ async function generateSitemap() {
 
   // 3. Dynamic Column Pages
   columnsData.forEach(column => {
-    const url = `/column/${column.id}`;
+    const url = `/_post/${column.id}`;
     smStream.write({
       url,
       changefreq: 'monthly',

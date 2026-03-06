@@ -4,10 +4,8 @@ import { PageTransition } from '../components/PageTransition';
 
 const HomePage = lazy(() => import('../pages/home/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
-const NewsListPage = lazy(() => import('../pages/news/page'));
-const NewsDetailPage = lazy(() => import('../pages/news/detail'));
-const ColumnListPage = lazy(() => import('../pages/column/page'));
-const ColumnDetailPage = lazy(() => import('../pages/column/detail'));
+const AzabuPressListPage = lazy(() => import('../pages/azabu-press/page'));
+const PostDetailPage = lazy(() => import('../pages/_post/detail'));
 const InterviewDetailPage = lazy(() => import('../pages/interview/detail'));
 const AdminPage = lazy(() => import('../pages/admin/page'));
 const AdminLoginPage = lazy(() => import('../pages/admin/login'));
@@ -19,20 +17,12 @@ const routes: RouteObject[] = [
     element: <PageTransition><HomePage /></PageTransition>,
   },
   {
-    path: '/news',
-    element: <PageTransition><NewsListPage /></PageTransition>,
+    path: '/azabu-press',
+    element: <PageTransition><AzabuPressListPage /></PageTransition>,
   },
   {
-    path: '/news/:id',
-    element: <PageTransition><NewsDetailPage /></PageTransition>,
-  },
-  {
-    path: '/column',
-    element: <PageTransition><ColumnListPage /></PageTransition>,
-  },
-  {
-    path: '/column/:id',
-    element: <PageTransition><ColumnDetailPage /></PageTransition>,
+    path: '/_post/:id',
+    element: <PageTransition><PostDetailPage /></PageTransition>,
   },
   {
     path: '/interview/:id',

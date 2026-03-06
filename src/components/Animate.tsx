@@ -46,6 +46,12 @@ export function AnimatedSection({
         duration: 0.7,
         ease: 'power2.out',
         delay: delay / 1000,
+        onStart: () => {
+          gsap.set(el, { willChange: 'opacity, transform' });
+        },
+        onComplete: () => {
+          gsap.set(el, { clearProps: 'willChange' });
+        },
         scrollTrigger: {
           trigger: el,
           start: `top ${100 - threshold * 100}%`,
@@ -97,6 +103,13 @@ export function StaggerChildren({
         duration: 0.6,
         ease: 'power2.out',
         stagger: interval / 1000,
+        onStart: function() {
+          // 'this' refers to the tween, this.targets() gets the specific elements animating
+          gsap.set(this.targets(), { willChange: 'opacity, transform' });
+        },
+        onComplete: function() {
+          gsap.set(this.targets(), { clearProps: 'willChange' });
+        },
         scrollTrigger: {
           trigger: container,
           start: `top ${100 - threshold * 100}%`,

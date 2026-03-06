@@ -41,7 +41,8 @@ function ArticleCard({
     });
   };
 
-  const linkPath = article.source === 'news' ? `/news/${article.id}` : `/column/${article.id}`;
+  // Link path is unified under _post
+  const linkPath = `/_post/${article.id}`;
 
   if (isFeatured) {
     return (

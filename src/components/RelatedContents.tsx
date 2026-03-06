@@ -13,11 +13,11 @@ export interface RelatedItem {
 
 interface RelatedContentsProps {
   items: RelatedItem[];
-  basePath: '/news' | '/column';
   title?: string;
+  basePath?: string; // Optional for backward compatibility, though not strictly needed anymore if type handled within items
 }
 
-export function RelatedContents({ items, basePath, title = "関連記事" }: RelatedContentsProps) {
+export function RelatedContents({ items, title = "関連記事", basePath }: RelatedContentsProps) {
   if (!items || items.length === 0) return null;
 
   return (
@@ -29,7 +29,7 @@ export function RelatedContents({ items, basePath, title = "関連記事" }: Rel
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {items.map((item) => (
             <Link
-              to={`${basePath}/${item.id}`}
+              to={`/_post/${item.id}`}
               key={item.id}
               className="group block"
             >
