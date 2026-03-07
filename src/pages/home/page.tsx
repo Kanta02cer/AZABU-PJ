@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { useScrollAnimation, useCountUp, useParallax } from '../../hooks/useScrollAnimation';
 import { newsData } from '../../mocks/news';
 import { columnsData } from '../../mocks/columns';
+
+const postModules = import.meta.glob('../../pages/_post/*.tsx');
+const availablePostIds = Object.keys(postModules).map(path => {
+  const match = path.match(/\/([^/]+)\.tsx$/);
+  return match ? match[1] : '';
+}).filter(Boolean);
+
+const activeNewsData = newsData.filter(news => availablePostIds.includes(news.id));
+const activeColumnsData = columnsData.filter(col => availablePostIds.includes(col.id));
+
 import { SEO } from '../../components/SEO';
 import { AnimatedSection, StaggerChildren } from '../../components/Animate';
 import { MobileStickyCTA } from '../../components/MobileStickyCTA';
@@ -936,7 +946,7 @@ export default function HomePage() {
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
             <div className="flex w-max animate-marquee gap-5 sm:gap-8 px-4 sm:px-6">
                 {/* First set of items */}
-                {[...newsData, ...newsData].map((news, index) => (
+                {[...activeNewsData, ...activeNewsData].map((news, index) => (
                   <Link to={`/_post/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
@@ -959,7 +969,7 @@ export default function HomePage() {
                   </Link>
                 ))}
                 {/* Second set of items for seamless loop */}
-                {[...newsData, ...newsData].map((news, index) => (
+                {[...activeNewsData, ...activeNewsData].map((news, index) => (
                   <Link to={`/_post/${news.id}`} key={`second-${news.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
@@ -1009,7 +1019,7 @@ export default function HomePage() {
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
             <div className="flex w-max animate-marquee-slow gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
               {/* First set of items */}
-              {[...columnsData, ...columnsData].map((column, index) => (
+              {[...activeColumnsData, ...activeColumnsData].map((column, index) => (
                 <Link to={`/_post/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">
@@ -1032,7 +1042,7 @@ export default function HomePage() {
                 </Link>
               ))}
               {/* Second set of items for seamless loop */}
-              {[...columnsData, ...columnsData].map((column, index) => (
+              {[...activeColumnsData, ...activeColumnsData].map((column, index) => (
                 <Link to={`/_post/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">

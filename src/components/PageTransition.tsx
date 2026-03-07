@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
+import Loading from './Loading';
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -21,7 +22,9 @@ export function PageTransition({ children }: PageTransitionProps) {
       }}
       className="w-full min-h-screen"
     >
-      {children}
+      <Suspense fallback={<Loading />}>
+        {children}
+      </Suspense>
     </motion.div>
   );
 }
