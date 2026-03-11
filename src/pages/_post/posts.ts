@@ -10,6 +10,9 @@ export interface PostMeta {
   title: string;
   excerpt: string;
   tags?: string[];
+  /** 手動で「人気／ピックアップ」記事として扱いたい場合に true にする */
+  isFeatured?: boolean;
+  isPopular?: boolean;
 }
 
 const modules = import.meta.glob('./*.tsx', { eager: true });
