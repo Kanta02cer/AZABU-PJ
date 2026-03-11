@@ -1,9 +1,7 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { createWriteStream, mkdirSync, copyFileSync, existsSync } from 'fs';
+import { createWriteStream, mkdirSync, copyFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join } from 'path';
 
-import { newsData } from '../src/mocks/news.ts';
-import { columnsData } from '../src/mocks/columns.ts';
 import { interviewsData } from '../src/mocks/interviews.ts';
 
 const HOSTNAME = 'https://azabuplus.jp';
@@ -13,6 +11,17 @@ const SITEMAP_FILE_PUBLIC = resolve(PUBLIC_DIR, 'sitemap.xml');
 // In postbuild, out directory already exists
 const OUT_DIR = resolve(process.cwd(), 'out');
 const SITEMAP_FILE_OUT = resolve(OUT_DIR, 'sitemap.xml');
+const POSTS_DIR = resolve(process.cwd(), 'src/pages/_post');
+
+function getPostSlugs() {
+  if (!existsSync(POSTS_DIR)) return [];
+  const entries = readdirSync(POSTS_DIR, { withFileTypes: true });
+  return entries
+    .filter((ent) => ent.isFile() && ent.name.endsWith('.tsx'))
+    .map((ent) => ent.name.replace(/\.tsx$/, ''))
+    // 内部用のファイルは除外
+    .filter((name) => name !== 'detail' && name !== 'posts');
+}
 
 async function generateSitemap() {
   console.log('Generating sitemap.xml and static route folders...');
@@ -46,9 +55,10 @@ async function generateSitemap() {
     routes.push(page.url);
   });
 
-  // 2. Dynamic News Pages
-  newsData.forEach(news => {
-    const url = `/_post/${news.id}`;
+  // 2. Dynamic Post Pages（_post 配下の全記事）
+  const postSlugs = getPostSlugs();
+  postSlugs.forEach((slug) => {
+    const url = `/_post/${slug}`;
     smStream.write({
       url,
       changefreq: 'monthly',
@@ -57,18 +67,7 @@ async function generateSitemap() {
     routes.push(url);
   });
 
-  // 3. Dynamic Column Pages
-  columnsData.forEach(column => {
-    const url = `/_post/${column.id}`;
-    smStream.write({
-      url,
-      changefreq: 'monthly',
-      priority: 0.6,
-    });
-    routes.push(url);
-  });
-
-  // 4. Dynamic Interview Pages
+  // 3. Dynamic Interview Pages
   interviewsData.forEach(interview => {
     const url = `/interview/${interview.id}`;
     smStream.write({
