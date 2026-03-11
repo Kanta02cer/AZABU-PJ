@@ -7,6 +7,9 @@ export const meta = {
   excerpt:
     '「未経験からエンジニア転職したいけど、何から始めればいい？」という20代向けに、最初の1ヶ月でやるべきことを順番付きで整理。ブラック企業を避けつつ、最短で内定確度を上げる現実的な進め方を解説します。',
   tags: ['エンジニア転職', '未経験', '20代', '転職活動', 'キャリア'],
+  // 人気記事として固定表示したい場合 true
+  isFeatured: true,
+  isPopular: true,
 };
 
 export default function EngineerCareerChange20sNoExperienceFirstSteps() {

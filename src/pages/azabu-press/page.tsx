@@ -16,6 +16,8 @@ type ArticleItem = {
   excerpt: string;
   tags: string[];
   source: 'column' | 'news';
+   /** 手動で人気記事として扱うフラグ */
+  isFeatured?: boolean;
 };
 
 function ArticleCard({ 
@@ -162,6 +164,7 @@ export default function ColumnListPage() {
       excerpt: p.excerpt,
       tags: p.tags ?? [],
       source: p.type,
+      isFeatured: p.isFeatured ?? p.isPopular ?? false,
     }));
 
     return mapped.sort((a, b) => {
@@ -198,8 +201,17 @@ export default function ColumnListPage() {
     return ['お気に入り', 'NEWS', 'COLUMN', ...cats.sort()];
   }, [allArticles]);
 
-  const featuredPost = filteredArticles.length > 0 ? filteredArticles[0] : null;
-  const standardPosts = filteredArticles.length > 1 ? filteredArticles.slice(1) : [];
+  // 人気記事（isFeatured）があればそれを先頭に。それ以外は最新順の先頭。
+  const featuredPost = useMemo(() => {
+    if (filteredArticles.length === 0) return null;
+    const pinned = filteredArticles.find((a) => a.isFeatured);
+    return pinned ?? filteredArticles[0];
+  }, [filteredArticles]);
+
+  const standardPosts = useMemo(() => {
+    if (!featuredPost) return filteredArticles;
+    return filteredArticles.filter((a) => a.id !== featuredPost.id);
+  }, [filteredArticles, featuredPost]);
 
   return (
     <div className="min-h-screen bg-[#FDFDFD]">

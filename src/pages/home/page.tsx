@@ -1,17 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation, useCountUp, useParallax } from '../../hooks/useScrollAnimation';
-import { newsData } from '../../mocks/news';
-import { columnsData } from '../../mocks/columns';
-
-const postModules = import.meta.glob('../../pages/_post/*.tsx');
-const availablePostIds = Object.keys(postModules).map(path => {
-  const match = path.match(/\/([^/]+)\.tsx$/);
-  return match ? match[1] : '';
-}).filter(Boolean);
-
-const activeNewsData = newsData.filter(news => availablePostIds.includes(news.id));
-const activeColumnsData = columnsData.filter(col => availablePostIds.includes(col.id));
+import { allPosts } from '../_post/posts';
 
 import { SEO } from '../../components/SEO';
 import { AnimatedSection, StaggerChildren } from '../../components/Animate';
@@ -933,7 +923,7 @@ export default function HomePage() {
       </SectionBg>
 
 
-      {/* News Section */}
+      {/* News Section（最新ニュース） */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Abstract%20newspaper%20and%20media%20concept%20background%20with%20soft%20warm%20tones%2C%20minimalist%20editorial%20design%20backdrop%20with%20faint%20text%20columns%20and%20golden%20amber%20highlights%2C%20clean%20modern%20journalism%20aesthetic%20with%20subtle%20geometric%20grid%20pattern%2C%20professional%20muted%20cream%20and%20warm%20white%20surface%20with%20gentle%20shadows%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-news-section-v1&orientation=landscape" opacity={0.04} id="ニュース">
         <div className="py-12 sm:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -945,8 +935,8 @@ export default function HomePage() {
           </div>
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
             <div className="flex w-max animate-marquee gap-5 sm:gap-8 px-4 sm:px-6">
-                {/* First set of items */}
-                {[...activeNewsData, ...activeNewsData].map((news, index) => (
+                {/* First set of items（最新順） */}
+                {[...allPosts.filter(p => p.type === 'news'), ...allPosts.filter(p => p.type === 'news')].map((news, index) => (
                   <Link to={`/_post/${news.id}`} key={`first-${news.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
@@ -969,7 +959,7 @@ export default function HomePage() {
                   </Link>
                 ))}
                 {/* Second set of items for seamless loop */}
-                {[...activeNewsData, ...activeNewsData].map((news, index) => (
+                {[...allPosts.filter(p => p.type === 'news'), ...allPosts.filter(p => p.type === 'news')].map((news, index) => (
                   <Link to={`/_post/${news.id}`} key={`second-${news.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                     <div className="relative overflow-hidden mb-4 rounded-lg">
                       <div className="w-full aspect-video">
@@ -1005,7 +995,7 @@ export default function HomePage() {
       </SectionBg>
 
 
-    {/* Column Section */}
+    {/* Column Section（AZABU+PRESS / コラム） */}
       <SectionBg variant="warm" imageUrl="https://readdy.ai/api/search-image?query=Elegant%20open%20book%20and%20knowledge%20concept%20background%20with%20warm%20golden%20ambient%20lighting%2C%20soft%20focus%20library%20or%20study%20environment%20with%20cream%20and%20amber%20tones%2C%20sophisticated%20educational%20atmosphere%20with%20gentle%20bokeh%2C%20minimalist%20learning%20aesthetic%20with%20warm%20highlights%20and%20natural%20textures%2C%20professional%20photography%20style%20with%20shallow%20depth%20of%20field%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-column-section-v1&orientation=landscape" opacity={0.05} id="コラム">
         <div className="py-12 sm:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -1018,8 +1008,8 @@ export default function HomePage() {
           
           <div className="relative w-full overflow-hidden mb-8 sm:mb-12 cursor-grab active:cursor-grabbing group">
             <div className="flex w-max animate-marquee-slow gap-4 sm:gap-6 px-4" style={{ animationDirection: "reverse" }}>
-              {/* First set of items */}
-              {[...activeColumnsData, ...activeColumnsData].map((column, index) => (
+              {/* First set of items（最新順） */}
+              {[...allPosts.filter(p => p.type === 'column'), ...allPosts.filter(p => p.type === 'column')].map((column, index) => (
                 <Link to={`/_post/${column.id}`} key={`first-${column.id}-${index}`} className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">
@@ -1042,7 +1032,7 @@ export default function HomePage() {
                 </Link>
               ))}
               {/* Second set of items for seamless loop */}
-              {[...activeColumnsData, ...activeColumnsData].map((column, index) => (
+              {[...allPosts.filter(p => p.type === 'column'), ...allPosts.filter(p => p.type === 'column')].map((column, index) => (
                 <Link to={`/_post/${column.id}`} key={`second-${column.id}-${index}`} aria-hidden="true" className="block w-[280px] sm:w-[360px] flex-shrink-0 group/card border-b border-black/10 pb-6 hover:border-[#FF6B00] transition-colors duration-400">
                   <div className="relative overflow-hidden mb-4 rounded-lg">
                     <div className="w-full aspect-video">
