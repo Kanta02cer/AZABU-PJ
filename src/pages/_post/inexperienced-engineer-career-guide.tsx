@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2025.10.05',
+  date: '2026.03.03',
   title: '未経験エンジニアの転職は優良企業選びが命！失敗しない3基準',
   excerpt:
     '「未経験エンジニアはやめとけ」と言われる厳しい現実と、ホワイトな環境で確実に成長するためのリアルな指標を徹底的に解説します。絶対に失敗したくない方は必見です。',

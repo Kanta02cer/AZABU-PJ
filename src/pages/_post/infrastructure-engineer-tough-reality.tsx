@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/sekitsui_cover.png',
   category: 'CAREER',
-  date: '2026.03.15',
+  date: '2026.03.06',
   title: 'インフラエンジニアはきつい？未経験者の誤解とリアルな転職法',
   excerpt:
     '「インフラエンジニアはきつい」という噂は本当でしょうか。未経験からIT業界を目指す人が知っておくべき、実際の業務のきつさや向いていない人の特徴、優良企業へ転職するコツを解説します。',

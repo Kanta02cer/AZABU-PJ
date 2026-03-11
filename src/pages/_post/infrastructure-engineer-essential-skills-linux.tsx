@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/インフラSE必須スキル_cover.png',
   category: 'SKILL',
-  date: '2026.04.10',
+  date: '2026.03.10',
   title: 'インフラエンジニアの必須スキル！実務で活きるLinux勉強法',
   excerpt:
     '「文系・未経験からITに挑戦するには、まず何を勉強すればいい？」インフラエンジニアの必須スキルであるLinux操作の基礎から、最も効率的な学習アプローチを徹底解説します。',

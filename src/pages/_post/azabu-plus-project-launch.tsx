@@ -2,7 +2,7 @@ export const meta = {
   type: 'news' as const,
   thumbnail: __BASE_PATH__ + 'images/news/azabu+_cover.png',
   category: 'PRESS RELEASE',
-  date: '2025.10.01',
+  date: '2026.03.02',
   title:
     '【未経験からITのプロへ】20代限定・インフラエンジニア採用オーディション開催！PC1台で「一生モノのスキル」を掴み取れ',
   excerpt:
