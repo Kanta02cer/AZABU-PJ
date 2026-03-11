@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/firstcareer_cover.png',
+  category: 'CAREER',
+  date: '2025.10.15',
+  title: '新卒インフラエンジニアは超穴場！24卒・25卒が狙うべき理由',
+  excerpt:
+    'IT業界を目指す学生の中で、新卒インフラエンジニアという選択がなぜ圧倒的な穴場と言えるのでしょうか。安定性と高年収を両立できる魅力と就活の秘訣を解説します。',
+  tags: ['新卒インフラエンジニア', '就活', 'キャリアアップ'],
+};
+
 export default function NewgradInfrastructureEngineerGuide() {
   return (
     <>

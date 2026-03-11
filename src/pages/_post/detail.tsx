@@ -1,22 +1,16 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import ArticleTemplate from '../../components/feature/ArticleTemplate';
-import { newsData } from '../../mocks/news';
-import { columnsData } from '../../mocks/columns';
 import Loading from '../../components/Loading';
+import { allPosts, getPostById } from './posts';
 
 const modules = import.meta.glob('./*.tsx');
 
 export default function PostDetailPage() {
   const { id } = useParams<{ id: string }>();
   const cleanId = id?.replace(/\/$/, '') || '';
-  
-  // Find in news data first, then column data
-  const newsItem = newsData.find(n => n.id === cleanId);
-  const columnItem = columnsData.find(c => c.id === cleanId);
-  
-  const article = newsItem || columnItem;
-  const sourceType = newsItem ? 'news' : 'column';
+
+  const article = getPostById(cleanId);
 
   if (!article) {
     return <Navigate to="/azabu-press" replace />;
@@ -25,12 +19,13 @@ export default function PostDetailPage() {
   const importFunc = modules[`./${cleanId}.tsx`];
   const ContentComponent = importFunc ? lazy(importFunc as any) : null;
 
-  // Get related articles (exclude current article, mix both sources or restrict to same source if preferred)
-  // To keep it simple, we filter from the source it belongs to
-  const sourceData = newsItem ? newsData : columnsData;
+  const sourceType = article.type;
+
+  // 同じ種別（news / column）の記事から関連記事を生成
+  const sourceData = allPosts.filter((p) => p.type === sourceType);
 
   const relatedArticles = sourceData
-    .filter(a => a.id !== id)
+    .filter((a) => a.id !== cleanId)
     .slice(0, 3)
     .map(a => ({
       id: a.id,
@@ -41,15 +36,23 @@ export default function PostDetailPage() {
     }));
 
   // Sort articles by date to find Prev and Next
-  const sortedArticles = [...sourceData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const currentIndex = sortedArticles.findIndex(a => a.id === cleanId);
+  const sortedArticles = [...sourceData].sort(
+    (a, b) =>
+      new Date(b.date.replace(/\./g, '/')).getTime() -
+      new Date(a.date.replace(/\./g, '/')).getTime()
+  );
+  const currentIndex = sortedArticles.findIndex((a) => a.id === cleanId);
   
   // Next article is older (index + 1), Prev article is newer (index - 1)
   const nextArticleData = currentIndex >= 0 && currentIndex < sortedArticles.length - 1 ? sortedArticles[currentIndex + 1] : null;
   const prevArticleData = currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
 
-  const prevArticle = prevArticleData ? { id: prevArticleData.id, title: prevArticleData.title, type: sourceType as 'news' | 'column' } : null;
-  const nextArticle = nextArticleData ? { id: nextArticleData.id, title: nextArticleData.title, type: sourceType as 'news' | 'column' } : null;
+  const prevArticle = prevArticleData
+    ? { id: prevArticleData.id, title: prevArticleData.title, type: sourceType }
+    : null;
+  const nextArticle = nextArticleData
+    ? { id: nextArticleData.id, title: nextArticleData.title, type: sourceType }
+    : null;
 
   return (
     <ArticleTemplate
@@ -58,7 +61,8 @@ export default function PostDetailPage() {
       date={article.date}
       category={article.category}
       thumbnail={article.thumbnail}
-      tags={columnItem ? columnItem.tags : undefined} // Only column data has tags currently
+      code={article.code}
+      tags={article.tags}
       relatedArticles={relatedArticles}
       prevArticle={prevArticle}
       nextArticle={nextArticle}

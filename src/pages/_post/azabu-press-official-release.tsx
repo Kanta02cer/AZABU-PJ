@@ -1,3 +1,13 @@
+export const meta = {
+  type: 'news' as const,
+  thumbnail: __BASE_PATH__ + 'images/news/firstpress_cover.png',
+  category: 'PRESS RELEASE',
+  date: '2026.02.22',
+  title: 'IT業界を徹底分析するデジタル専門誌「AZABU+PRESS」を正式リリース',
+  excerpt:
+    '元外資系コンサルタント出身であり、現在は大手SIerの採用担当を務めるプロフェッショナルがIT業界を徹底分析するデジタル専門誌「AZABU+PRESS（アザブプラスプレス）」を正式リリースいたしました。',
+};
+
 export default function AzabuPressOfficialRelease() {
   return (
     <>

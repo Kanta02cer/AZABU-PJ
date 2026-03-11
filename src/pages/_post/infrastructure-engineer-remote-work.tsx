@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/remotework_cover.png',
+  category: 'LIFESTYLE',
+  date: '2026.03.30',
+  title: 'フルリモートは可能？インフラエンジニアが最高の働き方を得る',
+  excerpt:
+    '「ITエンジニア＝在宅ワーク」のイメージは本当？インフラエンジニアのリモートワーク事情と、誰もが憧れる自由な働き方を手に入れるための具体的なステップを大公開します。',
+  tags: ['フルリモート', '働き方改革', 'インフラエンジニア'],
+};
+
 export default function InfrastructureEngineerRemoteWork() {
   return (
     <>

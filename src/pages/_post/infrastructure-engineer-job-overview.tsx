@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/infrase.png',
+  category: 'AZABU+PRESS',
+  date: '2026.03.10',
+  title: 'インフラエンジニアとは社会の土台！仕事内容と文系にも向く適性',
+  excerpt:
+    '未経験からIT業界を目指す人が知っておくべき「インフラエンジニアとは」何か。日々の具体的な仕事内容と、実は理系よりも文系の才能が活きる意外な理由を詳細に解説します。',
+  tags: ['インフラエンジニア', '適性診断', 'AZABU+PRESS'],
+};
+
 export default function InfrastructureEngineerJobOverview() {
   return (
     <>

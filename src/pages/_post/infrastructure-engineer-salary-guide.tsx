@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/20代向け転職成功ガイド_cover.png',
+  category: 'CAREER',
+  date: '2026.03.25',
+  title: 'インフラエンジニアの年収は？20代未経験から確実に上げる戦略',
+  excerpt:
+    'インフラエンジニアの年収は低い？高い？20代未経験からでも劇的な年収アップを実現するためのキャリアパスと、将来的に高年収を狙える企業選びの絶対的なポイントを徹底解説します。',
+  tags: ['年収アップ', '20代転職', 'キャリアパス'],
+};
+
 export default function InfrastructureEngineerSalaryGuide() {
   return (
     <>

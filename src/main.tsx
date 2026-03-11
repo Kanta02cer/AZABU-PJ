@@ -3,6 +3,7 @@ import './i18n'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { HelmetProvider } from 'react-helmet-async';
 
 // Hide loading screen after React app mounts
 function AppWithLoading() {
@@ -20,7 +21,11 @@ function AppWithLoading() {
     }
   }, []);
 
-  return <App />;
+  return (
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  );
 }
 
 createRoot(document.getElementById('root')!).render(

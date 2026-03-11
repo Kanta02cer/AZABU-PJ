@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
+  category: 'CAREER',
+  date: '2026.03.20',
+  title: '20代未経験からITエンジニア！好条件で年収を上げる最強戦略',
+  excerpt:
+    'スキルがないと悩む若者必見。20代未経験からITエンジニアに転職することがなぜ圧倒的に有利なのか。将来的に高年収を獲得するための具体的な転職戦略を大公開します。',
+  tags: ['20代転職', 'ITエンジニア', '未経験'],
+};
+
 export default function Strategy20sInexperiencedItCareer() {
   return (
     <>

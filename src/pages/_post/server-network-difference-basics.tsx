@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/server&network_cover.png',
+  category: 'CAREER',
+  date: '2026.03.05',
+  title: 'サーバーとネットワークの違いは？未経験インフラ志望の基礎知識',
+  excerpt:
+    'IT業界を志望する初心者が必ずぶつかる「サーバーとネットワークの違い」という疑問。専門用語を極力排除し、日常生活の例えを用いて分かりやすく徹底解説します。',
+  tags: ['職種図鑑', '基礎知識', 'インフラエンジニア'],
+};
+
 export default function ServerNetworkDifferenceBasics() {
   return (
     <>

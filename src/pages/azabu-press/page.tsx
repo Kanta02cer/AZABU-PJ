@@ -1,12 +1,11 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { columnsData } from '../../mocks/columns';
-import { newsData } from '../../mocks/news';
 import { NewsSearchFilter } from '../../components/NewsSearchFilter';
 import { SEO } from '../../components/SEO';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
 import { AnimatedSection } from '../../components/Animate';
+import { allPosts } from '../_post/posts';
 
 type ArticleItem = {
   id: string;
@@ -154,29 +153,18 @@ export default function ColumnListPage() {
 
   // Merge columns and news into a single list, sorted by date (latest first)
   const allArticles: ArticleItem[] = useMemo(() => {
-    const columns: ArticleItem[] = columnsData.map(c => ({
-      id: c.id,
-      thumbnail: c.thumbnail,
-      category: c.category,
-      date: c.date,
-      title: c.title,
-      excerpt: c.excerpt,
-      tags: c.tags,
-      source: 'column' as const,
+    const mapped: ArticleItem[] = allPosts.map((p) => ({
+      id: p.id,
+      thumbnail: p.thumbnail,
+      category: p.category,
+      date: p.date,
+      title: p.title,
+      excerpt: p.excerpt,
+      tags: p.tags ?? [],
+      source: p.type,
     }));
 
-    const news: ArticleItem[] = newsData.map(n => ({
-      id: n.id,
-      thumbnail: n.thumbnail,
-      category: n.category,
-      date: n.date,
-      title: n.title,
-      excerpt: n.excerpt,
-      tags: [],
-      source: 'news' as const,
-    }));
-
-    return [...columns, ...news].sort((a, b) => {
+    return mapped.sort((a, b) => {
       const dateA = new Date(a.date.replace(/\./g, '/'));
       const dateB = new Date(b.date.replace(/\./g, '/'));
       return dateB.getTime() - dateA.getTime();

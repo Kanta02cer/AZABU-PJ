@@ -1,3 +1,14 @@
+export const meta = {
+  type: 'news' as const,
+  thumbnail: __BASE_PATH__ + 'images/news/azabu+_cover.png',
+  category: 'PRESS RELEASE',
+  date: '2025.10.01',
+  title:
+    '【未経験からITのプロへ】20代限定・インフラエンジニア採用オーディション開催！PC1台で「一生モノのスキル」を掴み取れ',
+  excerpt:
+    '未経験から「手に職」をつけたい20代の皆さんへ。インフラエンジニアへの第一歩を、選考ではなく「オーディション」という形で踏み出しませんか？',
+};
+
 export default function AzabuPlusProjectLaunch() {
   return (
     <>

@@ -16,6 +16,7 @@ interface ArticleTemplateProps {
   date: string;
   category: string;
   thumbnail: string;
+  code?: string;
   content?: string;
   children?: React.ReactNode;
   tags?: string[];
@@ -37,6 +38,7 @@ export default function ArticleTemplate({
   date,
   category,
   thumbnail,
+  code,
   content,
   children,
   tags = [],
@@ -223,6 +225,11 @@ export default function ArticleTemplate({
                 {category}
               </span>
               <time className="text-white/70 text-sm tracking-widest uppercase">{formatDate(date)}</time>
+              {code && (
+                <span className="text-white/60 text-xs font-bold tracking-[0.25em] uppercase">
+                  {code}
+                </span>
+              )}
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white mb-8 leading-[1.2] drop-shadow-lg">
