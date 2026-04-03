@@ -2,6 +2,53 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../../components/SEO';
 
 export default function AzabuPlusTenshokuPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'AZABU+転職（アザブ転職・麻布転職・麻布プラス）とは何ですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '未経験からITインフラ領域へ挑戦したい方向けのキャリア支援プロジェクトです。年収・成長環境を重視しながら、役員クラスと直接話せる機会を提供しています。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '学歴や職歴に不安があっても応募できますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'はい。学歴・職歴だけでなく、学習意欲・継続性・入社後の成長可能性を重視しています。空白期間や未経験の方向け情報も多数用意しています。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '未経験でもエンジニア転職は可能ですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '可能です。Linux・ネットワーク・クラウドの基礎を段階的に学び、応募時に説明できる学習ログを作ることで、未経験でも現実的に転職を目指せます。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'どこから記事を読めばよいですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'まずは空白期間、学歴コンプレックス、スキルゼロ向けの優先記事を読むのがおすすめです。その後、AZABU+PRESSの優先20記事で応募準備を進めてください。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '最終的なゴールは何ですか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ゴールは無料面談の予約です。面談で現在地を整理し、未経験から成長環境へ進むための具体的な応募戦略を決めます。',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -10,6 +57,7 @@ export default function AzabuPlusTenshokuPage() {
         keywords="AZABU+転職,アザブ転職,麻布転職,麻布プラス,未経験 エンジニア 転職"
         canonical="https://azabuplus.jp/azabu-plus-tenshoku"
       />
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
 
       <section className="pt-32 pb-16 px-4 sm:px-6 bg-gradient-to-b from-[#FFF7F0] to-white">
         <div className="max-w-5xl mx-auto text-center">
@@ -73,6 +121,22 @@ export default function AzabuPlusTenshokuPage() {
                 {k}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">よくある質問</h2>
+          <div className="space-y-4">
+            <div className="p-5 rounded-xl border border-black/10">
+              <h3 className="font-bold text-[#111111] mb-2">AZABU+転職とは？</h3>
+              <p className="text-[#111111]/70">未経験からITインフラ領域に挑戦し、成長環境と年収アップを狙うための転職プロジェクトです。</p>
+            </div>
+            <div className="p-5 rounded-xl border border-black/10">
+              <h3 className="font-bold text-[#111111] mb-2">最終的にどこに進めばいいですか？</h3>
+              <p className="text-[#111111]/70">まずは無料面談予約に進み、現在地に合わせた応募戦略を整理するのが最短ルートです。</p>
+            </div>
           </div>
         </div>
       </section>

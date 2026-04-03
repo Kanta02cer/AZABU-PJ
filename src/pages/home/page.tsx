@@ -134,6 +134,13 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
         <div className={`absolute top-24 sm:top-32 left-4 sm:left-8 transition-all duration-1000 ${heroLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
           <p className="text-[#111111] text-xs sm:text-sm font-bold tracking-[0.2em] mb-2">麻布最大規模のプライム上場ITグループ</p>
           <div className="w-12 h-px bg-[#111111]/30"></div>
+          <Link
+            to="/azabu-plus-tenshoku"
+            className="inline-flex items-center gap-1 mt-3 text-[11px] sm:text-xs font-bold tracking-[0.15em] text-[#FF6B00] hover:text-[#111111] transition-colors"
+          >
+            AZABU+転職とは
+            <i className="ri-arrow-right-line" />
+          </Link>
         </div>
 
         {/* Huge centered image with slight parallax based on mouse */}
