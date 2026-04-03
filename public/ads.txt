@@ -1,0 +1,3 @@
+# ads.txt — Google AdSense（azabuplus.jp）
+# 形式: <販売者ドメイン>, <発行者ID>, <関係>, <認証局ID>
+google.com, pub-1344710796174131, DIRECT, f08c47fec0942fa0
