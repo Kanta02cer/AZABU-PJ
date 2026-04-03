@@ -20,20 +20,34 @@ export default function PostDetailPage() {
   const ContentComponent = importFunc ? lazy(importFunc as any) : null;
 
   const sourceType = article.type;
-
-  // 同じ種別（news / column）の記事から関連記事を生成
   const sourceData = allPosts.filter((p) => p.type === sourceType);
 
-  const relatedArticles = sourceData
-    .filter((a) => a.id !== cleanId)
-    .slice(0, 3)
-    .map(a => ({
-      id: a.id,
-      title: a.title,
-      thumbnail: a.thumbnail,
-      category: a.category,
-      date: a.date
-    }));
+  // 関連記事: タグ一致を優先し、不足分は同種別の最新記事で補完
+  const articleTags = article.tags ?? [];
+
+  const byTags = articleTags.length > 0
+    ? allPosts
+        .filter((p) => p.id !== cleanId && p.tags?.some((t) => articleTags.includes(t)))
+        .sort((a, b) => {
+          // タグ一致数が多い順
+          const scoreA = (a.tags ?? []).filter((t) => articleTags.includes(t)).length;
+          const scoreB = (b.tags ?? []).filter((t) => articleTags.includes(t)).length;
+          return scoreB - scoreA;
+        })
+        .slice(0, 6)
+    : [];
+
+  const fallback = sourceData
+    .filter((p) => p.id !== cleanId && !byTags.find((r) => r.id === p.id))
+    .slice(0, 6 - byTags.length);
+
+  const relatedArticles = [...byTags, ...fallback].slice(0, 6).map((a) => ({
+    id: a.id,
+    title: a.title,
+    thumbnail: a.thumbnail,
+    category: a.category,
+    date: a.date,
+  }));
 
   // Sort articles by date to find Prev and Next
   const sortedArticles = [...sourceData].sort(

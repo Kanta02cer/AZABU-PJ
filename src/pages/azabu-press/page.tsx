@@ -1,10 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { NewsSearchFilter } from '../../components/NewsSearchFilter';
 import { SEO } from '../../components/SEO';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
 import { AnimatedSection } from '../../components/Animate';
+import { AdFeed } from '../../components/AdSense';
 import { allPosts } from '../_post/posts';
 
 type ArticleItem = {
@@ -148,9 +149,13 @@ function ArticleCard({
   );
 }
 
+const INITIAL_COUNT = 12;
+const LOAD_MORE_COUNT = 12;
+
 export default function ColumnListPage() {
   const [activeCategory, setActiveCategory] = useState('すべて');
   const [searchQuery, setSearchQuery] = useState('');
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const { isFavorite, toggleFavorite } = useFavorites('press_favorites');
 
   // Merge columns and news into a single list, sorted by date (latest first)
@@ -201,6 +206,17 @@ export default function ColumnListPage() {
     return ['お気に入り', 'NEWS', 'COLUMN', ...cats.sort()];
   }, [allArticles]);
 
+  // カテゴリ/検索変更時はリセット
+  const handleCategoryChange = useCallback((cat: string) => {
+    setActiveCategory(cat);
+    setVisibleCount(INITIAL_COUNT);
+  }, []);
+
+  const handleSearchChange = useCallback((q: string) => {
+    setSearchQuery(q);
+    setVisibleCount(INITIAL_COUNT);
+  }, []);
+
   // 人気記事（isFeatured）があればそれを先頭に。それ以外は最新順の先頭。
   const featuredPost = useMemo(() => {
     if (filteredArticles.length === 0) return null;
@@ -208,10 +224,17 @@ export default function ColumnListPage() {
     return pinned ?? filteredArticles[0];
   }, [filteredArticles]);
 
-  const standardPosts = useMemo(() => {
+  const allStandardPosts = useMemo(() => {
     if (!featuredPost) return filteredArticles;
     return filteredArticles.filter((a) => a.id !== featuredPost.id);
   }, [filteredArticles, featuredPost]);
+
+  const standardPosts = useMemo(
+    () => allStandardPosts.slice(0, visibleCount),
+    [allStandardPosts, visibleCount]
+  );
+
+  const hasMore = visibleCount < allStandardPosts.length;
 
   return (
     <div className="min-h-screen bg-[#FDFDFD]">
@@ -246,9 +269,9 @@ export default function ColumnListPage() {
           <NewsSearchFilter
             categories={categories}
             activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
+            onCategoryChange={handleCategoryChange}
             searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
+            onSearchChange={handleSearchChange}
             placeholder="記事を検索..."
           />
         </div>
@@ -282,21 +305,39 @@ export default function ColumnListPage() {
                 />
               )}
 
-              {/* Grid Posts */}
+              {/* Grid Posts — 6件ごとにインフィード広告を挿入 */}
               {standardPosts.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                   {standardPosts.map((article, index) => (
-                    <ArticleCard 
-                      key={`${article.source}-${article.id}`} 
-                      article={article} 
-                      index={index + 1} 
-                      isFavorited={isFavorite(article.id)}
-                      onToggleFavorite={(e) => {
-                        e.preventDefault();
-                        toggleFavorite(article.id);
-                      }}
-                    />
+                    <>
+                      <ArticleCard
+                        key={`${article.source}-${article.id}`}
+                        article={article}
+                        index={index + 1}
+                        isFavorited={isFavorite(article.id)}
+                        onToggleFavorite={(e) => {
+                          e.preventDefault();
+                          toggleFavorite(article.id);
+                        }}
+                      />
+                      {/* 6件ごとにインフィード広告（col-span-full） */}
+                      {(index + 1) % 6 === 0 && (
+                        <AdFeed key={`ad-${index}`} slot="5555555555" />
+                      )}
+                    </>
                   ))}
+                </div>
+              )}
+              {/* Load More ボタン */}
+              {hasMore && (
+                <div className="flex justify-center mt-16 col-span-full">
+                  <button
+                    onClick={() => setVisibleCount((c) => c + LOAD_MORE_COUNT)}
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#FF6B00] text-[#FF6B00] text-sm font-bold hover:bg-[#FF6B00] hover:text-white transition-all duration-300 group"
+                  >
+                    <span>さらに読み込む（残り{allStandardPosts.length - visibleCount}件）</span>
+                    <i className="ri-arrow-down-line group-hover:translate-y-1 transition-transform"></i>
+                  </button>
                 </div>
               )}
             </>
@@ -308,6 +349,7 @@ export default function ColumnListPage() {
                 onClick={() => {
                   setSearchQuery('');
                   setActiveCategory('すべて');
+                  setVisibleCount(INITIAL_COUNT);
                 }}
                 className="text-xs font-bold tracking-[0.2em] uppercase text-[#FF6B00] hover:text-[#111111] transition-colors cursor-pointer"
               >

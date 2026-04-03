@@ -1,5 +1,5 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { createWriteStream, mkdirSync, copyFileSync, existsSync, readdirSync } from 'fs';
+import { createWriteStream, mkdirSync, copyFileSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { resolve, join } from 'path';
 
 import { interviewsData } from '../src/mocks/interviews.ts';
@@ -21,6 +21,28 @@ function getPostSlugs() {
     .map((ent) => ent.name.replace(/\.tsx$/, ''))
     // 内部用のファイルは除外
     .filter((name) => name !== 'detail' && name !== 'posts');
+}
+
+/** posts/*.tsx のソースから tags: [...] 配列を正規表現で抽出 */
+function getAllTags() {
+  if (!existsSync(POSTS_DIR)) return [];
+  const slugs = getPostSlugs();
+  const tagSet = new Set();
+  slugs.forEach((slug) => {
+    try {
+      const src = readFileSync(join(POSTS_DIR, `${slug}.tsx`), 'utf-8');
+      const match = src.match(/tags\s*:\s*\[([^\]]+)\]/);
+      if (match) {
+        const tagItems = match[1].matchAll(/'([^']+)'/g);
+        for (const item of tagItems) {
+          tagSet.add(item[1]);
+        }
+      }
+    } catch {
+      // skip
+    }
+  });
+  return Array.from(tagSet);
 }
 
 async function generateSitemap() {
@@ -67,7 +89,19 @@ async function generateSitemap() {
     routes.push(url);
   });
 
-  // 3. Dynamic Interview Pages
+  // 3. Tag Pages
+  const allTags = getAllTags();
+  allTags.forEach((tag) => {
+    const url = `/tag/${encodeURIComponent(tag)}`;
+    smStream.write({
+      url,
+      changefreq: 'weekly',
+      priority: 0.7,
+    });
+    routes.push(url);
+  });
+
+  // 4. Dynamic Interview Pages
   interviewsData.forEach(interview => {
     const url = `/interview/${interview.id}`;
     smStream.write({

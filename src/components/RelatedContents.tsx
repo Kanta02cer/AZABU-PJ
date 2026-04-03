@@ -26,7 +26,7 @@ export function RelatedContents({ items, title = "関連記事", basePath }: Rel
         <h3 className="text-xl sm:text-2xl font-bold text-[#111111] mb-8 sm:mb-10 text-center">
           {title}
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {items.map((item) => (
             <Link
               to={`/_post/${item.id}`}

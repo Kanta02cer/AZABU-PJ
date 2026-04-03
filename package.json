@@ -9,7 +9,8 @@
     "postbuild": "npx vite-node scripts/generate-sitemap.js && cp out/index.html out/404.html",
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "type-check": "tsc --noEmit --project tsconfig.app.json"
+    "type-check": "tsc --noEmit --project tsconfig.app.json",
+    "new-article": "node scripts/new-article.js"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "4.0.2",

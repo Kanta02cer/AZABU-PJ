@@ -72,6 +72,36 @@ export default defineConfig({
   build: {
     sourcemap: true,
     outDir: "out",
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (!id.includes("node_modules")) return undefined;
+          // アニメーション系（gsap / framer-motion）は重いので独立チャンクに
+          if (id.includes("gsap")) return "vendor-gsap";
+          if (id.includes("framer-motion") || id.includes("motion")) return "vendor-motion";
+          // Firebase は使う画面が限られるので独立チャンクに
+          if (id.includes("firebase") || id.includes("@firebase")) return "vendor-firebase";
+          // Supabase / Stripe も遅延ロード候補
+          if (id.includes("@supabase") || id.includes("supabase")) return "vendor-supabase";
+          if (id.includes("@stripe")) return "vendor-stripe";
+          // チャートライブラリ
+          if (id.includes("recharts") || id.includes("d3-")) return "vendor-charts";
+          // UI アイコン
+          if (id.includes("lucide-react")) return "vendor-ui";
+          // React エコシステム本体
+          if (
+            id.includes("react/") ||
+            id.includes("react-dom") ||
+            id.includes("react-router") ||
+            id.includes("react-i18next") ||
+            id.includes("react-helmet")
+          ) return "vendor-react";
+          // その他 node_modules は一律 vendor へ
+          return "vendor";
+        },
+      },
+    },
   },
   resolve: {
     alias: {
