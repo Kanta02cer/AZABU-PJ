@@ -281,6 +281,72 @@ export function AdSidebar({
   );
 }
 
+/** 長文記事: 本文中（最初の h2 直後に DOM 挿入＋ポータル用） */
+export function AdArticleMid({
+  slot = ADSENSE_SLOTS.articleMid,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="auto"
+      responsive
+      minHeight={200}
+      style={{ minHeight: 220 }}
+      className="w-full max-w-3xl"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="auto"
+      responsive
+      style={{ minHeight: 220 }}
+      className="w-full max-w-3xl"
+    />
+  );
+  return (
+    <div className="flex justify-center">
+      <AdLabeledSlot className="w-full max-w-3xl">{ad}</AdLabeledSlot>
+    </div>
+  );
+}
+
+/** 記事フッター付近: アンカー（回遊前の横長） */
+export function AdArticleAnchor({
+  slot = ADSENSE_SLOTS.articleAnchor,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="horizontal"
+      responsive
+      minHeight={100}
+      style={{ minHeight: 100 }}
+      className="w-full max-w-4xl"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="horizontal"
+      responsive
+      style={{ minHeight: 100 }}
+      className="w-full max-w-4xl"
+    />
+  );
+  return (
+    <div className="flex justify-center py-2">
+      <AdLabeledSlot className="w-full max-w-4xl">{ad}</AdLabeledSlot>
+    </div>
+  );
+}
+
 /** 一覧グリッド用インフィード */
 export function AdFeed({
   slot = ADSENSE_SLOTS.listingFeed,

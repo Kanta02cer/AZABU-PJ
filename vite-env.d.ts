@@ -9,6 +9,12 @@ interface ImportMetaEnv {
   readonly VITE_ADSENSE_ENABLE_ARTICLE_TOP?: string;
   readonly VITE_ADSENSE_LISTING_FEED_EVERY?: string;
   readonly VITE_ADSENSE_LAZY_ROOT_MARGIN?: string;
+  readonly VITE_ADSENSE_SLOT_ARTICLE_MID?: string;
+  readonly VITE_ADSENSE_SLOT_ARTICLE_ANCHOR?: string;
+  readonly VITE_ADSENSE_ENABLE_MID_ARTICLE?: string;
+  readonly VITE_ADSENSE_MID_ARTICLE_MIN_READING_MINUTES?: string;
+  readonly VITE_ADSENSE_MID_ARTICLE_MIN_H2?: string;
+  readonly VITE_ADSENSE_ENABLE_ANCHOR?: string;
 }
 
 interface ImportMeta {

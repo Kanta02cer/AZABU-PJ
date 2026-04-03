@@ -26,10 +26,12 @@
 | `articleTop` | ~~ブランドハブ直下〜本文前~~ **既定ではオフ** | 横長 | CTA直後の読み始めを阻害しないため非表示 |
 | `articleBottom` | **本文（prose）終了直後** | レスポンシブ | 読了直後＝自然な区切り。シェアの前 |
 | `articleInContent` | **関連記事ブロックの下** | レスポンシブ | 回遊前に1枠。記事内の連打感を避ける |
+| `articleMid` | **本文中・最初の h2 直後**（長文のみ） | レスポンシブ | 推定読了 ≥ 既定8分 かつ h2 が `VITE_ADSENSE_MID_ARTICLE_MIN_H2` 以上 |
+| `articleAnchor` | **「もっと見る」の直下** | 横長 | 回遊直前のフッター帯。`VITE_ADSENSE_ENABLE_ANCHOR=false` でオフ可 |
 | `sidebar` | **TOC下（デスクトップのみ）** | 300×250 | 本文と競合しにくいサイド |
 
 **推奨読者動線**  
-タグ → **ブランドハブ＋面談CTA** → 本文 → （広告・本文下）→ シェア → 前後記事 → 関連記事 → （広告）→ AZABU+PRESS 等
+タグ → **ブランドハブ＋面談CTA** → 本文（長文時は **h2 直後に1枠**）→ 本文下広告 → シェア → 前後記事 → 関連記事 → インコンテンツ → **もっと見る** → **アンカー** → Home
 
 ### 2.2 記事一覧（`/azabu-press`）
 
@@ -51,11 +53,14 @@
 | `/azabu-plus-tenshoku` 等ブランドハブ | **非掲載推奨**（ブランド検索着地の迷い防止） |
 | `/login` 等コンバージョン直前 | **非掲載** |
 
-### 2.5 将来拡張（設計のみ）
+### 2.5 実装済み拡張
 
-- **長文のみミッドロール**: 読了時間 ≥ 8分 かつ 見出しが N 個以上のとき、**最初の h2 の後**に1枠（要: コンテンツ構造のマークアップ対応）
-- **アンカー広告**: 記事末「もっと見る」の下に **1枠**（回遊強化）
-- **Auto ads**: 方針決定後にのみ検討（レイアウト制御が弱いため初期はオフ推奨）
+- **本文中（ミッド）**: `ArticleMidAdPortal` が DOM で **最初の h2 の直後** に挿入。条件は `ADSENSE_MID_ARTICLE_MIN_READING_MINUTES`（既定 8）と `ADSENSE_MID_ARTICLE_MIN_H2`（既定 1）。`VITE_ADSENSE_ENABLE_MID_ARTICLE=false` で無効化。
+- **アンカー**: `AdArticleAnchor` を **「もっと見る」セクションの下** に配置。`VITE_ADSENSE_ENABLE_ANCHOR=false` で無効化。
+
+### 2.6 将来検討
+
+- **Auto ads**: レイアウト制御が弱いため、方針決定後にのみ検討
 
 ---
 
@@ -66,7 +71,7 @@
 | **遅延表示** | `IntersectionObserver`（`rootMargin` 約 320px）でビューポート付近まで **マウントしない** |
 | **CLS対策** | ラッパーに `min-height` を付与し、枠の高さを事前確保 |
 | **スロット管理** | `src/config/adsense.ts` に集約。本番は `VITE_ADSENSE_SLOT_*` で上書き |
-| **A/B** | `VITE_ADSENSE_ENABLE_ARTICLE_TOP` で「本文前バナー」を試験的にオン可能 |
+| **A/B** | `VITE_ADSENSE_ENABLE_ARTICLE_TOP` で本文前バナー、`ENABLE_MID` / `ENABLE_ANCHOR` で中・下帯を個別にオフ可能 |
 
 ---
 

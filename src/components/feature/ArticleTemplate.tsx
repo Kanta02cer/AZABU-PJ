@@ -6,8 +6,9 @@ import { RelatedContents } from '../RelatedContents';
 import { PopularPosts } from '../PopularPosts';
 import { SEO } from '../SEO';
 import { AnimatedSection } from '../Animate';
-import { AdBannerTop, AdInContent, AdBannerBottom, AdSidebar } from '../AdSense';
-import { ADSENSE_ENABLE_ARTICLE_TOP } from '../../config/adsense';
+import { AdBannerTop, AdInContent, AdBannerBottom, AdSidebar, AdArticleAnchor } from '../AdSense';
+import { ArticleMidAdPortal } from '../ArticleMidAdPortal';
+import { ADSENSE_ENABLE_ANCHOR, ADSENSE_ENABLE_ARTICLE_TOP } from '../../config/adsense';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
@@ -342,6 +343,12 @@ export default function ArticleTemplate({
             {children || (content && <div dangerouslySetInnerHTML={{ __html: content }} />)}
           </div>
 
+          <ArticleMidAdPortal
+            contentRef={contentRef}
+            readingTime={readingTime}
+            articleId={articleId}
+          />
+
           {/* 広告②：本文直後（遅延ロード・スポンサー枠）— ADSENSE_PLACEMENT_DESIGN.md 参照 */}
           <AdBannerBottom />
 
@@ -641,6 +648,12 @@ export default function ArticleTemplate({
           </Link>
         </AnimatedSection>
       </div>
+
+      {ADSENSE_ENABLE_ANCHOR ? (
+        <div className="border-t border-black/5 bg-[#FDFDFD] px-4 pb-6 pt-2 sm:px-6">
+          <AdArticleAnchor />
+        </div>
+      ) : null}
 
       {/* Homeに戻る */}
       <div className="bg-[#FDFDFD] py-16 flex flex-col items-center justify-center border-t border-black/10">
