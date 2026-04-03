@@ -40,6 +40,7 @@ export const SEO: React.FC<SEOProps> = ({
   canonical,
   keywords,
   articleSchema,
+  breadcrumbSchema,
 }) => {
   const siteName = 'AZABU+ Project';
   const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
