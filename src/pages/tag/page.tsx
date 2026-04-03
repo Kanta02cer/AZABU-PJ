@@ -4,6 +4,7 @@ import { allPosts } from '../_post/posts';
 import { SEO } from '../../components/SEO';
 import { AnimatedSection } from '../../components/Animate';
 import { AdFeed } from '../../components/AdSense';
+import { ADSENSE_LISTING_FEED_EVERY } from '../../config/adsense';
 
 const ITEMS_PER_PAGE = 12;
 
@@ -120,10 +121,8 @@ export default function TagPage() {
                     )}
                   </Link>
                 </AnimatedSection>
-                {/* 6件ごとにインフィード広告 */}
-                {(index + 1) % 6 === 0 && index + 1 < visible.length && (
-                  <AdFeed key={`ad-${index}`} slot="5555555555" />
-                )}
+                {(index + 1) % ADSENSE_LISTING_FEED_EVERY === 0 &&
+                  index + 1 < visible.length && <AdFeed key={`ad-${index}`} />}
               </>
             ))}
           </div>

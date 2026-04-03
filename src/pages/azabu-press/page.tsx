@@ -6,6 +6,7 @@ import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
 import { AnimatedSection } from '../../components/Animate';
 import { AdFeed } from '../../components/AdSense';
+import { ADSENSE_LISTING_FEED_EVERY } from '../../config/adsense';
 import { PriorityTop20Carousel } from '../../components/PriorityTop20Carousel';
 import { allPosts } from '../_post/posts';
 
@@ -376,9 +377,8 @@ export default function ColumnListPage() {
                           toggleFavorite(article.id);
                         }}
                       />
-                      {/* 6件ごとにインフィード広告（col-span-full） */}
-                      {(index + 1) % 6 === 0 && (
-                        <AdFeed key={`ad-${index}`} slot="5555555555" />
+                      {(index + 1) % ADSENSE_LISTING_FEED_EVERY === 0 && (
+                        <AdFeed key={`ad-${index}`} />
                       )}
                     </>
                   ))}

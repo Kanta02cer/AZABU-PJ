@@ -7,6 +7,7 @@ import { PopularPosts } from '../PopularPosts';
 import { SEO } from '../SEO';
 import { AnimatedSection } from '../Animate';
 import { AdBannerTop, AdInContent, AdBannerBottom, AdSidebar } from '../AdSense';
+import { ADSENSE_ENABLE_ARTICLE_TOP } from '../../config/adsense';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
@@ -331,10 +332,8 @@ export default function ArticleTemplate({
             </div>
           </div>
 
-          {/* ━━━ 広告①：記事コンテンツ上部バナー ━━━
-              AdSense ダッシュボードで「ディスプレイ広告 > 横長」として作成した
-              スロットIDを slot prop に設定してください */}
-          <AdBannerTop slot="1111111111" />
+          {/* 広告①：本文前バナー（CROのため既定オフ。A/B時は VITE_ADSENSE_ENABLE_ARTICLE_TOP=true） */}
+          {ADSENSE_ENABLE_ARTICLE_TOP ? <AdBannerTop /> : null}
 
           <div
             ref={contentRef}
@@ -343,10 +342,8 @@ export default function ArticleTemplate({
             {children || (content && <div dangerouslySetInnerHTML={{ __html: content }} />)}
           </div>
 
-          {/* ━━━ 広告②：記事コンテンツ下部（本文直後） ━━━
-              AdSense ダッシュボードで「ディスプレイ広告 > レスポンシブ」として作成した
-              スロットIDを slot prop に設定してください */}
-          <AdBannerBottom slot="3333333333" />
+          {/* 広告②：本文直後（遅延ロード・スポンサー枠）— ADSENSE_PLACEMENT_DESIGN.md 参照 */}
+          <AdBannerBottom />
 
           {/* Editorial Styling */}
           <style>{`
@@ -561,11 +558,8 @@ export default function ArticleTemplate({
               </AnimatedSection>
             )}
 
-            {/* ━━━ 広告③：サイドバー広告（300×250） ━━━
-                AdSense ダッシュボードで「ディスプレイ広告 > 正方形」として作成した
-                スロットIDを slot prop に設定してください */}
             <AnimatedSection animation="slide-up" delay={300}>
-              <AdSidebar slot="4444444444" />
+              <AdSidebar />
             </AnimatedSection>
 
             {/* 人気記事ウィジェット */}
@@ -631,9 +625,8 @@ export default function ArticleTemplate({
         </AnimatedSection>
       </div>
 
-      {/* ━━━ 広告④：記事末尾・関連記事下のインコンテンツ広告 ━━━ */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
-        <AdInContent slot="2222222222" />
+        <AdInContent />
       </div>
 
       {/* もっと見る */}

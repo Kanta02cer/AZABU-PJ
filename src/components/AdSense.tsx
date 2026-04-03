@@ -1,13 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import {
+  ADSENSE_LAZY_ROOT_MARGIN,
+  ADSENSE_SLOTS,
+} from '../config/adsense';
 
 /**
  * AdSense ユニットコンポーネント
  *
- * 使い方:
- *   <AdSense slot="XXXXXXXXXX" format="auto" />
- *
- * slot ID は Google AdSense ダッシュボード > 広告ユニット から取得してください。
- * 現在の publisher ID: ca-pub-1344710796174131
+ * スロットIDは `src/config/adsense.ts` および環境変数 `VITE_ADSENSE_SLOT_*` で管理。
+ * 配置方針は ADSENSE_PLACEMENT_DESIGN.md を参照。
  *
  * 広告フォーマット種別:
  *   - "auto"        : レスポンシブ（推奨・デフォルト）
@@ -26,17 +27,83 @@ declare global {
 export type AdFormat = 'auto' | 'fluid' | 'rectangle' | 'vertical' | 'horizontal';
 
 interface AdSenseProps {
-  /** AdSense 広告ユニットのスロットID (10桁の数字) */
   slot: string;
   format?: AdFormat;
-  /** レスポンシブ対応するか (default: true) */
   responsive?: boolean;
   style?: React.CSSProperties;
   className?: string;
-  /** インフィード広告のレイアウト指定 */
   layout?: string;
-  /** レイアウトキー (fluid形式で使用) */
   layoutKey?: string;
+}
+
+type LazyAdSenseProps = AdSenseProps & {
+  /** プレースホルダー高さ（CLS 軽減） */
+  minHeight?: number;
+};
+
+export function AdLabeledSlot({
+  children,
+  dense,
+  className = '',
+}: {
+  children: React.ReactNode;
+  dense?: boolean;
+  className?: string;
+}) {
+  return (
+    <aside
+      className={`rounded-xl border border-black/[0.08] bg-[#FAFAFA]/90 ${dense ? 'px-2 py-2' : 'px-3 py-3'} ${className}`}
+      role="complementary"
+      aria-label="広告"
+    >
+      <p
+        className={`text-center font-bold uppercase tracking-widest text-[#111111]/40 ${
+          dense ? 'mb-1 text-[9px]' : 'mb-2 text-[10px]'
+        }`}
+      >
+        スポンサー
+      </p>
+      {children}
+    </aside>
+  );
+}
+
+/**
+ * 画面付近までスクロールしてからマウント（初期描画・LCP・CRO を優先）
+ */
+export function LazyAdSense({
+  minHeight = 120,
+  className = '',
+  ...adProps
+}: LazyAdSenseProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root || visible) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: ADSENSE_LAZY_ROOT_MARGIN, threshold: 0 }
+    );
+    io.observe(root);
+    return () => io.disconnect();
+  }, [visible]);
+
+  return (
+    <div
+      ref={ref}
+      className={`adsense-lazy-root ${className}`}
+      style={{ minHeight: visible ? undefined : minHeight }}
+    >
+      {visible ? <AdSense {...adProps} /> : null}
+    </div>
+  );
 }
 
 export function AdSense({
@@ -52,7 +119,6 @@ export function AdSense({
   const pushed = useRef(false);
 
   useEffect(() => {
-    // adsbygoogle が既にこの要素を処理済みの場合はスキップ
     if (pushed.current) return;
     const el = insRef.current;
     if (!el) return;
@@ -61,8 +127,8 @@ export function AdSense({
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
       pushed.current = true;
-    } catch (e) {
-      // AdSense のロード前など、エラーは無視
+    } catch {
+      // AdSense のロード前など
     }
   }, []);
 
@@ -83,90 +149,173 @@ export function AdSense({
   );
 }
 
-/**
- * 記事コンテンツ上部バナー（横長レスポンシブ）
- * → slot ID を AdSense ダッシュボードで "ディスプレイ広告" として作成して差し替えてください
- */
-export function AdBannerTop({ slot = '1111111111' }: { slot?: string }) {
+/** 記事: 本文前バナー（既定は設計上オフ。有効時のみ ArticleTemplate で表示） */
+export function AdBannerTop({
+  slot = ADSENSE_SLOTS.articleTop,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="horizontal"
+      responsive
+      minHeight={100}
+      style={{ minHeight: 90 }}
+      className="w-full max-w-3xl"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="horizontal"
+      responsive
+      style={{ minHeight: 90 }}
+      className="w-full max-w-3xl"
+    />
+  );
   return (
     <div className="my-8 flex justify-center">
-      <AdSense
-        slot={slot}
-        format="horizontal"
-        responsive
-        style={{ minHeight: 90 }}
-        className="w-full max-w-3xl"
-      />
+      <AdLabeledSlot className="w-full max-w-3xl">{ad}</AdLabeledSlot>
     </div>
   );
 }
 
-/**
- * 記事コンテンツ中部（レスポンシブ・インコンテンツ）
- */
-export function AdInContent({ slot = '2222222222' }: { slot?: string }) {
-  return (
-    <div className="my-12 flex justify-center">
-      <AdSense
-        slot={slot}
-        format="auto"
-        responsive
-        style={{ minHeight: 250 }}
-        className="w-full max-w-3xl"
-      />
-    </div>
+/** 記事: 本文直後 */
+export function AdBannerBottom({
+  slot = ADSENSE_SLOTS.articleBottom,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="auto"
+      responsive
+      minHeight={200}
+      style={{ minHeight: 200 }}
+      className="w-full max-w-3xl"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="auto"
+      responsive
+      style={{ minHeight: 200 }}
+      className="w-full max-w-3xl"
+    />
   );
-}
-
-/**
- * 記事コンテンツ下部（記事末・シェアボタン前）
- */
-export function AdBannerBottom({ slot = '3333333333' }: { slot?: string }) {
   return (
     <div className="my-10 flex justify-center">
-      <AdSense
-        slot={slot}
-        format="auto"
-        responsive
-        style={{ minHeight: 200 }}
-        className="w-full max-w-3xl"
-      />
+      <AdLabeledSlot className="w-full max-w-3xl">{ad}</AdLabeledSlot>
     </div>
   );
 }
 
-/**
- * サイドバー広告（縦長・TOC下）
- */
-export function AdSidebar({ slot = '4444444444' }: { slot?: string }) {
+/** 記事末尾・関連下など */
+export function AdInContent({
+  slot = ADSENSE_SLOTS.articleInContent,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="auto"
+      responsive
+      minHeight={220}
+      style={{ minHeight: 250 }}
+      className="w-full max-w-3xl"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="auto"
+      responsive
+      style={{ minHeight: 250 }}
+      className="w-full max-w-3xl"
+    />
+  );
+  return (
+    <div className="my-12 flex justify-center">
+      <AdLabeledSlot className="w-full max-w-3xl">{ad}</AdLabeledSlot>
+    </div>
+  );
+}
+
+/** サイドバー（TOC 下） */
+export function AdSidebar({
+  slot = ADSENSE_SLOTS.sidebar,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="rectangle"
+      responsive={false}
+      minHeight={260}
+      style={{ width: 300, height: 250 }}
+      className="mx-auto"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="rectangle"
+      responsive={false}
+      style={{ width: 300, height: 250 }}
+      className="mx-auto"
+    />
+  );
   return (
     <div className="mt-6">
-      <AdSense
-        slot={slot}
-        format="rectangle"
-        responsive={false}
-        style={{ width: 300, height: 250 }}
-        className="mx-auto"
-      />
+      <AdLabeledSlot>{ad}</AdLabeledSlot>
     </div>
   );
 }
 
-/**
- * 記事一覧ページ用インフィード広告（グリッド間に挿入）
- */
-export function AdFeed({ slot = '5555555555' }: { slot?: string }) {
+/** 一覧グリッド用インフィード */
+export function AdFeed({
+  slot = ADSENSE_SLOTS.listingFeed,
+  lazy = true,
+}: {
+  slot?: string;
+  lazy?: boolean;
+}) {
+  const ad = lazy ? (
+    <LazyAdSense
+      slot={slot}
+      format="fluid"
+      layout="in-article"
+      layoutKey="-6t+ed+2i-1n-4w"
+      responsive
+      minHeight={180}
+      style={{ minHeight: 200 }}
+      className="w-full"
+    />
+  ) : (
+    <AdSense
+      slot={slot}
+      format="fluid"
+      layout="in-article"
+      layoutKey="-6t+ed+2i-1n-4w"
+      responsive
+      style={{ minHeight: 200 }}
+      className="w-full"
+    />
+  );
   return (
-    <div className="col-span-1 sm:col-span-2 lg:col-span-3 my-4">
-      <AdSense
-        slot={slot}
-        format="fluid"
-        layout="in-article"
-        layoutKey="-6t+ed+2i-1n-4w"
-        responsive
-        style={{ minHeight: 200 }}
-        className="w-full"
-      />
+    <div className="col-span-1 my-4 sm:col-span-2 lg:col-span-3">
+      <AdLabeledSlot dense className="w-full">
+        {ad}
+      </AdLabeledSlot>
     </div>
   );
 }
