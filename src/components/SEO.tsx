@@ -30,6 +30,10 @@ interface SEOProps {
   breadcrumbSchema?: Record<string, unknown>;
 }
 
+/**
+ * props から直接参照するフィールド（breadcrumbSchema）は、分割代入から外す。
+ * ビルド差分・キャッシュ混在時でも「未定義の識別子」参照で落ちないようにする。
+ */
 export const SEO: React.FC<SEOProps> = ({
   title = 'AZABU+ Project',
   description = '20代のエンジニア転職なら麻布台ヒルズのAZABU+ Project。東京の東証プライム上場企業でインフラエンジニアとしてキャリアをスタート。未経験から年収350万円以上を保証。',
@@ -40,12 +44,13 @@ export const SEO: React.FC<SEOProps> = ({
   canonical,
   keywords,
   articleSchema,
-  breadcrumbSchema,
+  ...rest
 }) => {
   const siteName = 'AZABU+ Project';
   const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   const resolvedImage = ogImage || image || 'https://azabuplus.jp/og-image.jpg';
   const resolvedCanonical = canonical || url;
+  const breadcrumbLd = rest.breadcrumbSchema;
 
   return (
     <Helmet>
@@ -76,9 +81,9 @@ export const SEO: React.FC<SEOProps> = ({
         </script>
       )}
       {/* BreadcrumbList 構造化データ */}
-      {breadcrumbSchema && (
+      {breadcrumbLd && (
         <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
+          {JSON.stringify(breadcrumbLd)}
         </script>
       )}
     </Helmet>
