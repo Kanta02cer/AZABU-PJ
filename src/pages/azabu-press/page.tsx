@@ -6,6 +6,7 @@ import { useFavorites } from '../../hooks/useFavorites';
 import { Heart } from 'lucide-react';
 import { AnimatedSection } from '../../components/Animate';
 import { AdFeed } from '../../components/AdSense';
+import { PriorityTop20Carousel } from '../../components/PriorityTop20Carousel';
 import { allPosts } from '../_post/posts';
 
 type ArticleItem = {
@@ -300,35 +301,20 @@ export default function ColumnListPage() {
       {priorityTopArticles.length > 0 && (
         <section className="pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex items-center justify-between mb-5">
-              <h2 className="text-[#111111] text-lg sm:text-xl font-bold tracking-wide">
-                まず読むべき優先記事
-              </h2>
-              <span className="text-[#FF6B00] text-xs sm:text-sm font-bold tracking-widest uppercase">
+            <div className="mb-6 flex flex-col gap-2 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-[#111111] text-lg font-bold tracking-wide sm:text-xl">
+                  まず読むべき優先記事
+                </h2>
+                <p className="mt-1 text-[11px] tracking-widest text-[#111111]/45 sm:text-xs">
+                  #1〜#{priorityTopArticles.length} を立体的なカルーセルで表示（手動のみ・自動スクロールなし）
+                </p>
+              </div>
+              <span className="text-[#FF6B00] text-xs font-bold tracking-widest uppercase sm:text-sm">
                 Top {priorityTopArticles.length}
               </span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {priorityTopArticles.map((item, idx) => (
-                <Link
-                  key={item.id}
-                  to={`/_post/${item.id}`}
-                  className="group p-4 rounded-xl border border-black/10 bg-white hover:border-[#FF6B00]/50 hover:shadow-md transition-all"
-                >
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <span className="text-[10px] font-bold tracking-widest uppercase text-[#FF6B00]">
-                      #{idx + 1}
-                    </span>
-                    <span className="text-[10px] text-[#111111]/40 tracking-widest uppercase">
-                      {item.category}
-                    </span>
-                  </div>
-                  <h3 className="text-sm sm:text-base font-bold text-[#111111] leading-snug line-clamp-3 group-hover:text-[#FF6B00] transition-colors">
-                    {item.title}
-                  </h3>
-                </Link>
-              ))}
-            </div>
+            <PriorityTop20Carousel articles={priorityTopArticles} />
           </div>
         </section>
       )}
