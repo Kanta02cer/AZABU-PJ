@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../../components/SEO';
+import { pushCvClick } from '../../utils/pushCvClick';
 
 export default function AzabuPlusTenshokuPage() {
   const faqSchema = {
@@ -75,6 +76,9 @@ export default function AzabuPlusTenshokuPage() {
             href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              pushCvClick('brand_hub_hero_cta', { page_path: '/azabu-plus-tenshoku' })
+            }
             className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-full bg-[#FF6B00] text-white font-bold hover:bg-[#FF8C00] transition-colors"
           >
             無料で面談予約する

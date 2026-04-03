@@ -10,6 +10,7 @@ import { AdBannerTop, AdInContent, AdBannerBottom, AdSidebar } from '../AdSense'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from '../../hooks/useIsomorphicLayoutEffect';
+import { pushCvClick } from '../../utils/pushCvClick';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -319,6 +320,9 @@ export default function ArticleTemplate({
                 href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  pushCvClick('article_brand_hub_cta', { page_path: location.pathname })
+                }
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00] text-white text-sm font-bold hover:bg-[#FF8C00] transition-colors"
               >
                 無料で面談予約する
