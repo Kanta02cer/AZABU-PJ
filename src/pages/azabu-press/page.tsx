@@ -21,6 +21,33 @@ type ArticleItem = {
   isFeatured?: boolean;
 };
 
+/**
+ * CV導線を強化するための上部固定「優先20記事」。
+ * ここに並んだ順でAZABU+PRESS上部に表示する。
+ */
+const PRIORITY_TOP20_IDS = [
+  'career-restart-blank-period-infra-2026',
+  'resume-low-education-it-infra-realistic-2026',
+  'interview-career-gap-hikikomori-explanation-2026',
+  'career-change-no-skill-no-cert-90days-plan-2026',
+  'career-change-resume-screening-failures-fix-2026',
+  'career-offer-evaluation-checklist-it-2026',
+  'career-job-description-redflags-it-2026',
+  'career-first-90-days-onboarding-infra-2026',
+  'career-faq-before-resignation-checklist-2026',
+  'career-faq-entry-age-limit-2026',
+  'career-faq-no-degree-pass-2026',
+  'career-faq-blank-period-disclosure-2026',
+  'career-faq-night-shift-reality-2026',
+  'career-faq-why-infra-over-dev-2026',
+  'career-playbook-mock-interview-weekly-2026',
+  'career-playbook-probation-period-survival-2026',
+  'career-playbook-how-to-choose-first-cert-2026',
+  'career-route-freeter-to-infra-2026',
+  'career-route-many-job-changes-it-2026',
+  'career-route-no-savings-transition-2026',
+];
+
 function ArticleCard({ 
   article, 
   index,
@@ -206,6 +233,12 @@ export default function ColumnListPage() {
     return ['お気に入り', 'NEWS', 'COLUMN', ...cats.sort()];
   }, [allArticles]);
 
+  // 優先20記事（表示順固定）
+  const priorityTopArticles = useMemo(() => {
+    const byId = new Map(allArticles.map((a) => [a.id, a]));
+    return PRIORITY_TOP20_IDS.map((id) => byId.get(id)).filter(Boolean) as ArticleItem[];
+  }, [allArticles]);
+
   // カテゴリ/検索変更時はリセット
   const handleCategoryChange = useCallback((cat: string) => {
     setActiveCategory(cat);
@@ -262,6 +295,43 @@ export default function ColumnListPage() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Filter Options */}
+      {priorityTopArticles.length > 0 && (
+        <section className="pb-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="text-[#111111] text-lg sm:text-xl font-bold tracking-wide">
+                まず読むべき優先記事
+              </h2>
+              <span className="text-[#FF6B00] text-xs sm:text-sm font-bold tracking-widest uppercase">
+                Top {priorityTopArticles.length}
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {priorityTopArticles.map((item, idx) => (
+                <Link
+                  key={item.id}
+                  to={`/_post/${item.id}`}
+                  className="group p-4 rounded-xl border border-black/10 bg-white hover:border-[#FF6B00]/50 hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-[#FF6B00]">
+                      #{idx + 1}
+                    </span>
+                    <span className="text-[10px] text-[#111111]/40 tracking-widest uppercase">
+                      {item.category}
+                    </span>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold text-[#111111] leading-snug line-clamp-3 group-hover:text-[#FF6B00] transition-colors">
+                    {item.title}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Filter Options */}
       <section className="pb-12 border-b border-black/5">
