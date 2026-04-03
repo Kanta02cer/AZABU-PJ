@@ -55,6 +55,27 @@ export default function AzabuPlusTenshokuPage() {
           </Link>
         </div>
       </section>
+
+      <section className="pb-20 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto p-6 sm:p-8 rounded-2xl border border-black/10 bg-[#FAFAFA]">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#111111] mb-4">
+            表記ゆれキーワード（検索導線）
+          </h2>
+          <p className="text-[#111111]/70 leading-relaxed mb-4">
+            このページは以下の検索語句に対応するブランドハブです。どの表記からでも同じ内容に到達できます。
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {['AZABU+転職', 'アザブ転職', '麻布転職', '麻布プラス'].map((k) => (
+              <span
+                key={k}
+                className="px-3 py-1.5 rounded-full bg-white border border-[#FF6B00]/25 text-[#FF6B00] text-sm font-bold"
+              >
+                {k}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

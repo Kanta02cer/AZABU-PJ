@@ -26,6 +26,19 @@ const routes: RouteObject[] = [
     path: '/azabu-plus-tenshoku',
     element: <PageTransition><AzabuPlusTenshokuPage /></PageTransition>,
   },
+  // ブランド表記ゆれ向けのエイリアス導線
+  {
+    path: '/azabu-tenshoku',
+    element: <PageTransition><AzabuPlusTenshokuPage /></PageTransition>,
+  },
+  {
+    path: '/azabu-plus',
+    element: <PageTransition><AzabuPlusTenshokuPage /></PageTransition>,
+  },
+  {
+    path: '/azabu-plus-project',
+    element: <PageTransition><AzabuPlusTenshokuPage /></PageTransition>,
+  },
   {
     path: '/_post/:id',
     element: <PageTransition><PostDetailPage /></PageTransition>,
