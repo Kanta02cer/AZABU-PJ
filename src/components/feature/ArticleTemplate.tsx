@@ -301,6 +301,32 @@ export default function ArticleTemplate({
             </div>
           )}
 
+          {/* ブランドハブ導線 */}
+          <div className="mb-8 p-5 sm:p-6 rounded-xl border border-[#FF6B00]/20 bg-[#FFF8F2]">
+            <p className="text-[#111111] text-sm sm:text-base leading-relaxed mb-4">
+              AZABU+転職（アザブ転職・麻布転職・麻布プラス）の全体像を先に確認したい方は、
+              ブランドハブページをご覧ください。
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/azabu-plus-tenshoku"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#FF6B00] text-[#FF6B00] text-sm font-bold hover:bg-[#FF6B00] hover:text-white transition-colors"
+              >
+                AZABU+転職とは
+                <i className="ri-arrow-right-line" />
+              </Link>
+              <a
+                href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00] text-white text-sm font-bold hover:bg-[#FF8C00] transition-colors"
+              >
+                無料で面談予約する
+                <i className="ri-calendar-check-fill" />
+              </a>
+            </div>
+          </div>
+
           {/* ━━━ 広告①：記事コンテンツ上部バナー ━━━
               AdSense ダッシュボードで「ディスプレイ広告 > 横長」として作成した
               スロットIDを slot prop に設定してください */}

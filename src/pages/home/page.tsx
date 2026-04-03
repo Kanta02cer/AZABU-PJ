@@ -167,7 +167,7 @@ function HeroSection({ heroLoaded }: { heroLoaded: boolean }) {
             onClick={() => openInvitation("https://calendar.app.google/8cVcUkLokHP1w48Y6")}
             className="group relative inline-flex items-center gap-4 text-[#111111] font-bold tracking-[0.15em] uppercase hover:text-[#FF6B00] transition-colors pr-8 cursor-pointer"
           >
-            <span className="text-lg sm:text-xl">面談エントリー</span>
+            <span className="text-lg sm:text-xl">無料で面談予約する</span>
             <div className="w-12 h-px bg-[#111111] group-hover:bg-[#FF6B00] group-hover:w-20 transition-all duration-500"></div>
             <i className="ri-arrow-right-line text-2xl absolute right-0 opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500" />
           </button>
@@ -217,6 +217,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
         </div>
         <nav className="p-5 space-y-1">
           {[
+              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku' },
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
               { label: 'AZABU+PRESS', href: '/azabu-press' },
@@ -248,7 +249,7 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
             className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] text-white text-sm font-bold shadow-lg cursor-pointer whitespace-nowrap"
           >
             <i className="ri-calendar-check-fill text-lg" />
-            面談へエントリー
+            無料で面談予約する
           </button>
         </div>
       </div>
@@ -421,6 +422,7 @@ export default function HomePage() {
           </div>
           <nav className={`hidden md:flex items-center gap-8 transition-all duration-700 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`}>
             {[
+              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku' },
               { label: '特徴', href: '/#特徴' }, 
               { label: 'インタビュー', href: '/#インタビュー' }, 
               { label: 'AZABU+PRESS', href: '/azabu-press' },
@@ -441,7 +443,7 @@ export default function HomePage() {
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-500 whitespace-nowrap bg-[#FF6B00] text-white hover:bg-[#FFB800] cursor-pointer"
             >
               <i className="ri-calendar-check-fill text-base" />
-              面談エントリー
+              無料で面談予約する
             </button>
             {/* Mobile hamburger */}
             <button

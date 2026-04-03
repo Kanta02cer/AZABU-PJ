@@ -5,6 +5,7 @@ import { PageTransition } from '../components/PageTransition';
 const HomePage = lazy(() => import('../pages/home/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 const AzabuPressListPage = lazy(() => import('../pages/azabu-press/page'));
+const AzabuPlusTenshokuPage = lazy(() => import('../pages/azabu-plus-tenshoku/page'));
 const PostDetailPage = lazy(() => import('../pages/_post/detail'));
 const InterviewDetailPage = lazy(() => import('../pages/interview/detail'));
 const TagPage = lazy(() => import('../pages/tag/page'));
@@ -20,6 +21,10 @@ const routes: RouteObject[] = [
   {
     path: '/azabu-press',
     element: <PageTransition><AzabuPressListPage /></PageTransition>,
+  },
+  {
+    path: '/azabu-plus-tenshoku',
+    element: <PageTransition><AzabuPlusTenshokuPage /></PageTransition>,
   },
   {
     path: '/_post/:id',
