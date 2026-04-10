@@ -71,6 +71,21 @@ export default function InfrastructureEngineerRoadmapBeginner() {
       <p>
         もし、「自分の現状からどれくらいでインフラエンジニア転職が現実的か知りたい」「インフラエンジニア 未経験 ロードマップを一緒に具体化してほしい」と感じたら、専門家にキャリア相談を行い、学習プランと転職戦略をセットで整理してみることをおすすめします。
       </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

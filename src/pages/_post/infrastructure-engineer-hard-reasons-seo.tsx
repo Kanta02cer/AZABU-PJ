@@ -79,6 +79,21 @@ export default function InfrastructureEngineerHardReasonsSeo() {
       <p>
         インフラエンジニア きつい 理由を正しく理解しつつ、自分に合った環境を選べば、未経験からでも十分にキャリアを築けます。「きつい」という噂だけでインフラエンジニア転職を諦めるのではなく、まずは信頼できる情報源をもとに、自分にとってのベストな選択肢を一緒に整理していきましょう。
       </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

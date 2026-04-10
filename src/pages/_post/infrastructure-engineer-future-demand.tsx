@@ -70,6 +70,21 @@ export default function InfrastructureEngineerFutureDemand() {
       <p>
         もし「自分の経歴でインフラエンジニア 将来性 需要のあるポジションを狙えるのか不安」「どの企業なら将来性のあるインフラエンジニア転職ができるのか判断しづらい」と感じる場合は、一度キャリアの棚卸しと市場の整理を専門家と行ってみると、具体的なアクションプランが見えてくるはずです。
       </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

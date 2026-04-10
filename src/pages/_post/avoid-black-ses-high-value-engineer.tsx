@@ -1,3 +1,13 @@
+export const meta = {
+  type: 'column' as const,
+  thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
+  category: 'CAREER',
+  date: '2026.04.05',
+  title: 'ブラックなSESを回避！インフラエンジニアが高単価になる道',
+  excerpt: 'IT業界の闇とも言われる「ブラックなSES」の実態とは？未経験者が陥りやすい罠と、優良企業で確かなスキルアップ・高年収を実現するための見極め方を徹底解説します。',
+  tags: ['SES', 'ブラック企業回避', '高単価', 'インフラエンジニア', '未経験'],
+};
+
 export default function AvoidBlackSesHighValueEngineer() {
   return (
     <>

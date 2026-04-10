@@ -75,6 +75,21 @@ export default function InfrastructureEngineerJobDescriptionEasy() {
       <p>
         もし「自分の経歴でインフラエンジニア転職が現実的か知りたい」「インフラエンジニア 仕事内容 分かりやすく説明しながら面接で話せるようにしたい」と感じたら、一度キャリアの棚卸しと学習計画の整理を専門家と一緒に行うことで、最初の一歩を間違えずに進められるはずです。
       </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }
