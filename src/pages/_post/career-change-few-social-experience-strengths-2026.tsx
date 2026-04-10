@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.11',
+  date: '2026.04.03',
   title: '社会経験が乏しいと感じる人の「強みの見つけ方」｜未経験IT向けフレーム',
   excerpt:
     'アルバイトや短い就業しかなく、履歴書に書けることがないと悩む方向け。インフラ・IT未経験採用で評価されやすい強みの言語化と、経歴の翻訳例を整理しました。',

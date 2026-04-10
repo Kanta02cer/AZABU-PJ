@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.22',
+  date: '2026.01.27',
   title: '貯金が少ない人の転職設計｜学習と生活費を両立する現実解',
   excerpt: 'お金の不安で転職を止めないために、生活費・学習費・移行期間をどう設計するかを整理。無理のない進め方を紹介します。',
   tags: ['貯金', '生活費', '転職準備', '未経験', 'IT転職'],

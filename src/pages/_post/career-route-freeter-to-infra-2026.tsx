@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.25',
+  date: '2026.02.02',
   title: 'フリーターからインフラエンジニアへ｜正社員化までの現実ルート',
   excerpt: 'フリーター歴が長くても、ITインフラ職で正社員化を狙う道筋はあります。応募先の選び方、面接での伝え方、最初の90日で評価を上げる行動を解説。',
   tags: ['フリーター', '正社員', '未経験', 'IT転職', 'インフラエンジニア'],

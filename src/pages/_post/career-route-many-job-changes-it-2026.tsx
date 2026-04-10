@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.24',
+  date: '2026.01.29',
   title: '転職回数が多い人のIT再挑戦｜見られるポイントと対策',
   excerpt: '短期離職が複数ある場合でも、面接の構成次第で評価は変えられます。離職理由の扱い方と、次の職場で定着するための準備を解説。',
   tags: ['転職回数', '短期離職', '中途', 'IT転職', '未経験'],

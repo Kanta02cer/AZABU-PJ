@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.13',
+  date: '2026.01.11',
   title: '麻布プラス転職で変わる？高卒・大学中退からITインフラを狙う突破策',
   excerpt:
     '麻布プラス（AZABU+転職）を探している方向け。学歴コンプレックスがある場合でも評価される要素、履歴書の埋め合わせ方、資格と学習の見せ方を解説します。',

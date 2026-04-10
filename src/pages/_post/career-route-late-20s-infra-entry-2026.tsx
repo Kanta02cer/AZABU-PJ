@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.20',
+  date: '2026.01.31',
   title: '20代後半・未経験からインフラ職へ｜遅れを取り戻す戦略',
   excerpt: '20代後半で未経験転職を考える人向けに、選考で見られる点、優先する学習、企業選びのコツを解説します。',
   tags: ['20代後半', '未経験', 'インフラエンジニア', 'IT転職', '中途'],

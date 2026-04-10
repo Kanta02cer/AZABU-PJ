@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.10',
+  date: '2026.02.22',
   title: '未経験IT転職の模擬面接は週何回が最適？短期で通過率を上げる設計',
   excerpt: '面接準備は量より設計。週次で模擬面接を回す回数、振り返りの型、改善優先順位を解説します。',
   tags: ['模擬面接', '面接対策', '未経験', 'IT転職', '中途'],

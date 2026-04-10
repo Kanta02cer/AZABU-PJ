@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.28',
+  date: '2026.01.19',
   title: '未経験〜若手向け年収交渉の現実｜失敗しない伝え方',
   excerpt: '年収交渉は可能だが、やり方を間違えると逆効果。未経験〜若手が交渉で使える材料と伝え方を解説します。',
   tags: ['年収交渉', '未経験', '若手', 'IT転職', '内定'],

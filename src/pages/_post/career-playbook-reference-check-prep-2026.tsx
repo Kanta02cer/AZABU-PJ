@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.03',
+  date: '2026.02.14',
   title: 'リファレンス・バックグラウンド確認に備える｜転職前の整理ポイント',
   excerpt: '企業の確認プロセスに備えて、経歴・在籍情報・説明の一貫性を整えるための実務チェックリストを紹介します。',
   tags: ['リファレンスチェック', 'バックグラウンド確認', '中途', 'IT転職', '準備'],

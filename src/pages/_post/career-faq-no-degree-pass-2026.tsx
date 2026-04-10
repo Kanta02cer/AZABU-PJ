@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.19',
+  date: '2026.03.18',
   title: '学歴が弱くても内定は取れる？採用担当が見る代替指標',
   excerpt: '高卒・中退など学歴不安を抱える方へ。学歴の代わりに評価される学習・行動・定着指標をQ&Aで整理。',
   tags: ['学歴', '高卒', '中退', '未経験', 'IT転職'],

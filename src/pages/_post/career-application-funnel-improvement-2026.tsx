@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.25',
+  date: '2026.04.07',
   title: '応募数は増やすべき？未経験IT転職の歩留まり改善法',
   excerpt: 'やみくもな大量応募ではなく、応募→面接→改善のサイクルで通過率を上げる方法を解説。',
   tags: ['応募戦略', '歩留まり', '未経験', 'IT転職', '中途'],

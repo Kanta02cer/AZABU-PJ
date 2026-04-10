@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.26',
+  date: '2026.03.10',
   title: '経歴に不安がある人向け面接想定質問30｜回答の型つき',
   excerpt: '学歴・空白期間・離職回数など、聞かれやすい質問に備えるための想定問答集。回答の型を使って準備する方法を解説。',
   tags: ['面接質問', '想定問答', '未経験', 'IT転職', '中途'],

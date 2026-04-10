@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.29',
+  date: '2026.03.12',
   title: '入社後90日で差がつく行動｜未経験インフラのオンボーディング戦略',
   excerpt: '内定後が本番。未経験入社後90日で信頼を作る具体行動（報連相、手順化、学習ログ）を時系列で解説します。',
   tags: ['入社後', '90日', 'オンボーディング', 'インフラエンジニア', '未経験'],

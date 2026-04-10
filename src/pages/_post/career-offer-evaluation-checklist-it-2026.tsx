@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.01',
+  date: '2026.03.04',
   title: '内定が出た後に後悔しない判断軸｜IT転職オファー比較チェックリスト',
   excerpt: '給与だけで決めると失敗しやすいIT転職。内定承諾前に確認すべき10項目を、未経験インフラ志望向けに整理しました。',
   tags: ['内定', 'オファー比較', 'IT転職', '未経験', 'インフラエンジニア'],

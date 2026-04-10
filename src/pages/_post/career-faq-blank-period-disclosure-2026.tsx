@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.18',
+  date: '2026.03.28',
   title: '空白期間はどこまで話すべき？面接での適切な開示範囲',
   excerpt: '空白期間の説明で失敗しないために、開示範囲・話す順番・避けるべき表現をQ&A形式で解説。',
   tags: ['空白期間', '面接', '開示', '未経験', 'IT転職'],

@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.27',
+  date: '2026.04.09',
   title: '転職エージェントは何社使うべき？未経験ITの最適運用',
   excerpt: 'エージェントの併用は効果的ですが、増やしすぎると逆効果。未経験IT転職での適切な社数と使い分けを解説。',
   tags: ['転職エージェント', '未経験', 'IT転職', '応募戦略', '中途'],

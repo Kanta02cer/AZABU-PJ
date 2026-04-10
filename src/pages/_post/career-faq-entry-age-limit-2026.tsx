@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.20',
+  date: '2026.03.26',
   title: '未経験IT転職に年齢制限はある？20代後半〜30代前半の現実',
   excerpt: '年齢で諦める前に知るべき採用実態。20代後半〜30代前半で評価されるポイントをQ&A形式で解説。',
   tags: ['年齢制限', '20代後半', '30代前半', '未経験', 'IT転職'],

@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.14',
+  date: '2026.04.05',
   title: '休職・メンタル不調からのIT転職｜無理のないペース設計と職種選び',
   excerpt:
     '休職やメンタルヘルス上の事情を経験した方が、IT業界・インフラ職を選ぶ際の現実的な線、配慮が必要な点、面接での伝え方の考え方を整理しました。',

@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.17',
+  date: '2026.01.25',
   title: 'アルバイト中心の経歴からIT正社員へ｜評価される伝え方',
   excerpt: 'アルバイト歴が長くても、正社員採用につながる説明は作れます。職務の翻訳・継続性の見せ方を整理しました。',
   tags: ['アルバイト', '正社員', '未経験', 'IT転職', '履歴書'],

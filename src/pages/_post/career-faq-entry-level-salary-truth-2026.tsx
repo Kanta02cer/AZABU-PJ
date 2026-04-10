@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.13',
+  date: '2026.03.24',
   title: '未経験ITの初年度年収は低い？2年目以降の伸ばし方Q&A',
   excerpt: '初年度年収の現実と、2年目以降に伸ばすための具体策をQ&A形式で解説。期待値のズレを防ぎます。',
   tags: ['年収', '初年度', '未経験', 'IT転職', 'キャリアアップ'],

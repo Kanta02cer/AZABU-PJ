@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.23',
+  date: '2026.01.21',
   title: '地方在住から東京IT転職は可能？引越し前提の進め方',
   excerpt: '地方から東京のIT求人へ応募する際の順番を解説。現職維持しながらの選考、住居・生活費の見積もり、入社時期の調整をまとめました。',
   tags: ['地方転職', '東京転職', '中途', '未経験', 'インフラエンジニア'],

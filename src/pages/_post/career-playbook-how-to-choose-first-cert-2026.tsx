@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.06',
+  date: '2026.02.28',
   title: '最初の資格は何を取るべき？未経験IT転職の優先順位',
   excerpt: '資格選びで遠回りしないために、職種別の優先度と学習コストを比較。CCNA/LinuC/AWS入門の使い分けを解説。',
   tags: ['資格', 'CCNA', 'LinuC', 'AWS', '未経験', 'IT転職'],

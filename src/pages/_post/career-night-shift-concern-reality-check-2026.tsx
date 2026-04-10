@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.23',
+  date: '2026.03.06',
   title: '夜勤が不安な人のインフラ転職｜求人で確認すべき現実ポイント',
   excerpt: '夜勤・シフト勤務が不安な方向けに、求人票と面接で確認するべき具体項目を整理。無理のない働き方を選ぶ基準を解説。',
   tags: ['夜勤', 'シフト', 'インフラエンジニア', '未経験', '転職'],

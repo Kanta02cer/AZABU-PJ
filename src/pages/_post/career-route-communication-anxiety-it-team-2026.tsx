@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.19',
+  date: '2026.02.08',
   title: 'コミュニケーションに不安がある人のIT転職｜チームで働く最低ライン',
   excerpt: '話すのが得意でなくてもIT職は目指せます。インフラ現場で求められるコミュニケーションの最低ラインを具体化しました。',
   tags: ['コミュニケーション', '不安', 'IT転職', 'インフラエンジニア', '未経験'],

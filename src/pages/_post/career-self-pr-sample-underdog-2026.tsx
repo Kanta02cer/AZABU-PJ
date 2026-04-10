@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.22',
+  date: '2026.01.17',
   title: '経歴に自信がない人向け自己PR例文集｜未経験IT転職テンプレ',
   excerpt: '学歴・職歴に不安がある方向けに、自己PRの型と例文を紹介。書き方の順番を押さえて、面接でも使える内容に整えます。',
   tags: ['自己PR', '例文', '未経験', 'IT転職', '履歴書'],

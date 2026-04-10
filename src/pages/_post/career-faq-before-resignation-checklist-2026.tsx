@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.11',
+  date: '2026.03.30',
   title: '退職前に必ず確認すべきこと｜未経験IT転職の失敗防止チェック',
   excerpt: '内定前退職のリスクを避けるために、退職タイミングと確認事項をQ&A形式で解説します。',
   tags: ['退職', 'チェックリスト', '未経験', 'IT転職', 'リスク管理'],

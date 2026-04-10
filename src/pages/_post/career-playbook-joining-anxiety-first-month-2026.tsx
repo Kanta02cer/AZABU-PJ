@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.01',
+  date: '2026.02.26',
   title: '入社前不安を減らす準備｜未経験ITの初月を安定させるチェックリスト',
   excerpt: '入社前にやるべき準備を整理。書類・生活リズム・学習・コミュニケーションの4領域で初月の不安を軽減します。',
   tags: ['入社前', '不安', '未経験', 'IT転職', '初月'],

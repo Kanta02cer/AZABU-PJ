@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.12',
+  date: '2026.01.13',
   title: 'アザブ転職で再挑戦｜引きこもり・就活離れ期間の面接の話し方',
   excerpt:
     'アザブ転職（AZABU+転職）を検討する方向け。外出困難や就労空白がある場合に、面接で詰まらないための構成と前向きな締め方を解説します。',

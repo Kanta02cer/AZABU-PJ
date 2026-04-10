@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.21',
+  date: '2026.02.04',
   title: '家族に反対されるIT転職｜納得を得るための説明テンプレート',
   excerpt: '家族の不安（収入・安定・将来性）にどう答えるか。感情論でぶつからず、数字と計画で説明する方法をまとめました。',
   tags: ['家族', '反対', 'IT転職', '将来性', 'インフラエンジニア'],

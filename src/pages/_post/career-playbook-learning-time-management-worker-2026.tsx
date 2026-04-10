@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.05',
+  date: '2026.02.24',
   title: '働きながら学習時間を確保する方法｜未経験IT転職の時間術',
   excerpt: '現職を続けながらIT転職準備を進める人向けに、学習時間の作り方と継続のコツを紹介します。',
   tags: ['学習時間', '時間管理', '未経験', 'IT転職', '社会人学習'],

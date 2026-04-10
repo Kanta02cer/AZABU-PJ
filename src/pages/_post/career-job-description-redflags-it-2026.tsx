@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.30',
+  date: '2026.03.08',
   title: '求人票の危険サイン7選｜未経験IT転職で避けるべき文言',
   excerpt: '「未経験歓迎」に見えて実態が厳しい求人を見抜くために、求人票で確認すべき危険サインを具体例付きで解説。',
   tags: ['求人票', 'ブラック回避', '未経験', 'IT転職', 'SES'],

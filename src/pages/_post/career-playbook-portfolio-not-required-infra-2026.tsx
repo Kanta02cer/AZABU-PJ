@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.05.09',
+  date: '2026.02.18',
   title: 'ポートフォリオなしでも通る？インフラ未経験の評価ポイント',
   excerpt: '開発職と違い、インフラ未経験ではポートフォリオが必須ではないケースも多い。代わりに見られる要素を解説します。',
   tags: ['ポートフォリオ', 'インフラエンジニア', '未経験', 'IT転職', '応募'],

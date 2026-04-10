@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.02',
+  date: '2026.02.20',
   title: '内定辞退の伝え方テンプレ｜角を立てない連絡文例と注意点',
   excerpt: '内定辞退は伝え方次第で印象が大きく変わります。誠実で簡潔な連絡方法と文例をまとめました。',
   tags: ['内定辞退', 'メール文例', '転職', 'マナー', '中途'],

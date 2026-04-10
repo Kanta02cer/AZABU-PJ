@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.16',
+  date: '2026.01.23',
   title: '頼れる人脈がなくても転職は進められる｜未経験ITの情報収集術',
   excerpt: '紹介やコネがなくても、情報の集め方と応募戦略を整えれば転職は可能です。一次情報の取り方と判断軸を解説します。',
   tags: ['人脈', '情報収集', '未経験', 'IT転職', 'インフラエンジニア'],

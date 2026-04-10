@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.04.24',
+  date: '2026.01.15',
   title: 'SES配属後にキャリアを上げる方法｜現場ガチャで終わらせない戦略',
   excerpt: '最初の配属が理想でなくても、キャリアは上げられます。現場で積むべき経験と次の転職への繋げ方を解説。',
   tags: ['SES', 'キャリアアップ', '配属', 'インフラエンジニア', '転職'],

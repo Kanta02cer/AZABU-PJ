@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/20se_cover.png',
   category: 'CAREER',
-  date: '2026.05.08',
+  date: '2026.02.12',
   title: '転職失敗後の立て直し方｜2回目で決める再挑戦プラン',
   excerpt: '一度転職に失敗した後でも、原因を分解すれば再挑戦は可能。書類・面接・企業選びの再設計手順を解説。',
   tags: ['再挑戦', '転職失敗', '中途', 'IT転職', '未経験'],

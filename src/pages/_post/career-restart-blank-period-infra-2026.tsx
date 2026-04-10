@@ -2,7 +2,7 @@ export const meta = {
   type: 'column' as const,
   thumbnail: __BASE_PATH__ + 'images/column/itinfra_cover.png',
   category: 'CAREER',
-  date: '2026.04.15',
+  date: '2026.02.10',
   title: 'AZABU+転職｜空白期間・長期離職からのITインフラ転職と面接の現実ライン',
   excerpt:
     'AZABU+転職（アザブ転職・麻布転職）を検討する方向け。長期ブランクがある場合の再スタート戦略、志望動機・経歴の語り方、企業が見るポイントを整理しました。',
