@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerInterviewQuestionListUnderdog2026() {
-  return <><p>面接不安は「準備不足」が原因になりがちです。質問を先回りして準備しましょう。</p><h2>頻出テーマ</h2><ul><li>なぜITか</li><li>なぜインフラか</li><li>空白期間の説明</li><li>定着できる理由</li></ul><h2>回答の型</h2><p>結論→理由→具体例→入社後の行動。</p><h2>まとめ</h2><p>丸暗記ではなく、型で答えられるようにするのがコツです。</p></>;
+  return <><p>面接不安は「準備不足」が原因になりがちです。質問を先回りして準備しましょう。</p><h2>頻出テーマ</h2><img src={__BASE_PATH__ + 'images/column/interview-clipboard-dark.png'} alt="面接官がクリップボードを持って確認しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><ul><li>なぜITか</li><li>なぜインフラか</li><li>空白期間の説明</li><li>定着できる理由</li></ul><h2>回答の型</h2><p>結論→理由→具体例→入社後の行動。</p><h2>まとめ</h2><p>丸暗記ではなく、型で答えられるようにするのがコツです。</p></>;
 }

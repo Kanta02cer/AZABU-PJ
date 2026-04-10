@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerAgentUsageMultiChannel2026() {
-  return <><p>情報量を増やすために併用は有効ですが、管理できる範囲が前提です。</p><h2>目安</h2><p>2〜3社を軸に、得意領域が異なる会社を組み合わせる。</p><h2>使い分け</h2><ul><li>求人紹介中心</li><li>書類添削中心</li><li>面接対策中心</li></ul><h2>結論</h2><p>数より、改善サイクルを回せる体制が重要です。</p></>;
+  return <><p>情報量を増やすために併用は有効ですが、管理できる範囲が前提です。</p><h2>目安</h2><img src={__BASE_PATH__ + 'images/column/career-agent-meeting.png'} alt="転職エージェントと応募者が3人で面談しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>2〜3社を軸に、得意領域が異なる会社を組み合わせる。</p><h2>使い分け</h2><ul><li>求人紹介中心</li><li>書類添削中心</li><li>面接対策中心</li></ul><h2>結論</h2><p>数より、改善サイクルを回せる体制が重要です。</p></>;
 }

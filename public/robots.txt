@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azabuplus-project.com/sitemap.xml
+Sitemap: https://azabuplus.jp/sitemap.xml

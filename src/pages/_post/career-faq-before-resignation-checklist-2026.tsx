@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerFaqBeforeResignationChecklist2026() {
-  return <><p>勢いで退職すると、資金と心理の両面で苦しくなります。</p><h2>Q: 退職はいつが安全？</h2><p>A: 原則、内定承諾と入社条件確定後です。</p><h2>Q: 何を確認？</h2><p>A: 入社日、条件書、研修内容、初月支出見積もりです。</p></>;
+  return <><p>勢いで退職すると、資金と心理の両面で苦しくなります。</p><h2>Q: 退職はいつが安全？</h2><img src={__BASE_PATH__ + 'images/column/resignation-team-handover.png'} alt="退職時に同僚へ引き継ぎをしているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>A: 原則、内定承諾と入社条件確定後です。</p><h2>Q: 何を確認？</h2><p>A: 入社日、条件書、研修内容、初月支出見積もりです。</p></>;
 }

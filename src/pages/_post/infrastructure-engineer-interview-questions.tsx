@@ -20,6 +20,7 @@ export default function InfrastructureEngineerInterviewQuestions() {
       </p>
 
       <h2 id="heading-1">未経験向け：頻出の面接質問と回答のコツ</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-panel-two.png'} alt="面接官2名が応募者と向き合うシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         未経験者向けのインフラエンジニア 面接 質問集で必ず登場するのが、「なぜインフラエンジニアを志望したのか」「これまでどんな勉強をしてきたか」「夜勤やシフト勤務についてどう考えているか」といった質問です。
       </p>

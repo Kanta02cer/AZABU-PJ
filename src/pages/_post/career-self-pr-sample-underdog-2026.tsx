@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerSelfPrSampleUnderdog2026() {
-  return <><p>自己PRは盛るものではなく、再現性を伝えるものです。</p><h2>型</h2><p>強み→具体行動→結果→再現性。</p><h2>例</h2><p>手順遵守、改善提案、継続学習などを短く示す。</p><h2>まとめ</h2><p>1分で話せる長さに整えると面接で使いやすいです。</p></>;
+  return <><p>自己PRは盛るものではなく、再現性を伝えるものです。</p><h2>型</h2><img src={__BASE_PATH__ + 'images/column/resume-document-check.png'} alt="面接官が履歴書（RESUME）を両手で確認しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>強み→具体行動→結果→再現性。</p><h2>例</h2><p>手順遵守、改善提案、継続学習などを短く示す。</p><h2>まとめ</h2><p>1分で話せる長さに整えると面接で使いやすいです。</p></>;
 }

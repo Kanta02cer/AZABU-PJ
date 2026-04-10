@@ -20,6 +20,7 @@ export default function InfrastructureEngineerMotivationExamples() {
       </p>
 
       <h2 id="heading-1">志望動機で必ず押さえるべき3つの要素</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-female-handshake.png'} alt="女性が面接官と握手して内定を得るシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         インフラエンジニア 志望動機 書き方の基本は、「きっかけ」「学習・行動」「将来像」の3要素を入れることです。これにより、思いつきではなく、ある程度考え抜いたうえでインフラエンジニアを選んでいることが伝わります。
       </p>

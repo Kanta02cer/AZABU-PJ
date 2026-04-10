@@ -17,6 +17,7 @@ export default function CareerChangeImposterSyndromeInfraBeginner2026() {
       </p>
 
       <h2>結論：未経験は「隠す」より「定義する」</h2>
+      <img src={__BASE_PATH__ + 'images/column/stress-layoff-box.png'} alt="頭を抱えて悩む男性の傍らに段ボール箱がある退職シーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         面接で求められるのは、完璧なスキルではなく、<strong>学習の再現性と安全に仕事をする姿勢</strong>です。「未経験ですが、ここまで作業ログを残す習慣があります」と言えると、説得力が変わります。
       </p>

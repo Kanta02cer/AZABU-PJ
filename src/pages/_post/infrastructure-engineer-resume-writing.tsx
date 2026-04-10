@@ -20,6 +20,7 @@ export default function InfrastructureEngineerResumeWriting() {
       </p>
 
       <h2 id="heading-1">職務経歴書に盛り込むべき基本構成</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-clipboard-review.png'} alt="面接官がクリップボードで書類を確認するシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         インフラエンジニア 職務経歴書 書き方の基本構成は、「職務要約」「スキル要約」「プロジェクト経験」「自己PR」の4つです。これにより、採用担当は短時間であなたのスキルセットとキャリアの流れを把握しやすくなります。
       </p>
@@ -29,6 +30,7 @@ export default function InfrastructureEngineerResumeWriting() {
       </p>
 
       <h2 id="heading-2">未経験者の職務経歴書の書き方</h2>
+      <img src={__BASE_PATH__ + 'images/column/resume-check-red.png'} alt="赤いジャケットを着た面接官が履歴書を確認するシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         インフラエンジニア 職務経歴書 未経験の場合、職務経験はIT以外の内容になりますが、その中から「インフラエンジニアとして活かせる要素」を抽出して書くことがポイントです。たとえば、接客経験なら「ヒアリング力」、事務経験なら「正確性」「手順通りに進める力」などです。
       </p>

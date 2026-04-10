@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerFaqBlankPeriodDisclosure2026() {
-  return <><p>空白期間は隠すより、簡潔に説明して次の話へ繋ぐ方が安全です。</p><h2>Q: 詳細に話すべき？</h2><p>A: 職務に必要な範囲で十分です。</p><h2>Q: 何を足す？</h2><p>A: その期間の学習・改善行動・再発防止策を添えます。</p></>;
+  return <><p>空白期間は隠すより、簡潔に説明して次の話へ繋ぐ方が安全です。</p><h2>Q: 詳細に話すべき？</h2><img src={__BASE_PATH__ + 'images/column/interview-document-red.png'} alt="赤いジャケットを着た面接担当者が書類を確認しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>A: 職務に必要な範囲で十分です。</p><h2>Q: 何を足す？</h2><img src={__BASE_PATH__ + 'images/column/resume-signing-desk.png'} alt="面接官がデスクで応募書類に記入しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>A: その期間の学習・改善行動・再発防止策を添えます。</p></>;
 }

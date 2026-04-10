@@ -17,6 +17,7 @@ export default function CareerChangeAfterLeaveMentalHealthIt2026() {
       </p>
 
       <h2>前提：医療的判断は医療の専門家へ、転職は「働き方の設計」へ</h2>
+      <img src={__BASE_PATH__ + 'images/column/resignation-female-box.png'} alt="退職時に荷物を整理して職場を去る女性" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         キャリア記事でできるのは、一般的な業界情報と面接の準備の型です。体調面の可否は個別事情が大きいため、<strong>復職・就労のタイミング</strong>は医師・カウンセラー等のサポートを優先してください。
       </p>

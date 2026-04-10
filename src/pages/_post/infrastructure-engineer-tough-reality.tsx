@@ -21,6 +21,7 @@ export default function InfrastructureEngineerToughReality() {
 </p>
 
 <h2 id="heading-1">ネットでよく見る「インフラエンジニアはきつい」と言われる3つの理由</h2>
+<img src={__BASE_PATH__ + 'images/column/stress-work-burnout.png'} alt="デスクで頭を抱えてストレスを感じている男性エンジニア" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
 <p>
   そもそも、どうしてこれほどまでに「インフラエンジニアはきつい」というイメージが定着してしまったのでしょうか。その背景には、未経験者が最初によくアサインされる「運用・監視」という初期フェーズ特有の労働環境が関係しています。
 </p>

@@ -21,6 +21,7 @@ export default function InfrastructureEngineerRemoteWork() {
 </p>
 
 <h2 id="heading-1">インフラエンジニアにおける勤務事情のリアルとフルリモートは可能かという疑問</h2>
+<img src={__BASE_PATH__ + 'images/column/remote-work-headset.png'} alt="ヘッドセットをつけて在宅でPCを操作する女性エンジニア" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
 <p>
   「フルリモートは可能か」という疑問に対する答えは、あなたが担当する業務内容（フェーズ）によって大きく異なってきます。
 </p>

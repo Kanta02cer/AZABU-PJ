@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerRouteFamilyOppositionIt2026() {
-  return <><p>家族の反対は、あなたの可能性を否定しているというより「生活への不安」の表現です。</p><h2>結論</h2><p>年収見込み、学習計画、退職タイミングを数字で示すと対話が進みます。</p><h2>説明テンプレ</h2><ul><li>なぜ今転職するか</li><li>いつまでに何を学ぶか</li><li>収入がどう変わる見込みか</li></ul><h2>まとめ</h2><p>反対をゼロにするより、リスク管理の姿勢を示すことが重要です。</p></>;
+  return <><p>家族の反対は、あなたの可能性を否定しているというより「生活への不安」の表現です。</p><h2>結論</h2><img src={__BASE_PATH__ + 'images/column/interview-discussion.png'} alt="面接で交渉・議論しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>年収見込み、学習計画、退職タイミングを数字で示すと対話が進みます。</p><h2>説明テンプレ</h2><ul><li>なぜ今転職するか</li><li>いつまでに何を学ぶか</li><li>収入がどう変わる見込みか</li></ul><h2>まとめ</h2><p>反対をゼロにするより、リスク管理の姿勢を示すことが重要です。</p></>;
 }

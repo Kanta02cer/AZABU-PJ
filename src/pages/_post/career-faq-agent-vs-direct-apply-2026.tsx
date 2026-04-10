@@ -9,5 +9,5 @@ export const meta = {
 };
 
 export default function CareerFaqAgentVsDirectApply2026() {
-  return <><p>どちらが絶対有利ではありません。目的別に使い分けるのが正解です。</p><h2>Q: エージェントの利点は？</h2><p>A: 添削・面接対策・非公開情報の取得です。</p><h2>Q: 直接応募の利点は？</h2><p>A: 企業理解の深さと意思表示の速さです。</p></>;
+  return <><p>どちらが絶対有利ではありません。目的別に使い分けるのが正解です。</p><h2>Q: エージェントの利点は？</h2><img src={__BASE_PATH__ + 'images/column/career-tablet-consultation.png'} alt="担当者がタブレットを使いながら転職相談をしているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} /><p>A: 添削・面接対策・非公開情報の取得です。</p><h2>Q: 直接応募の利点は？</h2><p>A: 企業理解の深さと意思表示の速さです。</p></>;
 }

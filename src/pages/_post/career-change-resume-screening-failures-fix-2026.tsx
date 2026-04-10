@@ -17,6 +17,7 @@ export default function CareerChangeResumeScreeningFailuresFix2026() {
       </p>
 
       <h2>落ちやすい理由トップ5（未経験寄り）</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-young-resume.png'} alt="若い男性が履歴書を前に面接を受けているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <ol>
         <li>
           <strong>志望動機が業界一般論</strong>：DX、IT人材不足など、どの会社にも当てはまる文章。

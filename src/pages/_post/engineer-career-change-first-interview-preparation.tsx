@@ -23,6 +23,7 @@ export default function EngineerCareerChangeFirstInterviewPreparation() {
       </p>
 
       <h2 id="heading-1">1. 「なぜエンジニアか？」を30秒で説明できるか</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-suit-male.png'} alt="スーツ姿の男性が面接を受けているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         面接でほぼ確実に聞かれるのが「なぜエンジニアを目指したのか」です。
         ここで曖昧な回答をしてしまうと、「途中で辞めてしまうかも」と判断されてしまいます。

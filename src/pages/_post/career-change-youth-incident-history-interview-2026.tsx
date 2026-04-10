@@ -17,6 +17,7 @@ export default function CareerChangeYouthIncidentHistoryInterview2026() {
       </p>
 
       <h2>原則：職務に必要な範囲に絞る</h2>
+      <img src={__BASE_PATH__ + 'images/column/interview-young-sitting.png'} alt="若い男性が面接官と向き合い書類を確認しているシーン" style={{ width: '100%', borderRadius: '12px', margin: '1.5rem 0' }} />
       <p>
         採用面接は、性格の裁断の場ではなく、<strong>業務遂行と組織適合の確認</strong>が目的です。詳細は、聞かれた範囲で簡潔に答え、必要なら「職務に関係する範囲で」という前提を添えてください。
       </p>
