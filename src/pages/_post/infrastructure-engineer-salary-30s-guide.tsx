@@ -49,6 +49,40 @@ export default function InfrastructureEngineerSalary30sGuide() {
       <p>
         もし「自分の今の年収がインフラエンジニア 年収 相場 30代と比べてどの位置にいるのか知りたい」「どの順番でスキルアップと転職を進めればインフラエンジニア 年収 アップにつながるか整理したい」と感じたら、一度キャリアの棚卸しと市場の確認をプロと一緒に行ってみることをおすすめします。
       </p>
+
+      <h2 id="heading-4">転職で年収アップを実現するための交渉テクニック</h2>
+      <p>
+        インフラエンジニア 年収 アップを目指すうえで、転職の際の年収交渉は非常に重要です。市場相場を知らずに交渉すると、本来もらえるはずの年収より低い金額で合意してしまうリスクがあります。以下のポイントを意識することで、交渉の場で適切な年収を提示できるようになります。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>市場相場を複数のソースで確認する：</strong>求人サイトや転職エージェントで同じスキルセットのエンジニアの年収レンジを調べ、自分の希望年収の根拠を作る。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>現職の年収を正確に把握しておく：</strong>基本給・残業代・各種手当・賞与の内訳を整理し、年収総額と月給換算を明確にしておく。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>「希望年収」よりも「最低ライン」を伝える：</strong>交渉の場では「できれば〇〇万円」よりも「最低でも〇〇万円は必要です」という形で伝えるほうが、明確な交渉になりやすい。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>スキルで裏付ける：</strong>年収交渉は感情論ではなく、「私には〇〇のスキルと△△の実績があり、市場では〇〇万円の評価が一般的です」という論理で伝えることが重要。</li>
+      </ul>
+
+      <h2 id="heading-5">30代インフラエンジニアが年収を伸ばし続けるための長期戦略</h2>
+      <p>
+        インフラエンジニア 年収 相場 30代のピークは、多くの場合40代前後にやってきます。30代のうちに「どのスキルを深めるか」「マネジメントに進むかスペシャリストとして残るか」という方向性を決めておくことが、年収の天井を高く保つカギになります。
+      </p>
+      <p>
+        クラウドアーキテクトやSREとしてスペシャリスト路線を選んだ場合、40代でも年収1,000万円超のポジションに到達しているケースは珍しくありません。一方で、マネジメント路線（インフラチームのリーダーやIT部門の管理職）に進んだ場合は、技術力よりも組織運営力とビジネス感覚が評価の軸になります。インフラエンジニア 年収 アップを長期的に実現するためには、今のうちから「自分がどちらの方向性で価値を高めていくか」を意識して、スキルと経験を積み上げていきましょう。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

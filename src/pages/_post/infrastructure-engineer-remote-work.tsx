@@ -49,6 +49,22 @@ export default function InfrastructureEngineerRemoteWork() {
   それは、入社する企業が「将来的にクラウド案件（AWS/Azure）をしっかりと経験させてくれる企業かどうか」を見極めることです。ずっと客先常駐で物理的なネットワーク監視だけをやらせる企業だと、どれだけ経験を積んでもフルリモートは可能にはなりません（物理機器の目視監視がメインだと出社が必須なため）。企業自体がDX化や働き方改革に積極的で、社員のスキルアップを応援してくれるホワイト優良企業を選ぶことこそが、フルリモートは可能かどうかを分ける最大の分水嶺なのです。
 </p>
 
+<h2 id="heading-6">フルリモートに向いているインフラエンジニアの特徴</h2>
+<p>
+  フルリモートは可能な環境に移ったとしても、実際に長期的に活躍し続けられるかどうかは、働き方のスタイルにも依存します。フルリモートで成果を出しやすいインフラエンジニアの特徴を以下に整理します。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>自律的に作業を進められる：</strong>指示待ちではなく、「今日やるべきこと」を自分で整理して業務を進められる。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>報告・連絡・相談を小まめに行う：</strong>チャットやコメントでこまめにアウトプットし、「何をやっているか」を周囲に可視化できる。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>ドキュメントを丁寧に残す：</strong>コマンドの実行履歴・設定変更の理由・障害対応のログを文書として残す習慣がある。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>生活リズムを整えられる：</strong>自宅での集中力を維持するための環境（作業スペース・デュアルモニター等）を整えられている。</li>
+</ul>
+
+<h2 id="heading-7">まとめ：フルリモートは「スキル×環境×習慣」で実現する</h2>
+<p>
+  インフラエンジニアとしてフルリモートは可能な働き方を手に入れるためには、「クラウドスキルの習得」「リモート可能な企業の選択」「自律的な働き方の習慣」という3つの要素が揃うことが条件です。焦って最初からフルリモートを求めるよりも、まずは技術力を高め、信頼される実績を作ることが、結果的に最も確実にフルリモートへの道を拓く戦略です。正しい会社を選び、正しい順番でキャリアを積めば、フルリモートは可能という未来は決して遠くありません。
+</p>
+
 <div style={{"textAlign":"center","marginTop":"3rem","marginBottom":"3rem"}}>
   <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style={{"display":"inline-flex","alignItems":"center","justifyContent":"center","background":"linear-gradient(135deg, #FF6B00, #FF8C00)","color":"white","padding":"1.25rem 3rem","borderRadius":"9999px","fontWeight":"bold","textDecoration":"none","boxShadow":"0 4px 14px rgba(255,107,0,0.3)","transition":"transform 0.2s"}}>
     多様な働き方ができる優良企業を紹介してもらう

@@ -55,6 +55,44 @@ export default function InfrastructureEngineerMotivationExamples() {
       <p>
         企業の事業内容や扱う技術（オンプレ中心か、クラウド中心か）、インフラエンジニアの育成方針などを調べたうえで、「だからこそ自分はこの環境で成長したい」と結びつけて書けば、インフラエンジニア 志望動機 例文として、テンプレートを超えた説得力のある文章になります。
       </p>
+
+      <h2 id="heading-5">職種未経験者が使いやすい「転職動機の型」</h2>
+      <p>
+        インフラエンジニア 志望動機 未経験の方が意識すると差が出る「転職動機の型」を紹介します。以下の3パターンのどれかに自分のエピソードを当てはめると、説得力のある志望動機を作りやすくなります。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>「課題解決型」：</strong>前職で情報システムやIT基盤に関わる課題に直面し、それを解決するためにインフラエンジニアを目指すようになった、という流れ。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>「価値観一致型」：</strong>社会インフラやシステムの安定稼働という「縁の下の力持ち」的な役割への共感や、ものごとを論理的に解決することへの適性を自覚したという流れ。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>「キャリア設計型」：</strong>将来的にクラウドエンジニアやSREとして働きたいという明確な目標があり、そのための基礎としてインフラエンジニアからキャリアをスタートしたいという流れ。</li>
+      </ul>
+
+      <h2 id="heading-6">志望動機を完成させる3ステップ</h2>
+      <p>
+        インフラエンジニア 志望動機 書き方の最終ステップとして、文章を完成させるための実践的なプロセスをまとめます。
+      </p>
+      <ul style={{"listStyleType":"decimal","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>下書きを書く：</strong>「きっかけ・行動・将来像」の3要素を箇条書きでメモし、それをつなげて文章にする。まずは300字程度でOK。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>企業情報で肉付けする：</strong>応募先の企業のWebサイト・採用情報・口コミを調べ、「この企業を選んだ具体的な理由」を1〜2文追加する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>声に出して読んでみる：</strong>書いた志望動機を声に出して読み、自然に話せるかどうかを確認する。面接で棒読みにならないよう、自分の言葉で語れる状態にする。</li>
+      </ul>
+      <p>
+        インフラエンジニア 志望動機 例文を参考にしながらも、最終的には「自分の言葉」で語れることが最も重要です。完璧な文章を書こうとするよりも、採用担当に「この人はなぜインフラエンジニアなのか」がスッと伝わる内容を目指しましょう。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

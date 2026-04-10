@@ -58,6 +58,40 @@ export default function InfrastructureEngineerAwsCloudSkills() {
       <p>
         「どのレベルまでインフラエンジニア AWS クラウド スキルを高めれば、自分のキャリア目標に届くのか知りたい」という場合は、一度キャリアゴールと現在のスキルセットを整理したうえで、AWS学習の優先度や範囲を決めることをおすすめします。
       </p>
+
+      <h2 id="heading-5">クラウドスキルで年収はどのくらい変わるか</h2>
+      <p>
+        インフラエンジニア AWS クラウド スキルの有無は、転職市場での評価に直接影響します。AWSの主要サービスを一通り扱えるレベルであれば、未経験スタートでも2〜3年後には年収500万円前後を狙える求人が現実的な選択肢になってきます。さらに、AWSの認定資格（ソリューションアーキテクト アソシエイト以上）を保有したうえで設計・構築の実務経験を持つエンジニアは、年収700〜900万円クラスのポジションや、月単価80万円以上のフリーランス案件に参入できるケースも多くなっています。
+      </p>
+      <p>
+        インフラエンジニア クラウド 勉強法として意識してほしいのは、「クラウドはオンプレの代替ではなく、設計思想そのものが異なる」という点です。マネージドサービスを活用してどのようにコストを最適化するか、スケーラビリティと可用性を両立させるアーキテクチャをどう設計するか、といったクラウドネイティブな考え方を養うことが、長期的な市場価値の向上につながります。
+      </p>
+
+      <h2 id="heading-6">AWSの次に学ぶべきスキルの方向性</h2>
+      <p>
+        インフラエンジニア AWS クラウド スキルを一定レベルまで高めた後、次に学ぶべき方向性として代表的なものを整理します。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>IaC（インフラのコード化）：</strong>TerraformやAWS CloudFormationを使ってインフラを自動的に構築・管理する技術。クラウド案件では特に需要が高い。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>コンテナ技術：</strong>DockerやKubernetesによるコンテナ管理。マイクロサービス基盤のインフラを扱うエンジニアに必須のスキルとなっている。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>SRE（サイト信頼性エンジニアリング）：</strong>サービスの可用性・信頼性を高める観点でインフラを設計・改善するアプローチ。開発とインフラの橋渡し役として注目されている。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>セキュリティ設計：</strong>クラウド環境でのIAM設計・ネットワークセキュリティ・コンプライアンス対応。規模の大きな案件ではほぼ必須の知識になっている。</li>
+      </ul>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

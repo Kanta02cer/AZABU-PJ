@@ -64,9 +64,27 @@ export default function InfrastructureEngineerEnglishRequired() {
   DeepLやChatGPTなどのAI翻訳ツールが高精度になった現在、英語の公式ドキュメントは瞬時に日本語に翻訳できます。英語力がなくても技術的な内容は十分理解できる環境になっています。
 </p>
 
+<h2>インフラエンジニアが実務で使う英語フレーズの例</h2>
+<p>
+  英語が必要になる場面として最も多いのが、エラーログやドキュメントの読解です。以下のような英語表現は、インフラエンジニアの実務でよく出てくるため、日頃から慣れておくと役立ちます。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>「Connection timed out」：</strong>接続がタイムアウトした。ネットワーク設定やファイアウォールの確認が必要。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>「Permission denied」：</strong>権限がなく操作が拒否された。ファイルのパーミッションやユーザー権限を見直す。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>「No such file or directory」：</strong>指定したファイルやパスが存在しない。パスの確認が必要。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>「Service unavailable」：</strong>サービスが利用できない状態。プロセスの起動状態やリソース不足を確認する。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>「Deprecated」：</strong>将来的に廃止予定の機能。代替の手段への移行を検討する必要があるというサイン。</li>
+</ul>
+<p>
+  これらのフレーズはGoogleで英語のまま検索するだけでも解決策にたどり着けることが多く、英語が苦手な方でも「読む力」だけを少しずつ鍛えることで十分に対応できます。
+</p>
+
 <h2>まとめ：英語は「あれば武器」、なくても戦える</h2>
 <p>
   インフラエンジニアとして日本でキャリアをスタートするうえで、英語は必須ではありません。しかし、キャリアが一定のレベルに達したとき、英語力は年収と選択肢を大きく広げる「上位互換スキル」になります。まずは技術力を磨きながら、英語は焦らず段階的に身につけていく戦略が最も現実的です。
+</p>
+<p>
+  英語力を高めるための第一歩として、インフラエンジニアにおすすめの方法は「AWSやLinuxの公式ドキュメントを英語で読む習慣をつけること」です。最初は翻訳ツールを使いながらでも構いません。毎日少しずつ英語の技術文書に触れることで、専門用語の読解力は自然と上がっていきます。技術の習得と英語力の向上を並行させることが、インフラエンジニアとしての長期的な市場価値を最大化する最善策です。
 </p>
 
 <div style={{"textAlign":"center","marginTop":"3rem","marginBottom":"3rem"}}>

@@ -56,6 +56,25 @@ export default function InfrastructureEngineerEssentialSkillsLinux() {
   中でも「LinuC（リナック）レベル1」は、Linuxの基本的な操作やシステム管理のインフラエンジニアの必須スキルを世界的に証明する資格です。未経験からサーバー運用などへの転職を目指すなら、まず最初に取得を目指すべき最大の登竜門と言えるでしょう。また、ネットワーク系であれば「CCNA」の勉強をすることが、インフラエンジニアの必須スキルを体系的に学ぶベストな選択肢となります。
 </p>
 
+<h2 id="heading-7">未経験者がLinuxを学ぶためのおすすめ学習ステップ</h2>
+<p>
+  インフラエンジニアの必須スキルであるLinuxを効率よく習得するために、以下のような段階的な学習ステップを参考にしてください。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>STEP1 環境を用意する：</strong>WindowsならWSL2、MacならターミナルでそのままLinuxコマンドを試せます。VirtualBoxにUbuntuを入れる方法も入門として定番です。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>STEP2 基本コマンドを覚える：</strong>ls・cd・cp・mkdir・rm・vi（vim）の6コマンドを手で繰り返し打つことが、最初の壁を越えるための最速ルートです。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>STEP3 パーミッションとプロセスを理解する：</strong>ファイルの所有者と権限（chmod・chown）、動いているプロセスの確認方法（ps・top）を理解すると、現場作業で困ることが一気に減ります。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>STEP4 LinuCレベル1に向けて体系的に学ぶ：</strong>参考書や動画講座（Udemyなど）を使いながら、試験範囲を網羅的に学習。2〜3ヶ月の集中学習で取得を目指しましょう。</li>
+</ul>
+<p>
+  インフラエンジニアの必須スキルを体系的に学ぶ際、「ただ本を読む」より「手を動かして失敗する」ことのほうが圧倒的に記憶に残ります。コマンドを打ち間違えてエラーが出た経験こそが、現場でのトラブルシューティング力の源になるのです。
+</p>
+
+<h2 id="heading-8">インフラエンジニアとして次に身につけるべきスキル</h2>
+<p>
+  Linuxの基礎が固まったら、インフラエンジニアの必須スキルとして次に学ぶべき領域に目を向けましょう。具体的には「ネットワークの基礎（TCP/IP・DNS・NAT・VLANなど）」「クラウドの入門（AWSの主要サービス）」「シェルスクリプトによる自動化」の3つが、現場でのスキルアップに直結する次のステップとして挙げられます。これらを組み合わせることで、単なる「コマンド操作者」から「インフラを設計・構築できるエンジニア」へと成長するための土台が整っていきます。
+</p>
+
 <div style={{"textAlign":"center","marginTop":"3rem","marginBottom":"3rem"}}>
   <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style={{"display":"inline-flex","alignItems":"center","justifyContent":"center","background":"linear-gradient(135deg, #FF6B00, #FF8C00)","color":"white","padding":"1.25rem 3rem","borderRadius":"9999px","fontWeight":"bold","textDecoration":"none","boxShadow":"0 4px 14px rgba(255,107,0,0.3)","transition":"transform 0.2s"}}>
     エンジニア適性診断もできる！無料面談に予約する

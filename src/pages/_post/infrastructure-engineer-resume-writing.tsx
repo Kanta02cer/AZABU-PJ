@@ -56,6 +56,48 @@ export default function InfrastructureEngineerResumeWriting() {
       <p>
         改善のコツは、「Before／After」「課題／対応」「数字での変化」といった軸を意識して書き直すことです。例えば、「アラートメールが多く対応漏れが発生していた状況で、しきい値の見直しと通知ルールを整理し、対応漏れをゼロにした」というような書き方は高く評価されます。
       </p>
+
+      <h2 id="heading-5">職務経歴書に書くべきスキル一覧の整理方法</h2>
+      <p>
+        インフラエンジニア 職務経歴書 サンプルでは必ず「スキル要約」の欄が設けられています。この欄に記載するスキルは、以下のカテゴリごとに整理して書くと、採用担当が短時間で理解しやすくなります。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>OS：</strong>CentOS 7/8、RHEL 7/8、Ubuntu 20.04、Windows Server 2019など、バージョンを含めて記載する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>ネットワーク：</strong>Cisco製品（Catalyst・ASA）、ルーティングプロトコル（OSPF・BGP）、VLAN構成など扱った機器・技術を具体的に書く。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>クラウド：</strong>AWS（EC2・VPC・S3・RDS・ELB等）、Azure（VM・VNet等）の経験サービスを羅列する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>監視ツール：</strong>Zabbix・Nagios・Datadogなど、実際に操作したツールを記載する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>自動化・構成管理：</strong>Terraform・Ansible・シェルスクリプトなど、習得済みのIaCツールを記載する。</li>
+      </ul>
+
+      <h2 id="heading-6">職務経歴書提出前の最終チェックリスト</h2>
+      <p>
+        インフラエンジニア 職務経歴書 書き方の最終確認として、提出前に以下の項目をチェックしてください。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}>プロジェクトごとに「担当した具体的な業務」と「成果・工夫」が記載されているか</li>
+        <li style={{"marginBottom":"0.75rem"}}>スキル要約に記載した技術は、プロジェクト経験の欄でも裏付けされているか</li>
+        <li style={{"marginBottom":"0.75rem"}}>誤字・脱字・敬語の統一がされているか</li>
+        <li style={{"marginBottom":"0.75rem"}}>A4で2〜3枚以内に収まっているか（未経験者は1〜2枚でも可）</li>
+        <li style={{"marginBottom":"0.75rem"}}>他社の名称や機密情報が誤って含まれていないか</li>
+      </ul>
+      <p>
+        インフラエンジニア 職務経歴書 未経験の方も経験者の方も、書いた後に一日置いてから見直すと、冷静な目で改善点を見つけやすくなります。自信を持って提出できる書類を仕上げることが、転職活動の第一歩です。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

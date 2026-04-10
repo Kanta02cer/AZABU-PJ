@@ -54,6 +54,40 @@ export default function InfrastructureEngineerRemoteWorkProjects() {
       <p>
         自分がどの程度のリモート比率を求めているのかを明確にしたうえで、インフラエンジニア 在宅勤務 可能な企業の中から、自分のスキルとキャリア目標に合う選択肢を一緒に絞り込んでいくと、納得度の高い転職がしやすくなります。
       </p>
+
+      <h2 id="heading-5">リモートワークを実現しやすいインフラエンジニアのキャリアパス</h2>
+      <p>
+        インフラエンジニア フルリモート を実現するためには、経験の積み方も重要です。最初の1〜2年は現場出社が多くても、クラウド・自動化・設計寄りのスキルを積み上げることで、3〜5年後にはフルリモートやハイブリッド型の働き方が現実的な選択肢になっていきます。以下のスキルアップパスを意識することで、インフラエンジニア リモートワーク 案件への道が開けます。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>1〜2年目：</strong>Linux・ネットワーク基礎・監視ツール（Zabbix・Datadog等）の操作を習得。現場での運用経験を積む。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>2〜3年目：</strong>AWSの主要サービスを習得し、クラウド環境での構築を担当。クラウドプラクティショナー・SAAを取得。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>3〜5年目：</strong>TerraformやAnsibleを使ったIaC・自動化を習得。設計フェーズにも関わり始め、リモートで完結できる業務比率が増える。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>5年目以降：</strong>フルリモートのフリーランス案件や、在宅勤務前提のTech企業インフラチームへの転職が現実的な選択肢になる。</li>
+      </ul>
+
+      <h2 id="heading-6">リモートインフラエンジニアに必要な「自律的な働き方」のコツ</h2>
+      <p>
+        インフラエンジニア 在宅勤務 を長期的に続けるためには、技術スキルだけでなく「自律的に働く力」が欠かせません。リモート環境では、進捗が見えにくくなるため、自分からアウトプットを発信していく姿勢が重要です。
+      </p>
+      <p>
+        具体的には、「作業ログをSlackや社内ツールに小まめに投稿する」「週次で自分の進捗レポートをまとめる」「わからないことはチャットで早めに確認する」といった習慣が、リモートワーク環境でのチームの信頼構築につながります。インフラエンジニア フルリモート で長く活躍しているエンジニアほど、コミュニケーションの丁寧さと報告の頻度が高い傾向があります。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

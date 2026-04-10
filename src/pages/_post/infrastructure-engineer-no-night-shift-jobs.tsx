@@ -54,6 +54,40 @@ export default function InfrastructureEngineerNoNightShiftJobs() {
       <p>
         特に、クラウドや自社サービス系のインフラに関わることで、インフラエンジニア 夜勤なし 求人に近い環境と、成長機会の両方を手に入れられる可能性があります。「今の会社の中で部署異動を狙うか」「思い切って転職するか」を含めて、自分にとってベストな選択肢を整理していきましょう。
       </p>
+
+      <h2 id="heading-5">夜勤ありの現場で積んだ経験を「強み」に変える方法</h2>
+      <p>
+        インフラエンジニア 夜勤 つらい という経験は、実は転職活動において強力なアピールポイントになります。夜勤を伴う監視・運用業務を経験しているということは、「24時間365日稼働するシステムの責任を担った」ということであり、インフラの本質的な難しさと重要性を肌で知っているエンジニアである証明です。
+      </p>
+      <p>
+        面接では「夜勤を通じてどのような障害対応スキルを身につけたか」「手順書の整備や改善にどう貢献したか」といった形で経験を語ることで、日勤型の企業へのキャリアチェンジであっても、高いポテンシャルと即戦力性をアピールできます。つらかった経験をそのままにせず、「成長の証拠」として言語化しておきましょう。
+      </p>
+
+      <h2 id="heading-6">夜勤なしのインフラエンジニア求人を見つけるための実践的な方法</h2>
+      <p>
+        インフラエンジニア 夜勤なし 求人を効率的に探すために、以下の方法を組み合わせて活用することをおすすめします。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>求人票のキーワード検索：</strong>「日勤のみ」「シフトなし」「オンコールなし」「土日祝休み」などのキーワードで絞り込み検索を活用する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>エージェントに条件を明確に伝える：</strong>「夜勤・シフトのない求人のみ紹介してほしい」と最初の面談で明確に伝え、条件に合わない求人の紹介を防ぐ。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>企業規模・業種を絞る：</strong>SaaS・Web系・大手メーカーの情報システム部門・官公庁系など、もともとシフト制が少ない業種を優先する。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>口コミサイトで実態を確認：</strong>OpenWorkなどの口コミサイトで「夜勤の実態」「オンコールの頻度」について現役・元社員のコメントを確認する。</li>
+      </ul>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

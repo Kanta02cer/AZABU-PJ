@@ -45,6 +45,38 @@ export default function AvoidBlackSesHighValueEngineer() {
   面接の場で「具体的なキャリアパス」を明確に示してくれるかどうかが最大のカギです。「まずは〇〇の資格を取って運用保守から開始し、2年後には構築案件へアサインする」といったプランがあるか確認しましょう。また、未経験者をいきなり現場に丸投げせず、自社で1〜3ヶ月の充実したIT研修を行ってから配属させる体力のある企業を選ぶことが、ブラックなSESに捕まらないための鉄則です。
 </p>
 
+<h2 id="heading-7">高単価エンジニアになるために必要なスキルセット</h2>
+<p>
+  ブラックなSESを回避したうえで、さらに「高単価・高年収」のエンジニアを目指すためには、どのようなスキルを積み上げていくべきでしょうか。優良なSES企業や一次請けSIerで経験を積みながら、以下のスキルセットを意識して身につけていくことが重要です。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>Linux・ネットワークの基礎固め：</strong>運用保守の現場からスタートしつつも、LinuCやCCNAなどの資格取得で体系的な知識を証明する。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>クラウドスキル（AWS/Azure）の習得：</strong>物理インフラだけでなくクラウド設計・構築まで扱えるエンジニアは、フリーランス市場でも常に高単価で求められる。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>構築・設計フェーズへのステップアップ：</strong>監視・運用から「構築」「設計（上流工程）」へと担当フェーズを上げることが、年収を大幅に引き上げる最短ルートになる。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>IaC・自動化スキル：</strong>TerraformやAnsibleを使ったインフラ自動化ができるエンジニアは、月単価80〜120万円クラスの案件も現実的な目標になる。</li>
+</ul>
+
+<h2 id="heading-8">優良SES・SIerを見つけるための実践的チェックリスト</h2>
+<p>
+  求人を見るときと面接を受けるときに、以下の点を必ず確認することで、ブラックなSESを早期に見抜き、本当に成長できる企業だけを絞り込むことができます。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}>自社研修が1〜3ヶ月以上あり、ITの基礎を体系的に教えてもらえるか</li>
+  <li style={{"marginBottom":"0.75rem"}}>入社後のキャリアパス（どの資格・フェーズを経てどのような案件に進むか）が具体的に示されているか</li>
+  <li style={{"marginBottom":"0.75rem"}}>エンジニアの単価や自社の取り分を開示・説明してくれるか</li>
+  <li style={{"marginBottom":"0.75rem"}}>ITと無関係な業務に配属された事例がないか（口コミや社員インタビューで確認する）</li>
+  <li style={{"marginBottom":"0.75rem"}}>従業員の平均勤続年数が3年以上あり、離職率が極端に高くないか</li>
+  <li style={{"marginBottom":"0.75rem"}}>クラウド案件や上流工程の実績があり、若手の抜擢事例を聞くことができるか</li>
+</ul>
+
+<h2 id="heading-9">ブラックSESを回避した後の長期キャリア戦略</h2>
+<p>
+  優良な企業でスタートを切ったあとは、焦らず着実にスキルと経験を積み上げることが大切です。インフラエンジニアは「運用保守→構築→設計→クラウドアーキテクト」という段階的なキャリアパスが確立されており、各フェーズを丁寧に経験することで、20代後半〜30代前半のうちに年収600〜800万円以上を目指すことは決して夢ではありません。
+</p>
+<p>
+  また、経験が一定レベルに達したらフリーランスという選択肢も出てきます。クラウド設計・構築ができるインフラエンジニアのフリーランス単価は月70〜120万円が相場であり、週2〜3日の副業案件でも月20〜40万円の収入を得ることが可能です。最初の会社選びでブラックなSESを回避し、正しい環境で経験を積み上げることこそが、高単価・高年収への唯一の近道です。
+</p>
+
 <div style={{"textAlign":"center","marginTop":"3rem","marginBottom":"3rem"}}>
   <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style={{"display":"inline-flex","alignItems":"center","justifyContent":"center","background":"linear-gradient(135deg, #FF6B00, #FF8C00)","color":"white","padding":"1.25rem 3rem","borderRadius":"9999px","fontWeight":"bold","textDecoration":"none","boxShadow":"0 4px 14px rgba(255,107,0,0.3)","transition":"transform 0.2s"}}>
     ブラック企業を避けて優良な求人だけを紹介してもらう

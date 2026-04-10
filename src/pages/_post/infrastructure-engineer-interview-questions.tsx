@@ -59,6 +59,44 @@ export default function InfrastructureEngineerInterviewQuestions() {
       <p>
         「自分の経歴だとどんなインフラエンジニア 面接 質問が来そうか」「どのように答えれば自分らしさを出せるかが不安」という場合は、一度模擬面接などでアウトプットしてみると、改善ポイントが見えやすくなります。
       </p>
+
+      <h2 id="heading-5">面接で落とされやすいNGパターンと改善策</h2>
+      <p>
+        インフラエンジニア 面接 対策として、採用担当の視点から「これをやると評価が下がる」という典型的なNGパターンを整理します。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>抽象的な回答：</strong>「システム全般を担当していました」「いろいろな業務をやっていました」という説明は、採用担当に何も伝わりません。「CentOS7のLinuxサーバー10台の定期監視と障害一次対応を担当」のように具体的に話しましょう。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>ネガティブな退職理由の前面押し出し：</strong>「上司が嫌いで」「残業が多くて」だけを退職理由にすると、次の職場でも同じことが起きそうと判断されます。必ず「次にやりたいこと」とセットで話す構成にしましょう。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>知識の丸暗記で終わっている：</strong>用語は言えるけど「実際どんな場面で使ったか」が言えない状態は、自己学習のみで実務経験がない印象を与えます。勉強中の内容でも「自分の環境で試した」エピソードを添えましょう。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>逆質問ゼロ：</strong>「特にありません」は意欲のなさと取られます。事前に2〜3個の質問を用意してから面接に臨みましょう。</li>
+      </ul>
+
+      <h2 id="heading-6">面接直前に確認すべき準備チェックリスト</h2>
+      <p>
+        インフラエンジニア 面接 質問集への回答を準備したうえで、当日に万全の状態で臨むために以下のチェックリストを活用してください。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}>職務経歴書に書いた内容を口頭でスラスラ説明できるか確認する</li>
+        <li style={{"marginBottom":"0.75rem"}}>志望動機の「きっかけ→行動→将来像」の3要素が揃っているか</li>
+        <li style={{"marginBottom":"0.75rem"}}>逆質問を2〜3個用意しているか</li>
+        <li style={{"marginBottom":"0.75rem"}}>担当した技術（OS・ネットワーク機器・クラウドサービス）のバージョンや規模を具体的に言えるか</li>
+        <li style={{"marginBottom":"0.75rem"}}>夜勤・残業・勤務地などの条件面を事前に整理して「答えられる状態」にしているか</li>
+      </ul>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

@@ -49,6 +49,41 @@ export default function InfrastructureEngineerFreelanceRate() {
       <p>
         「今の自分のスキルでインフラエンジニア フリーランス 単価どのくらいを狙えるのか」「どのタイミングで会社員からフリーランスに移るのが安全か」を知りたい場合は、一度キャリアやスキルセットを棚卸しし、現状と目標のギャップを明確にすることから始めてみてください。
       </p>
+
+      <h2 id="heading-4">フリーランスインフラエンジニアのリアルな1日と案件の種類</h2>
+      <p>
+        インフラ フリーランス 年収をイメージするうえで、実際にどのような案件が多いのかを知っておくことも重要です。フリーランスのインフラエンジニアが受ける案件は、大きく「常駐型（週4〜5日、客先に通う）」「リモート型（週2〜3日、在宅で作業）」「スポット型（定期的ではなく単発の設計・構築支援）」の3種類に分かれます。
+      </p>
+      <p>
+        特に経験が5年以上になると、フルリモートで週3日稼働・月50〜80万円のような案件も現実的に受注できるようになります。インフラエンジニア フリーランス 単価は、リモートワーク可能な案件のほうが応募競争率も高いため、差別化できる専門スキル（Terraform・Kubernetes・セキュリティ設計など）を持っておくことが重要です。
+      </p>
+
+      <h2 id="heading-5">フリーランス転向のタイミングと準備リスト</h2>
+      <p>
+        インフラエンジニア フリーランス なるには、いつ・どのように準備すればいいのかを事前に把握しておくことが安心につながります。以下のリストを参考に、フリーランス転向の準備を進めてください。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>経験年数：</strong>最低でも3〜5年の実務経験があり、構築フェーズ以上の仕事を経験していることが目安。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>資格：</strong>AWS認定ソリューションアーキテクトアソシエイト以上、またはLinuCレベル2・CCNAなど、スキルを証明できる資格を持っているか。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>3〜6ヶ月分の生活費の確保：</strong>案件が切れる期間や契約更新のタイミングに備えて、生活費の蓄えを用意しておく。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>エージェント登録：</strong>レバテックフリーランス・Midworksなどのインフラ系に強いエージェントに事前登録し、案件の相場感を把握しておく。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>青色申告の準備：</strong>個人事業主として確定申告を行うための会計ソフト（freeeやMoneyForwardなど）の導入と、経費管理の習慣化。</li>
+      </ul>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

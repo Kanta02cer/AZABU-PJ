@@ -51,6 +51,21 @@ export default function InfrastructureEngineerSalaryGuide() {
   そして3つ目が最も重要で、「上流工程に行ける会社を選ぶこと」です。いつまでも監視作業しかやらせてくれない会社では、どれだけ頑張ってもインフラエンジニアの年収は上がりません。「入社後に構築や設計へステップアップできる制度」が整っている優良企業を最初の段階で選ぶことこそが、インフラエンジニアの年収を爆発的に高めるための絶対条件なのです。
 </p>
 
+<h2 id="heading-6">インフラエンジニアの年収を比較：会社員 vs フリーランス</h2>
+<p>
+  インフラエンジニアの年収を考えるうえで、会社員とフリーランスの違いも理解しておくと、長期的なキャリア戦略が立てやすくなります。会社員インフラエンジニアは安定した収入と各種手当・社会保険があり、年収400〜700万円が多くの方の活躍レンジです。一方でフリーランスは収入の安定性は下がりますが、月単価60〜120万円（年収720〜1,440万円相当）のポジションに到達できるケースもあります。
+</p>
+<p>
+  フリーランスはスキルと実績がそのまま単価に直結するため、クラウド設計・IaC・セキュリティ設計などの希少スキルを持つインフラエンジニアほど高い収入を実現できます。「まずは会社員として5〜7年間しっかりスキルを積み、その後フリーランスで年収を大幅に伸ばす」というロードマップを持っている方も多く、計画的なキャリア設計がインフラエンジニアの年収を最大化する鍵となります。
+</p>
+
+<h2 id="heading-7">年収アップのために今日からできる3つの行動</h2>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>現在の年収と市場相場を比較する：</strong>転職サイトや求人票で同スキルのエンジニアの年収レンジを確認し、自分が適正価格で評価されているかを把握する。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>次の資格取得の計画を立てる：</strong>LinuC・CCNA・AWSなどの資格ロードマップを作成し、取得目標の月を決める。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>クラウドの無料枠で手を動かす：</strong>AWSの無料枠を使って実際に環境を構築してみることが、クラウドスキル習得の最短ルートです。</li>
+</ul>
+
 <div style={{"textAlign":"center","marginTop":"3rem","marginBottom":"3rem"}}>
   <a href="https://calendar.app.google/8cVcUkLokHP1w48Y6" target="_blank" style={{"display":"inline-flex","alignItems":"center","justifyContent":"center","background":"linear-gradient(135deg, #FF6B00, #FF8C00)","color":"white","padding":"1.25rem 3rem","borderRadius":"9999px","fontWeight":"bold","textDecoration":"none","boxShadow":"0 4px 14px rgba(255,107,0,0.3)","transition":"transform 0.2s"}}>
     高年収を目指せる優良企業への無料キャリア相談はこちら

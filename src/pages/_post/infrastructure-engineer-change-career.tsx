@@ -58,6 +58,40 @@ export default function InfrastructureEngineerChangeCareer() {
       <p>
         「自分ひとりではインフラエンジニア 辞めたい 転職先を整理しきれない」「何を残して何を変えるべきか分からない」という場合は、第三者と一緒にキャリアの棚卸しを行うことで、自分にとってベストな選択肢がクリアになることが多いです。
       </p>
+
+      <h2 id="heading-5">インフラエンジニア経験を他職種に活かす際のアピール方法</h2>
+      <p>
+        インフラエンジニア 辞めたい 転職先へのキャリアチェンジを成功させるためには、「インフラエンジニアとして積んだ経験をどう言語化するか」が鍵になります。例えば、以下のような経験は、他職種でも高く評価されます。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>障害対応の経験：</strong>「プレッシャーのある状況でも冷静に原因を特定し、チームと連携して解決に導く力」として評価される。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>手順書・ドキュメント作成：</strong>「複雑な技術情報を分かりやすく整理して伝える力」としてITコンサルや社内SEで重宝される。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>システム全体の把握力：</strong>「アプリケーション・ネットワーク・クラウドを横断して理解している視点」は、開発チームでのコミュニケーションで強みになる。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>継続的な学習習慣：</strong>「変化の速いIT技術に追いつき続けた経験」は、どの職種でも評価される姿勢として伝わる。</li>
+      </ul>
+
+      <h2 id="heading-6">転職前に確認すべき「辞めたい理由」の分析</h2>
+      <p>
+        インフラエンジニア 辞めたい という気持ちが強まったとき、まず立ち止まって考えてほしいのが「辞めたい理由の本質」です。夜勤が辛いのであれば日勤型の企業への転職で解決できる可能性があります。障害対応のプレッシャーが辛いなら、社内SEや自社サービス企業のインフラ担当であればオンコールが少ない場合があります。
+      </p>
+      <p>
+        「職種そのものが合わない」のか、「今の環境が合わない」のかを正確に判断することが、後悔しない転職への第一歩です。インフラエンジニア キャリアチェンジを急ぐ前に、まずこの問いに向き合ってみましょう。理由によっては、思い切った職種変更よりも「同じ職種で環境を変える」ほうが、はるかに満足度の高い結果になることがあります。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

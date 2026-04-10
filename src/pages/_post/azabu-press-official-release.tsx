@@ -53,6 +53,43 @@ export default function AzabuPressOfficialRelease() {
   </div>
 </div>
 
+<h2 id="heading-5">AZABU+PRESSが解決したい「情報格差」という問題</h2>
+<p>
+  IT業界への転職を考えたとき、求職者が直面する最大の壁のひとつが「情報の非対称性」です。企業側は採用のノウハウや市場動向を熟知している一方、求職者側は表面的な求人票や不確かなネット情報しか持っていないことが多く、この格差が「入社後のミスマッチ」「ブラック企業への入社」「キャリアの停滞」を生む根本原因になっています。
+</p>
+<p>
+  AZABU+PRESSは、元外資系コンサルタントとSIer採用担当という、両サイドを知り尽くした編集責任者が、業界の「本当のところ」を包み隠さず発信することで、この情報格差をゼロに近づけることを目指しています。
+</p>
+
+<h2 id="heading-6">今後の主な連載テーマ</h2>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>SES企業の正しい見分け方：</strong>ブラックSESとホワイトSESを見極めるための実践的チェックリストを定期連載。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>インフラエンジニアの年収リアル：</strong>フェーズ別・スキル別の年収データと、確実に年収を上げるためのキャリア戦略を深掘り解説。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>未経験からの転職成功事例：</strong>実際に未経験からインフラエンジニアとして活躍している方々のリアルな体験談を紹介。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>市場価値の高いスキルセット：</strong>Linux・AWS・Terraform・Kubernetesなど、採用担当が「この人は欲しい」と感じる技術の最新トレンドを解説。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>面接・転職活動の攻略法：</strong>職務経歴書の書き方から逆質問まで、採用担当の視点から見た「受かる人」と「落ちる人」の違いを紹介。</li>
+</ul>
+
+<h2 id="heading-7">読者への約束</h2>
+<p>
+  AZABU+PRESSは、広告収益を優先した提灯記事や、特定の企業に誘導するための偏った情報を一切発信しません。読者の皆さんが自分自身の力で「正しい判断」ができるよう、客観的なデータと現場のリアルに基づいた情報だけをお届けすることを約束します。IT業界への転職を真剣に考えているすべての方にとって、本誌が「信頼できる羅針盤」となることを目指して、これからも発信を続けてまいります。
+</p>
+
+<div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+  <a
+    href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+    target="_blank"
+    style={{
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+      padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+      textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+    }}
+  >
+    無料キャリア相談・1day就職オーディションはこちら
+  </a>
+</div>
+
     </>
   );
 }

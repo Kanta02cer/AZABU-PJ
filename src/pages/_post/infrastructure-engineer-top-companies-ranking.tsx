@@ -49,6 +49,42 @@ export default function InfrastructureEngineerTopCompaniesRanking() {
       <p>
         もし、「自分に合ったインフラエンジニア 大手企業 ランキングの見方が分からない」「どの企業が自分にとって優良なのか判断しづらい」と感じている場合は、一度キャリアカウンセリングを通じて、自分の価値観と市場の選択肢を整理してみるのがおすすめです。
       </p>
+
+      <h2 id="heading-4">インフラエンジニアが成長できる企業を見極める質問リスト</h2>
+      <p>
+        インフラエンジニア 優良企業かどうかを見極めるために、企業説明会や面接の場で積極的に確認すべき質問を整理します。これらの質問に対して具体的な回答が返ってくる企業は、インフラエンジニアの育成に本気で向き合っている可能性が高いと判断できます。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}>未経験入社の方が、どのようなステップでキャリアアップしていますか？具体的な事例を教えてください。</li>
+        <li style={{"marginBottom":"0.75rem"}}>クラウド案件（AWS・Azure等）の比率はどのくらいですか？今後の方針も含めて教えてください。</li>
+        <li style={{"marginBottom":"0.75rem"}}>インフラエンジニアの平均勤続年数と、直近の離職率を教えてもらえますか？</li>
+        <li style={{"marginBottom":"0.75rem"}}>資格取得の費用補助制度はありますか？取得を推奨している資格はどれですか？</li>
+        <li style={{"marginBottom":"0.75rem"}}>リモートワーク制度の実態はどうですか？フルリモートや週○日リモートの実績はありますか？</li>
+        <li style={{"marginBottom":"0.75rem"}}>担当するインフラフェーズは主に何ですか？監視・運用から設計へのキャリアパスは整っていますか？</li>
+      </ul>
+
+      <h2 id="heading-5">「名前より中身」で選ぶことがインフラエンジニアの成長を決める</h2>
+      <p>
+        インフラエンジニア 大手企業 ランキングで上位に出てくる企業が、必ずしも「インフラエンジニアとして成長できる最良の環境」とは限りません。重要なのは、その企業がインフラエンジニアに対してどのような仕事を任せ、どのようなキャリアパスを用意しているかです。
+      </p>
+      <p>
+        「有名企業で安心したい」という気持ちは自然ですが、インフラエンジニアとして数年後に確実に市場価値を高めていくためには、「どんな経験を積めるか」「誰と働けるか」「どんな技術を扱えるか」という観点で企業を選ぶことが最重要です。インフラエンジニア 企業 選び方の軸を自分なりに整理したうえで、ランキングを参考にしながら「本当に自分に合う優良企業」を自分の目で見つけていきましょう。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

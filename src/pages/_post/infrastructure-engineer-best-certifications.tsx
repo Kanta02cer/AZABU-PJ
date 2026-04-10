@@ -54,6 +54,49 @@ export default function InfrastructureEngineerBestCertifications() {
       <p>
         大切なのは、インフラエンジニア 資格 一覧の中から自分のキャリアの方向性に合った資格を選び、「学んだ内容を小さく実践する」「資格をきっかけに転職活動や社内異動に挑戦する」といったアクションにつなげていくことです。そうすることで、資格が単なる履歴書の飾りではなく、キャリアを切り開く武器として機能し始めます。
       </p>
+
+      <h2 id="heading-5">インフラエンジニアおすすめ資格の取得順序まとめ</h2>
+      <p>
+        インフラエンジニア おすすめ 資格を「どの順番で取るか」は、現在のスキルレベルとキャリアの方向性によって異なります。以下に、代表的な取得ロードマップを2パターン示します。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>サーバー系を強化したい場合：</strong>ITパスポート → LinuCレベル1 → LinuCレベル2 → AWS クラウドプラクティショナー → AWSソリューションアーキテクトアソシエイト</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>ネットワーク系を強化したい場合：</strong>ITパスポート → CCNA → LinuCレベル1 → AWSクラウドプラクティショナー → AWSソリューションアーキテクトアソシエイト</li>
+      </ul>
+      <p>
+        どちらのルートでも、最終的にはAWSなどのクラウド資格を取得することで、インフラエンジニア 資格 一覧の中でも市場価値の高いポジションに近づけます。資格取得に合わせて、手を動かす実践（VirtualBoxやAWS無料枠での環境構築）を並行することで、面接での説得力がさらに増します。
+
+      </p>
+
+      <h2 id="heading-6">資格取得にかかる費用と期間の目安</h2>
+      <p>
+        インフラエンジニア 資格 初心者が計画を立てやすいよう、主要な資格の費用と学習期間を整理します。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>ITパスポート：</strong>受験料7,500円。学習期間は1〜2ヶ月（週5〜10時間）。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>LinuCレベル1：</strong>1科目あたり15,000〜20,000円。学習期間は2〜3ヶ月（週10〜15時間）。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>CCNA：</strong>受験料46,000円前後。学習期間は3〜6ヶ月（週10〜15時間）。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>AWSクラウドプラクティショナー：</strong>受験料20,000円前後。学習期間は1〜2ヶ月（週5〜10時間）。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>AWSソリューションアーキテクトアソシエイト：</strong>受験料30,000円前後。学習期間は2〜4ヶ月（週10〜15時間）。</li>
+      </ul>
+      <p>
+        企業によっては資格取得費用を全額または一部補助してくれる場合があります。入社前の面接でこの制度の有無を確認しておくと、インフラエンジニア おすすめ 資格の取得計画を立てやすくなります。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

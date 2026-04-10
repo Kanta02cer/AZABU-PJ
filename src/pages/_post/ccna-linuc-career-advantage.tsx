@@ -54,6 +54,42 @@ export default function CcnaLinucCareerAdvantage() {
       <p>
         資格そのものよりも、「資格取得を通じてどのようなスキルを身につけ、それをどう実務や転職活動に活かすか」が重要です。もし、自分の現状から見てどの資格が最も費用対効果が高いのか迷っている場合は、一度キャリアの方向性を整理しながら、CCNA LinuC 転職 有利な組み合わせ方を一緒に考えていくのが良いでしょう。
       </p>
+
+      <h2 id="heading-5">CCNAとLinuCの学習コストと取得期間の目安</h2>
+      <p>
+        CCNA LinuC 転職 有利という観点で検討する際、学習コストと取得期間も重要な判断材料です。LinuCレベル1は、まったくのLinux初心者でも2〜3ヶ月の集中学習（週10〜15時間程度）で取得できるケースが多く、受験料は1科目あたり約15,000〜20,000円です。ITパスポートの次に狙いやすい資格として、未経験者の登竜門的な位置づけになっています。
+      </p>
+      <p>
+        一方でCCNAは、ネットワークの基礎知識がまったくない場合は4〜6ヶ月の学習が必要になることもあり、受験料は約46,000円（1回）と決して安くはありません。難易度もLinuCレベル1と比べると高めですが、その分転職市場での評価も高く、ネットワークエンジニア寄りの求人では必須資格として記載されるケースが多いです。
+      </p>
+
+      <h2 id="heading-6">資格取得後の実践で価値を高める方法</h2>
+      <p>
+        CCNA LinuC 転職 有利というテーマを語るうえで、資格取得後の「実践の場」を確保することも重要です。資格で得た知識を手を動かして確認するために、LinuCであれば自分でLinux環境（VirtualBoxやWSLなど）を構築して操作を反復し、CCNAであればシミュレーターソフト（Cisco Packet Tracerなど）を使ってルーティング設定を試してみることを強くおすすめします。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>LinuC実践：</strong>VirtualBoxにCentOSやUbuntuを入れ、ユーザー管理・パーミッション設定・ネットワーク設定を繰り返す</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>CCNA実践：</strong>Packet Tracerでスタティックルート・VLANの設定を行い、ネットワーク図と照らし合わせながら理解を深める</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>AWS連携：</strong>Linux・ネットワークの基礎を固めたうえでAWSのクラウドプラクティショナーやSAAに挑戦し、クラウドへの橋渡しをする</li>
+      </ul>
+      <p>
+        CCNA LinuC 転職 有利というのは、資格の称号を持つことよりも「資格取得の過程で身につけた知識を現場で再現できること」にあります。面接では「この資格を取るためにどのような学習をしたか」「実際にどんな環境を作って試したか」を具体的に話せると、技術的な信頼度が一段と高まります。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }

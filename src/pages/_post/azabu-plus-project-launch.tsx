@@ -82,6 +82,20 @@ export default function AzabuPlusProjectLaunch() {
   <li style={{"marginBottom":"0.5rem"}}><strong>内定・研修スタート</strong>：プロ仕様のカリキュラムで、現場で使える技術を習得。</li>
 </ul>
 
+<h2 id="heading-5b">研修で身につくスキルと入社後のキャリアパス</h2>
+<p>
+  合格後にスタートする研修では、単なる座学ではなく、実際の現場で使うツールや技術を体験しながら学ぶ実践型カリキュラムを採用しています。Linux操作・ネットワーク設定・クラウドの入門といったインフラエンジニアの基礎を1〜3ヶ月で習得し、その後は個人の習得度に合わせた案件にアサインされます。
+</p>
+<ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+  <li style={{"marginBottom":"0.75rem"}}><strong>研修期間（1〜3ヶ月）：</strong>Linuxコマンド操作・ネットワーク基礎・クラウド入門（AWS）・資格取得サポート</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>1〜2年目：</strong>運用保守・監視業務からスタート。手順書作成・障害対応の基礎を習得。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>2〜4年目：</strong>構築フェーズに移行。サーバー設定・ネットワーク構成・クラウド環境の構築を担当。</li>
+  <li style={{"marginBottom":"0.75rem"}}><strong>4年目以降：</strong>設計・上流工程へ。クラウドアーキテクト・プロジェクトリーダーとして活躍するエンジニアも多数。</li>
+</ul>
+<p>
+  このキャリアパスを踏むことで、未経験スタートでも20代後半には年収500〜700万円クラスのポジションを目指せます。「どこでも通用するエンジニア」になるための土台を、しっかりと積み上げられる環境が用意されています。
+</p>
+
 <h2 id="heading-6">よくある質問 (FAQ)</h2>
 <div className="qa-section">
   <div className="qa-question">

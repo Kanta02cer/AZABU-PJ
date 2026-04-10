@@ -58,6 +58,41 @@ export default function BlackSesHowToIdentify() {
       <p>
         「どのSES企業ならインフラエンジニアとして成長できるのか」「自分の希望条件に合うSES ホワイト 企業をどう探せばいいか分からない」と感じている場合は、第三者の視点も活用しながら、慎重に選んでいくことが重要です。
       </p>
+
+      <h2 id="heading-5">SES ホワイト企業を見極める5つのチェックポイント</h2>
+      <p>
+        ブラックSESを避けるためには、「ホワイトなSES企業の特徴」を知っておくことも同様に重要です。以下の5つのポイントが当てはまる企業であれば、インフラエンジニアとして安心してキャリアを積める可能性が高いと判断できます。
+      </p>
+      <ul style={{"listStyleType":"disc","paddingLeft":"1.5rem","marginBottom":"2rem"}}>
+        <li style={{"marginBottom":"0.75rem"}}><strong>研修制度が整っている：</strong>自社での1〜3ヶ月の技術研修があり、未経験者をいきなり現場に放り込まない体制があるか。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>単価・取り分を開示してくれる：</strong>面接や入社後に、エンジニアの市場単価と自社マージンを正直に説明してくれるか。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>キャリアパスが明文化されている：</strong>「運用保守→構築→設計」といった具体的なステップと昇給基準が提示されているか。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>エンジニア出身の社内担当者がいる：</strong>案件選定や悩み相談をITの現場を知っている人間が担ってくれる体制があるか。</li>
+        <li style={{"marginBottom":"0.75rem"}}><strong>クラウド・上流案件の実績がある：</strong>AWS・AzureなどのクラウドやITインフラ設計に関わる実績を持つ案件が複数存在するか。</li>
+      </ul>
+
+      <h2 id="heading-6">ブラックSESを避けた先にあるキャリアの可能性</h2>
+      <p>
+        SES ブラック 見分け方を正しく理解し、ホワイトな環境でキャリアをスタートさせることは、将来の年収と働き方に直結します。優良なSES企業や一次請けSIerで経験を積んだインフラエンジニアは、20代後半には年収500〜700万円クラスを狙えるポジションに到達するケースも少なくありません。
+      </p>
+      <p>
+        また、クラウドスキルや自動化の知識を積み上げることで、将来的にはフリーランスへの転向も視野に入ります。インフラ系フリーランスの月単価は60〜120万円が相場であり、週3日稼働のフレキシブルな働き方も実現できます。SES ブラック 見分け方を知っておくことは、単に最悪の事態を避けるためだけでなく、自分の人生を自分でコントロールするための重要な知識です。正しい情報を持って、納得のいく最初の一歩を踏み出しましょう。
+      </p>
+
+      <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
+        <a
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
+            padding: '1.25rem 3rem', borderRadius: '9999px', fontWeight: 'bold',
+            textDecoration: 'none', boxShadow: '0 4px 14px rgba(255,107,0,0.3)',
+          }}
+        >
+          無料キャリア相談・1day就職オーディションはこちら
+        </a>
+      </div>
     </>
   );
 }
