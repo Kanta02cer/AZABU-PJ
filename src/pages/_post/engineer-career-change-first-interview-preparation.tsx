@@ -47,7 +47,7 @@ export default function EngineerCareerChangeFirstInterviewPreparation() {
       <h2 id="heading-2">2. 「なぜ御社か？」は求人のどの一文に惹かれたかまで落とし込む</h2>
       <p>
         「インフラに興味があるから」「研修があるから」だけでは、どの会社にも言えてしまう回答です。
-        採用側が知りたいのは、<strong>数ある会社の中でなぜここなのか</strong>という“選択”の理由です。
+        採用側が知りたいのは、<strong>数ある会社の中でなぜここなのか</strong>という"選択"の理由です。
       </p>
 
       <p>次のように準備すると、説得力が増します。</p>
@@ -60,7 +60,7 @@ export default function EngineerCareerChangeFirstInterviewPreparation() {
 
       <p>
         例：<br />
-        「求人票の“未経験者でも3年後には設計を任せられるように育成する”という記載に強く惹かれました。
+        「求人票の"未経験者でも3年後には設計を任せられるように育成する"という記載に強く惹かれました。
         自分も長期的に専門性を身につけたいと考えており、その考え方が一致していると感じたためです。」
       </p>
 

@@ -13,7 +13,7 @@ export default function CareerChangeNoSkillNoCert90DaysPlan2026() {
   return (
     <>
       <p>
-        「何から始めればいいか分からない」は、未経験転職で最も損をする状態です。対策はシンプルで、<strong>90日で”言語化できる到達点”を1つ作る</strong>こと。資格がなくても、学習ログと検証環境があれば応募は動きます。本記事では、0日目から応募フェーズまでの90日モデルと、各フェーズのチェックポイントを解説します。
+        「何から始めればいいか分からない」は、未経験転職で最も損をする状態です。対策はシンプルで、<strong>90日で"言語化できる到達点"を1つ作る</strong>こと。資格がなくても、学習ログと検証環境があれば応募は動きます。本記事では、0日目から応募フェーズまでの90日モデルと、各フェーズのチェックポイントを解説します。
       </p>
 
       <h2>0〜30日：基礎学習フェーズ（Linux・ネットワーク）</h2>
@@ -58,8 +58,8 @@ export default function CareerChangeNoSkillNoCert90DaysPlan2026() {
 
       <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
         <a
-          href=”https://calendar.app.google/8cVcUkLokHP1w48Y6”
-          target=”_blank”
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
           style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',

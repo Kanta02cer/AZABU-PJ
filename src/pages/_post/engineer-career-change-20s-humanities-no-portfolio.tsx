@@ -22,7 +22,7 @@ export default function EngineerCareerChange20sHumanitiesNoPortfolio() {
         <strong>何を揃えれば評価されるのか</strong>を理解し、最短ルートで埋めていくことです。
       </p>
 
-      <h2 id="heading-1">エンジニア転職で本当に見られているのは“専攻”でも“作品数”でもない</h2>
+      <h2 id="heading-1">エンジニア転職で本当に見られているのは"専攻"でも"作品数"でもない</h2>
       <p>
         採用現場の視点から言えば、文系か理系かよりも、ポートフォリオの数よりも、
         次の3つがはるかに重視されています。
@@ -77,7 +77,7 @@ export default function EngineerCareerChange20sHumanitiesNoPortfolio() {
         自分の言葉で説明できることです。
       </p>
 
-      <h3 id="heading-6">3. 文系の強みを“技術用語”に翻訳する</h3>
+      <h3 id="heading-6">3. 文系の強みを"技術用語"に翻訳する</h3>
       <p>
         文系のこれまでの経験は、そのままだとエンジニア採用の文脈では伝わりにくいですが、
         言い換えれば十分に武器になります。
@@ -97,7 +97,7 @@ export default function EngineerCareerChange20sHumanitiesNoPortfolio() {
 
       <h2 id="heading-7">面接では「完成度」より「伸びしろの見せ方」で勝負する</h2>
 
-      <h3 id="heading-8">4. 「まだ未完成です」と正直に言って良いが、必ず“次の一歩”を添える</h3>
+      <h3 id="heading-8">4. 「まだ未完成です」と正直に言って良いが、必ず"次の一歩"を添える</h3>
       <p>
         未経験のポートフォリオは、正直どこかしら荒さが残っていて当然です。
         その時に大事なのは、<strong>できていないことをどう説明するか</strong>です。
@@ -108,7 +108,7 @@ export default function EngineerCareerChange20sHumanitiesNoPortfolio() {
         <strong>ロードマップ付きで話せるかどうか</strong>が評価の分かれ目になります。
       </p>
 
-      <h3 id="heading-9">5. 質問タイムで“文系ならではの視点”を1つ投げる</h3>
+      <h3 id="heading-9">5. 質問タイムで"文系ならではの視点"を1つ投げる</h3>
       <p>
         面接の最後にある逆質問の時間は、文系出身の強みを出しやすい場面です。
         例えば次のような質問は、現場感のある良い印象を与えやすくなります。

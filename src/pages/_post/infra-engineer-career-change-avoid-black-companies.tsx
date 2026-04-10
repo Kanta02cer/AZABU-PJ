@@ -93,7 +93,7 @@ export default function InfraEngineerCareerChangeAvoidBlackCompanies() {
       </ul>
 
       <p>
-        「現場の評価次第です」とだけ言われる会社は、エンジニアを単なる“リソース”として見ている可能性が高く、
+        「現場の評価次第です」とだけ言われる会社は、エンジニアを単なる"リソース"として見ている可能性が高く、
         長期的な成長には向きません。
       </p>
 

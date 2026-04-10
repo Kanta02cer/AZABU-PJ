@@ -31,7 +31,7 @@ export default function EngineerCareerChange20sNoExperienceFirstSteps() {
         最初に入る環境が「育つ現場」か「消耗する現場」かで、1〜2年後の市場価値が決まります。
       </p>
 
-      <h3 id="heading-2">“勉強してから応募”より、“応募しながら必要分を勉強”が現実的</h3>
+      <h3 id="heading-2">"勉強してから応募"より、"応募しながら必要分を勉強"が現実的</h3>
       <p>
         もちろん学習は必要ですが、「完璧にしてから応募しよう」とすると、だいたい長期化します。
         未経験転職は、<strong>応募→面接→足りない部分を補う</strong>を回しながら、加速度的に勝ち筋を作る方が成功しやすいです。
@@ -54,7 +54,7 @@ export default function EngineerCareerChange20sNoExperienceFirstSteps() {
         <p>
           ・ 研修や育成の実態がある（期間・内容を具体的に説明できる）<br />
           ・ 1〜2年後に「構築・設計」など上流に上がれる道筋がある<br />
-          ・ 夜勤や常駐の条件が“固定”ではなく、改善や移行の余地がある
+          ・ 夜勤や常駐の条件が"固定"ではなく、改善や移行の余地がある
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function EngineerCareerChange20sNoExperienceFirstSteps() {
         このサイクルが回ると、未経験でも勝率が上がります。
       </p>
 
-      <h3 id="heading-10">6. ブラック回避は“口コミ”より面接質問でやる</h3>
+      <h3 id="heading-10">6. ブラック回避は"口コミ"より面接質問でやる</h3>
       <p>
         口コミは参考程度にして、面接で構造を確認する方が確実です。例えば次のように聞きます。
       </p>
@@ -91,7 +91,7 @@ export default function EngineerCareerChange20sNoExperienceFirstSteps() {
         「夜勤がある場合、日勤への移行実績はありますか？」
       </p>
 
-      <h3 id="heading-11">7. “最初の内定”をゴールにせず、条件交渉の材料にする</h3>
+      <h3 id="heading-11">7. "最初の内定"をゴールにせず、条件交渉の材料にする</h3>
       <p>
         未経験の場合でも、内定が1つ出ると一気に状況が変わります。焦って決めずに、
         条件の良い環境へ寄せるための材料として使いましょう。特に20代は、最初の1社目で伸びると

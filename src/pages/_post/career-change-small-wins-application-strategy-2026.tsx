@@ -55,8 +55,8 @@ export default function CareerChangeSmallWinsApplicationStrategy2026() {
 
       <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '3rem' }}>
         <a
-          href=”https://calendar.app.google/8cVcUkLokHP1w48Y6”
-          target=”_blank”
+          href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+          target="_blank"
           style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             background: 'linear-gradient(135deg, #FF6B00, #FF8C00)', color: 'white',
