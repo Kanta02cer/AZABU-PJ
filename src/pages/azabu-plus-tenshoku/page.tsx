@@ -72,18 +72,24 @@ export default function AzabuPlusTenshokuPage() {
             学歴・職歴・ブランクに不安があっても、未経験からITインフラ領域に挑戦できる現実的な入口を提供。
             日本を代表するIT企業の役員と直接話せる機会を通じて、成長環境とキャリアの再起を支援します。
           </p>
-          <a
-            href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() =>
-              pushCvClick('brand_hub_hero_cta', { page_path: '/azabu-plus-tenshoku' })
-            }
-            className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-full bg-[#FF6B00] text-white font-bold hover:bg-[#FF8C00] transition-colors"
-          >
-            無料で面談予約する
-            <i className="ri-arrow-right-line" />
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+            <Link
+              to="/tenshoku/register"
+              onClick={() => pushCvClick('brand_hub_hero_register', { page_path: '/azabu-plus-tenshoku' })}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#FF6B00] text-white font-bold hover:bg-[#FF8C00] transition-colors"
+            >
+              無料で求職者登録する →
+            </Link>
+            <a
+              href="https://calendar.app.google/8cVcUkLokHP1w48Y6"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => pushCvClick('brand_hub_hero_cta', { page_path: '/azabu-plus-tenshoku' })}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-[#FF6B00] text-[#FF6B00] font-bold hover:bg-[#FFF7F0] transition-colors"
+            >
+              面談予約する
+            </a>
+          </div>
         </div>
       </section>
 

@@ -224,17 +224,22 @@ function MobileMenu({ isOpen, onClose, isScrolled }: { isOpen: boolean; onClose:
         </div>
         <nav className="p-5 space-y-1">
           {[
-              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku' },
-              { label: '特徴', href: '/#特徴' }, 
-              { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'AZABU+PRESS', href: '/azabu-press' },
-              { label: 'FAQ', href: '/#FAQ' }
+              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku', special: false },
+              { label: '特徴', href: '/#特徴', special: false },
+              { label: 'インタビュー', href: '/#インタビュー', special: false },
+              { label: 'AZABU+PRESS', href: '/azabu-press', special: false },
+              { label: 'FAQ', href: '/#FAQ', special: false },
+              { label: '🏢 UpBoard｜学歴不問で上場企業へ', href: '/upboard', special: true },
           ].map((item) => (
             <Link
               key={item.label}
               to={item.href}
               onClick={onClose}
-              className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-[#1A2B4C] text-base font-medium hover:bg-[#FF6B00]/5 hover:text-[#FF6B00] transition-all cursor-pointer"
+              className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-base font-medium transition-all cursor-pointer ${
+                item.special
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 font-bold'
+                  : 'text-[#1A2B4C] hover:bg-[#FF6B00]/5 hover:text-[#FF6B00]'
+              }`}
             >
               <span>{item.label}</span>
             </Link>
@@ -429,18 +434,24 @@ export default function HomePage() {
           </div>
           <nav className={`hidden md:flex items-center gap-8 transition-all duration-700 ${heroLoaded ? 'opacity-100' : 'opacity-0'}`}>
             {[
-              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku' },
-              { label: '特徴', href: '/#特徴' }, 
-              { label: 'インタビュー', href: '/#インタビュー' }, 
-              { label: 'AZABU+PRESS', href: '/azabu-press' },
-              { label: 'FAQ', href: '/#FAQ' }
+              { label: 'AZABU+転職とは', href: '/azabu-plus-tenshoku', badge: false },
+              { label: '特徴', href: '/#特徴', badge: false },
+              { label: 'インタビュー', href: '/#インタビュー', badge: false },
+              { label: 'AZABU+PRESS', href: '/azabu-press', badge: false },
+              { label: 'FAQ', href: '/#FAQ', badge: false },
+              { label: 'UpBoard', href: '/upboard', badge: true },
             ].map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-sm font-medium cursor-pointer text-[#111111] hover:text-[#FF6B00] transition-colors"
+                className={`text-sm font-medium cursor-pointer transition-colors relative ${
+                  item.badge ? 'text-blue-600 font-bold' : 'text-[#111111] hover:text-[#FF6B00]'
+                }`}
               >
                 {item.label}
+                {item.badge && (
+                  <span className="absolute -top-2 -right-3 px-1.5 py-0.5 rounded-full bg-blue-600 text-white text-[9px] font-black">NEW</span>
+                )}
               </Link>
             ))}
           </nav>
@@ -1322,6 +1333,86 @@ export default function HomePage() {
         </div>
       </SectionBg>
 
+
+      {/* UpBoard Bridge Section */}
+      <section className="py-16 px-4 bg-[#0A0F1E] overflow-hidden relative">
+        <div className="absolute inset-0 opacity-5"
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        <div className="absolute top-0 left-1/3 w-96 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+
+            {/* Left: テキスト */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold tracking-widest mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse inline-block" />
+                NEW SERVICE
+              </div>
+              <h2 className="text-white text-3xl sm:text-4xl font-black leading-tight mb-4">
+                学歴じゃない。<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                  実力で、上場へ。
+                </span>
+              </h2>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-md">
+                高卒・専門卒・低偏差値大卒でも、スキルと意欲だけで東証上場企業のエンジニア職へ。
+                AIがあなたの市場価値を即座にスコアリングします。
+              </p>
+              <div className="flex flex-wrap items-center gap-3 justify-center lg:justify-start">
+                <Link to="/upboard/check"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-black hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/25">
+                  🤖 無料AI診断を受ける →
+                </Link>
+                <Link to="/upboard"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/70 font-medium hover:bg-white/5 transition-colors">
+                  詳しく見る
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-4 mt-5 text-white/30 text-xs justify-center lg:justify-start">
+                <span>✓ 完全無料</span>
+                <span>✓ 学歴一切不問</span>
+                <span>✓ 有料職業紹介許可取得済み</span>
+              </div>
+            </div>
+
+            {/* Right: スコアカード（装飾） */}
+            <div className="flex-shrink-0">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-6 w-72 backdrop-blur-sm">
+                <div className="flex items-center justify-between mb-5">
+                  <p className="text-white/50 text-xs">AI診断スコア例</p>
+                  <span className="px-2.5 py-1 rounded-full bg-amber-500 text-white text-xs font-black">Sランク</span>
+                </div>
+                <div className="text-center mb-4">
+                  <span className="text-6xl font-black text-amber-400">87</span>
+                  <span className="text-white/40 text-sm ml-1">点</span>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { label: 'スキルセット', val: 32, max: 40 },
+                    { label: '実務経験', val: 20, max: 25 },
+                    { label: 'ポートフォリオ', val: 8, max: 8 },
+                    { label: '転職緊急度', val: 10, max: 10 },
+                  ].map(item => (
+                    <div key={item.label} className="flex items-center gap-2">
+                      <span className="text-white/40 text-xs w-24 shrink-0">{item.label}</span>
+                      <div className="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-1.5 bg-gradient-to-r from-blue-400 to-cyan-300 rounded-full"
+                          style={{ width: `${(item.val / item.max) * 100}%` }} />
+                      </div>
+                      <span className="text-white/50 text-xs w-8 text-right">{item.val}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <p className="text-white/40 text-xs mb-1">AI推定年収</p>
+                  <p className="text-white font-black text-xl">450〜580<span className="text-white/40 text-sm font-normal">万円</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA Section */}
       <SectionBg variant="light" imageUrl="https://readdy.ai/api/search-image?query=Dramatic%20aerial%20night%20view%20of%20Tokyo%20premium%20business%20district%20with%20illuminated%20skyscrapers%20and%20golden%20city%20lights%2C%20deep%20dark%20navy%20atmosphere%20with%20warm%20amber%20reflections%20on%20glass%20buildings%2C%20cinematic%20urban%20landscape%20photography%20with%20rich%20contrast%2C%20sophisticated%20metropolitan%20skyline%20at%20night%20with%20bokeh%20light%20effects%2C%20ultra%20premium%20quality%20architectural%20photography%2C%20ultra%20wide%20panoramic%20composition&width=1920&height=800&seq=bg-cta-section-v1&orientation=landscape" opacity={0.15}>
